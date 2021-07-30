@@ -9,10 +9,15 @@
   justify-content: center;
   align-items: center;
   flex-basis: 10%;
-  height: 50%;
-  transition: flex-grow .3s linear;
+  height: 100%;
+  transition: height .3s linear;
 }
 
-.accordion__cell:target {
-  flex-grow: 3;
+.accordion__result {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 650ms;
+}
+.accordion__cell:target .accordion__result{
+  max-height: fit-content;
 }
