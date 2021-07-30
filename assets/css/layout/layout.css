@@ -1,0 +1,22 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* @media all and (max-width: 480px) {
+  .grid {
+    grid-template-columns: auto;
+    gap: .5rem;
+  }
+} */
+
+.cell-primary {
+  background-color: var(--color-primary);
+}
+.cell-secondary {
+  background-color: var(--color-secondary);
+}
+.cell-tertiary {
+  background-color: var(--color-tertiary);
+}

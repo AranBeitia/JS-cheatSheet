@@ -1,0 +1,18 @@
+.accordion {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion__cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 10%;
+  height: 50%;
+  transition: flex-grow .3s linear;
+}
+
+.accordion__cell:target {
+  flex-grow: 3;
+}
