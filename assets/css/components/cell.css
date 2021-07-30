@@ -1,0 +1,13 @@
+.cell {
+  padding: 1rem;
+}
+
+.cell-primary {
+  background-color: var(--color-primary);
+}
+.cell-secondary {
+  background-color: var(--color-secondary);
+}
+.cell-tertiary {
+  background-color: var(--color-tertiary);
+}

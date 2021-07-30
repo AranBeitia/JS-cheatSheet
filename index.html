@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <link rel="icon" type="image/icon" href="favicon.ico">
-  <script src="assets/js/vanilla.js" defer></script>
+  <script type="module" src="assets/js/vanilla.js" defer></script>
   <script src="assets/js/jquery.js" defer></script>
   <title>JQuery CheatSheet</title>
 </head>
@@ -19,51 +19,107 @@
     <img src="assets/images/logo.svg" alt="Logo" class="logo" />
     <h1>CheatSheet</h1>
   </header>
-  <main class="grid">
-    <section id="events" class="cell-primary flex-center">
-      <a href="#events">
-        <h2>Events</h2>
-        <div class="accordion__result">
-          <h3>Document loading</h3>
-          <ul>
-            <li>.load()</li>
-          </ul>
-          <h3>Mouse events</h3>
-          <ul>
-            <li>.click()</li>
-            <li>.dblclick()</li>
-            <li>.mousemove()</li>
-            <li>.mouseover()</li>
-          </ul>
-          <h3>Keyboard events</h3>
-          <ul>
-            <li>.keypress()</li>
-          </ul>
-          <h3>Form events</h3>
-          <ul>
-            <li>.submit()</li>
-            <li>.change()</li>
-            <li>.select()</li>
-          </ul>
+  <main class="grid padding-1">
+    <section class="cell cell-primary">
+      <h2 class="text-center">Events</h2>
+      <div>
+        <h3>Document loading</h3>
+        <ul>
+          <li><a href="#">.load()</a></li>
+        </ul>
+        <h3>Mouse events</h3>
+        <ul>
+          <li><a href="#">.click()</a></li>
+          <li>.dblclick()</li>
+          <li>.mousemove()</li>
+          <li>.mouseover()</li>
+        </ul>
+        <h3>Keyboard events</h3>
+        <ul>
+          <li>.keypress()</li>
+        </ul>
+        <h3>Form events</h3>
+        <ul>
+          <li>.submit()</li>
+          <li>.change()</li>
+          <li>.select()</li>
+        </ul>
 
-          <h3>nuse</h3>
-          <li>When an image is loaded</li>
-          <li>When an image fails to load, (if you write an incorrect image url the loading of the image will fail)</li>
-          <li>When a checkbox is checked or unchecked</li>
-          <li>When a ul list item is clicked, show the item that was clicked</li>
-        </div>
-      </a>
+        <h3>nuse</h3>
+        <li>When an image is loaded</li>
+        <li>When an image fails to load, (if you write an incorrect image url the loading of the image will fail)</li>
+        <li>When a checkbox is checked or unchecked</li>
+        <li>When a ul list item is clicked, show the item that was clicked</li>
+      </div>
     </section>
-    <section id="functions" class="cell-secondary flex-center">
-      <a href="#functions">
-        <h2>Functions</h2>
-      </a>
+    <section class="cell cell-secondary">
+      <h2 class="text-center">Functions</h2>
+      <ul>
+        <li>Create an HTML element with any text value
+          Remove an HTML element with any text value
+          Append an HTML element with any text value to a parent element
+          Prepend an HTML element with any text value to a parent element
+          Create and add an HTML element with any text value after another element
+          Create and add an HTML element with any text value before another element
+          Clone an HTML element within other element
+          Add a class to an HTML item
+          Remove a class to an HTML item
+          Toggle a class of an HTML item
+          Add a disabled attribute to an HTML button
+          Remove the disabled attribute of an HTML button
+          Set a data-src attribute to a img element
+          Remove the data-src attribute of the img element
+          Hide an HTML element on click (display: none)
+          Show an HTML element on click (display: block)
+          Fade in an HTML element using jQuery
+          Fade out an HTML element using jQuery
+          Iterate a collection of elements and apply a change of style on them
+          Get the parent element of a certain element and change its font weight
+          Get the collection of children of a certain element and change its font weight
+          </li>
+      </ul>
     </section>
-    <section id="selectors" class="cell-tertiary flex-center">
-      <a href="#selectors">
-        <h2>Selectors</h2>
-      </a>
+    <section class="cell cell-tertiary">
+      <h2 class="text-center">Selectors</h2>
+      <ul>
+        <li>Get all the elements that have a certain class and change their font weight
+          Get an item by id and change its font weight
+          Get all the elements that have a certain class and the display property of none and change their font color
+          Get the options of a select element that are selected (attribute selected)
+          Change the href attribute of the first <a> element (You have to create several <a> elements)
+          Show an alert with the value of the first <input> of the page (Create an <input> element to test this case)
+          Remove all items from a specific selector
+          Animate an item after 2 seconds from the initial page load
+          </li>
+      </ul>
     </section>
   </main>
+  <article id="modal" class="modal flex-center --open">
+    <div class="modal__content">
+      <button id="modal-close" class="button--close">X</button>
+      <section id="modal-inner">
+        <div class="w3-bar w3-black">
+          <button class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
+          <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Paris</button>
+          <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Tokyo</button>
+        </div>
+        
+        <div id="London" class="w3-container city">
+          <h2>London</h2>
+          <p>London is the capital city of England.</p>
+        </div>
+        
+        <div id="Paris" class="w3-container city" style="display:none">
+          <h2>Paris</h2>
+          <p>Paris is the capital of France.</p> 
+        </div>
+        
+        <div id="Tokyo" class="w3-container city" style="display:none">
+          <h2>Tokyo</h2>
+          <p>Tokyo is the capital of Japan.</p>
+        </div>
+      </section>
+    </div>
+  </article>
 </body>
 </html>

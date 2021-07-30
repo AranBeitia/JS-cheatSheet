@@ -1,8 +1,10 @@
-window.onload = function() {
-  if(window.innerWidth < 480) {
-    document.querySelector('main').classList.add('accordion')
-    document.querySelector('#events').classList.add('accordion__cell')
-    document.querySelector('#functions').classList.add('accordion__cell')
-    document.querySelector('#selectors').classList.add('accordion__cell')
+import { buildLayout } from './modal.js'
+
+function openCity(cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
   }
+  document.getElementById(cityName).style.display = "block";  
 }
