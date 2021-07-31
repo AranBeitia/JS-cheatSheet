@@ -19,7 +19,7 @@
     <img src="assets/images/logo.svg" alt="Logo" class="logo" />
     <h1>CheatSheet</h1>
   </header>
-  <main class="grid padding-1">
+  <main class="grid grid-3-to-1 padding-1">
     <section class="cell cell-primary">
       <h2 class="text-center">Events</h2>
       <div>
@@ -97,8 +97,23 @@
   <article id="modal" class="modal flex-center --open">
     <div class="modal__content">
       <button id="modal-close" class="button--close">X</button>
-      <section id="modal-inner">
-        
+      <section id="modal-inner" class="grid grid-2 tab">
+          <input name="tab-nav" type="radio" id="jquery" class="tab__radiobutton" checked="checked" />
+          <div class="tab__content">
+            <div class="tab__inner">
+              <h2>JQuery</h2>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptates dolore id aspernatur odit minus quidem deleniti ab rerum exercitationem dolores neque officiis explicabo possimus blanditiis sed, voluptatem ut. Ab?</p>
+            </div>
+          </div>
+          <label class="tab__nav flex-center" for="jquery">JQuery</label>
+          <input name="tab-nav" type="radio" id="Vanillajs" class="tab__radiobutton" />
+          <div class="tab__content">
+            <div class="tab__inner">
+              <h2>Vanilla JS</h2>
+              <p>Amet consectetur adipisicing elit. Sed ipsam ad exercitationem, quo quae ullam, quidem laudantium corporis quis minima debitis nesciunt repellat. Quos dolore ex quis voluptas, minus ut?</p>
+            </div>
+          </div>
+          <label class="tab__nav flex-center" for="Vanillajs">Vanilla JS</label>
       </section>
     </div>
   </article>

@@ -1,11 +1,19 @@
 .grid {
   display: grid;
+}
+
+.grid-3-to-1 {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 3rem 1fr;
+}
+
 @media all and (max-width: 480px) {
-  .grid {
+  .grid-3-to-1 {
     grid-template-columns: auto;
     gap: .5rem;
   }

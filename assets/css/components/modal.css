@@ -20,6 +20,7 @@
   padding: 1rem;
   width: 70%;
   background-color: var(--color-white);
+  color: var(--color-grey-dark);
   border-radius: 5px;
   box-shadow: 3px 3px 15px 0px rgb(41 50 63 / 75%);
   transform: scale(0.0);
