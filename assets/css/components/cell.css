@@ -2,12 +2,27 @@
   padding: 1rem;
 }
 
+.cell li {
+  line-height: 1.5;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cell li:hover {
+  background-color: var(--color-black);
+}
+
 .cell-primary {
+  height: 100%;
   background-color: var(--color-primary);
 }
+
 .cell-secondary {
+  height: 100%;
   background-color: var(--color-secondary);
 }
+
 .cell-tertiary {
+  height: 100%;
   background-color: var(--color-tertiary);
 }

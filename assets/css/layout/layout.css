@@ -4,6 +4,7 @@
 
 .grid-3-to-1 {
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
   gap: 1rem;
 }
 
