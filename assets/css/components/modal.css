@@ -18,12 +18,18 @@
   position: relative;
   padding: 1rem;
   max-width: 70%;
-  width: 100%;
   overflow: auto;
   background-color: var(--color-white);
   color: var(--color-grey-dark);
   border-radius: 5px;
   box-shadow: 3px 3px 15px 0px rgb(41 50 63 / 75%);
+}
+
+@media all and (max-width: 480px) {
+  .modal__content {
+    max-width: 100%;
+    height: 100%;
+  }
 }
 
 [data-animation="zoomInOut"] .modal__content {

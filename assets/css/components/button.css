@@ -3,14 +3,14 @@
   top: .5rem;
   right: .5rem;
   background-color: transparent;
-  color: #29323F;
+  color: var(--color-secondary);
   border: none;
-  font-size: 1rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .button--close:hover {
-  color: #626972;
-  font-size: 1.2rem;
+  color: var(--color-primary);
+  font-size: 1.5rem;
 }
