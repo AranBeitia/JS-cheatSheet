@@ -1,12 +1,15 @@
 @import 'base/variables.css';
 @import 'base/base.css';
 @import 'base/typography.css';
+
 @import 'layout/layout.css';
+
 @import 'utils/flexbox.css';
 @import 'utils/utils.css';
+
 @import 'components/logo.css';
 @import 'components/cell.css';
 @import 'components/button.css';
 @import 'components/modal.css';
 @import 'components/tab.css';
-@import 'components/accordion.css';
+

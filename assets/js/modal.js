@@ -1,41 +1,31 @@
-import {eventLoadHTML} from './templates/eventLoad.js'
-const links = document.querySelectorAll('a')
-const modalContent = document.getElementById('modal-inner')
+function modal () {
+  const buttonsOpen = document.querySelectorAll('[data-open]')
+  const buttonsClose = document.querySelectorAll('[data-close]')
 
-bindModalEvents()
+  buttonsOpen.forEach(button => button.addEventListener('click', event => {
+    const modalId = event.target.dataset.open
+    document.getElementById(modalId).classList.add('--is-visible')
+  }))
 
-links.forEach(a => openModal(a))
+  buttonsClose.forEach(button => button.addEventListener('click', function () {
+    this.parentElement.parentElement.classList.remove('--is-visible')
+  }))
 
-function openModal(a) {
-  a.addEventListener('click', () => {
-    buildLayout(eventLoadHTML)
+  document.addEventListener('click', event => {
+    let modal = document.querySelector('.modal.--is-visible')
+    if(event.target === modal) {
+      modal.classList.remove('--is-visible')
+    }
+  })
 
-    const modalContainer = document.getElementById('modal')
-    modalContainer?.classList.toggle('--open')
+  document.addEventListener('keyup', event => {
+    let modal = document.querySelector('.modal.--is-visible')
+    if(event.key === 'Escape' && modal) {
+      modal.classList.remove('--is-visible')
+    }
   })
 }
 
-function bindModalEvents () {
-  const close = document.getElementById('modal-close')
-  const modalContainer = document.getElementById('modal')
+modal ()
 
-  close?.addEventListener('click', () => {
-    const modalContainer = document.getElementById('modal')
-    modalContainer?.classList.remove('--open')
-    console.log(modalContainer);
-  })
-  modalContainer.addEventListener('click', () => modalContainer.classList.remove('--open'))
-  
-}
-
-function buildLayout(html) {
-  modalContent.innerHTML = html
-}
-
-
-// function closeModal() {
-  //   console.log('holdddd');
-  //   modalContainer.classList.toggle('--close')
-  // }
-
-export {buildLayout}
+ export { modal }

@@ -25,11 +25,11 @@
       <div>
         <h3>Document loading</h3>
         <ul>
-          <li><a href="#" data-js="event-load">.load()</a></li>
+          <li><a href="#" data-open="eventLoad">.load()</a></li>
         </ul>
         <h3>Mouse events</h3>
         <ul>
-          <li><a href="#" data-js="event-click">.click()</a></li>
+          <li><a href="#" data-open="eventClick">.click()</a></li>
           <li>.dblclick()</li>
           <li>.mousemove()</li>
           <li>.mouseover()</li>
@@ -94,26 +94,54 @@
       </ul>
     </section>
   </main>
-  <article id="modal" class="modal flex-center --open">
+  <!-- Event load modal -->
+  <article class="modal flex-center" id="eventLoad" data-animation="zoomInOut">
     <div class="modal__content">
-      <button id="modal-close" class="button--close">X</button>
-      <section id="modal-inner" class="grid grid-2 tab">
-          <input name="tab-nav" type="radio" id="jquery" class="tab__radiobutton" checked="checked" />
-          <div class="tab__content">
-            <div class="tab__inner">
-              <h2>JQuery</h2>
-              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptates dolore id aspernatur odit minus quidem deleniti ab rerum exercitationem dolores neque officiis explicabo possimus blanditiis sed, voluptatem ut. Ab?</p>
-            </div>
+      <button class="button--close" data-close>X</button>
+      <h1>Event load</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-el" type="radio" id="jquery-el" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <h2>JQuery</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptates dolore id aspernatur odit minus quidem deleniti ab rerum exercitationem dolores neque officiis explicabo possimus blanditiis sed, voluptatem ut. Ab?</p>
           </div>
-          <label class="tab__nav flex-center" for="jquery">JQuery</label>
-          <input name="tab-nav" type="radio" id="Vanillajs" class="tab__radiobutton" />
-          <div class="tab__content">
-            <div class="tab__inner">
-              <h2>Vanilla JS</h2>
-              <p>Amet consectetur adipisicing elit. Sed ipsam ad exercitationem, quo quae ullam, quidem laudantium corporis quis minima debitis nesciunt repellat. Quos dolore ex quis voluptas, minus ut?</p>
-            </div>
+        </div>
+        <label class="tab__nav flex-center" for="jquery-el">JQuery</label>
+        <input name="tab-nav-el" type="radio" id="Vanillajs-el" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <h2>Vanilla JS</h2>
+            <p>Amet consectetur adipisicing elit. Sed ipsam ad exercitationem, quo quae ullam, quidem laudantium corporis quis minima debitis nesciunt repellat. Quos dolore ex quis voluptas, minus ut?</p>
           </div>
-          <label class="tab__nav flex-center" for="Vanillajs">Vanilla JS</label>
+        </div>
+        <label class="tab__nav flex-center" for="Vanillajs-el">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Event click modal -->
+  <article class="modal flex-center" id="eventClick" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Event click</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav" type="radio" id="jquery" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <h2>JQuery</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptates dolore id aspernatur odit minus quidem deleniti ab rerum exercitationem dolores neque officiis explicabo possimus blanditiis sed, voluptatem ut. Ab?</p>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jquery">JQuery</label>
+        <input name="tab-nav" type="radio" id="Vanillajs" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <h2>Vanilla JS</h2>
+            <p>Amet consectetur adipisicing elit. Sed ipsam ad exercitationem, quo quae ullam, quidem laudantium corporis quis minima debitis nesciunt repellat. Quos dolore ex quis voluptas, minus ut?</p>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="Vanillajs">Vanilla JS</label>
       </section>
     </div>
   </article>
