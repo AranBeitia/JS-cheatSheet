@@ -23,26 +23,26 @@
     <section class="cell cell-primary">
       <h2 class="text-center">Events</h2>
       <ul>
-        <li data-open="eventLoad">HTML document loaded</li>
+        <li data-open="eventDomLoad">HTML document loaded</li>
         <li data-open="eventClick">HTML item clicked</li>
-        <li>HTML item double clicked .dblclick()</li>
-        <li>Mouse cursor moved .mousemove()</li>
-        <li>Mouse over an element .mouseover()</li>
-        <li>Keyboard press a key .keypress()</li>
-        <li>Form is submitted .submit()</li>
-        <li>Change a value .change()</li>
-        <li>Form is submitted .select()</li>
-        <li>Image is loaded .load()</li>
-        <li>Image fails to load (if you write an incorrect image url the loading of the image will fail)</li>
-        <li>User changes option select</li>
-        <li>Checkbox checked/unchecked</li>
-        <li>Show item clicked (When a ul list item is clicked)</li>
+        <li data-open="eventDblClick">HTML item double clicked .dblclick()</li>
+        <li data-open="eventMouseMove">Mouse cursor moved .mousemove()</li>
+        <li data-open="eventMouseOver">Mouse over an element .mouseover()</li>
+        <li data-open="eventKeyboard">Keyboard press a key .keypress()</li>
+        <li data-open="eventSubmit">Form is submitted .submit()</li>
+        <li data-open="eventChange">Change a value .change()</li>
+        <li data-open="eventSubmitSelect">Form is submitted .select()</li>
+        <li data-open="eventLoad">Image is loaded .load()</li>
+        <li data-open="eventLoadFail">Image fails to load (if you write an incorrect image url the loading of the image will fail)</li>
+        <li data-open="eventOptionSelect">User changes option select</li>
+        <li data-open="eventChecked">Checkbox checked/unchecked</li>
+        <li data-open="eventShow">Show item clicked (When a ul list item is clicked)</li>
       </ul>
     </section>
     <section class="cell cell-secondary">
       <h2 class="text-center">Functions</h2>
       <ul>
-        <li>Create an HTML element with any text value</li>
+        <li data-open="functionValue">Create an HTML element with any text value</li>
         <li>Remove an HTML element with any text value</li>
         <li>Append an HTML element with any text value to a parent element</li>
         <li>Prepend an HTML element with any text value to a parent element</li>
@@ -79,26 +79,27 @@
       </ul>
     </section>
   </main>
-  <!-- Event load modal -->
-  <article class="modal flex-center" id="eventLoad" data-animation="zoomInOut">
+  <!-- MODALS -->
+  <!-- Event DOM content load modal -->
+  <article class="modal flex-center" id="eventDomLoad" data-animation="zoomInOut">
     <div class="modal__content">
       <button class="button--close" data-close>X</button>
       <h1>Event DOM Content loaded</h1>
       <section class="grid grid-2 tab">
-        <input name="tab-nav-el" type="radio" id="jquery-el" class="tab__radiobutton" checked="checked" />
+        <input name="tab-nav-el" type="radio" id="jqueryEl" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
             <button id="eventLoadJq" class="button">Test me</button>
           </div>
         </div>
-        <label class="tab__nav flex-center" for="jquery-el">JQuery</label>
-        <input name="tab-nav-el" type="radio" id="Vanillajs-el" class="tab__radiobutton" />
+        <label class="tab__nav flex-center" for="jqueryEl">JQuery</label>
+        <input name="tab-nav-el" type="radio" id="VanillajsEl" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
             <button id="eventLoadV" class="button">Test me</button>
           </div>
         </div>
-        <label class="tab__nav flex-center" for="Vanillajs-el">Vanilla JS</label>
+        <label class="tab__nav flex-center" for="VanillajsEl">Vanilla JS</label>
       </section>
     </div>
   </article>
@@ -112,19 +113,67 @@
         <input name="tab-nav" type="radio" id="jquery" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
-            <h2>JQuery</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptates dolore id aspernatur odit minus quidem deleniti ab rerum exercitationem dolores neque officiis explicabo possimus blanditiis sed, voluptatem ut. Ab?</p>
+            <button id="eventClickJq" class="button">Test me</button>
           </div>
         </div>
         <label class="tab__nav flex-center" for="jquery">JQuery</label>
         <input name="tab-nav" type="radio" id="Vanillajs" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
-            <h2>Vanilla JS</h2>
-            <p>Amet consectetur adipisicing elit. Sed ipsam ad exercitationem, quo quae ullam, quidem laudantium corporis quis minima debitis nesciunt repellat. Quos dolore ex quis voluptas, minus ut?</p>
+            <button id="eventClickV" class="button">Test me</button>
           </div>
         </div>
         <label class="tab__nav flex-center" for="Vanillajs">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Event double click modal -->
+  <article class="modal flex-center" id="eventDblClick" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Event double click</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-dbl" type="radio" id="jqueryDbl" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="eventDblClickJq" class="button">Test me</button>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryDbl">JQuery</label>
+        <input name="tab-nav-dbl" type="radio" id="VanillajsDbl" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="eventDblClickV" class="button">Test me</button>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsDbl">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Event mouse move modal -->
+  <article class="modal flex-center" id="eventMouseMove" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Event mouse move</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-mm" type="radio" id="jqueryMm" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <p class="text-center">Move the mouse inside the box</p>
+            <div id="eventMouseMoveJc" class="canvan-box flex-center"></div>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryMm">JQuery</label>
+        <input name="tab-nav-mm" type="radio" id="VanillajsMm" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <p class="text-center">Move the mouse inside the box</p>
+            <div id="eventMouseMoveV" class="canvan-box flex-center"></div>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsMm">Vanilla JS</label>
       </section>
     </div>
   </article>
