@@ -33,9 +33,9 @@
         <li data-open="eventChange">Change a value</li>
         <li data-open="eventOptionSelect">User changes option select</li>
         <li data-open="eventChecked">Checkbox checked/unchecked</li>
+        <li data-open="eventShow">Show item clicked (When a ul list item is clicked)</li>
         <li data-open="eventLoad">Image is loaded .load()</li>
         <li data-open="eventLoadFail">Image fails to load (if you write an incorrect image url the loading of the image will fail)</li>
-        <li data-open="eventShow">Show item clicked (When a ul list item is clicked)</li>
       </ul>
     </section>
     <section class="cell cell-secondary">
@@ -333,46 +333,64 @@
     </div>
   </article>
 
-    <!-- Event checked / unchecked modal -->
-    <article class="modal flex-center" id="eventChecked" data-animation="zoomInOut">
-      <div class="modal__content">
-        <button class="button--close" data-close>X</button>
-        <h1>Event checked / unchecked</h1>
-        <section class="grid grid-2 tab">
-          <input name="tab-nav-check" type="radio" id="jqueryCheck" class="tab__radiobutton" checked="checked" />
-          <div class="tab__content">
-            <div class="tab__inner">
-              <form action="" id="eventCheckJq" class="flex-column">
-                <label for="frui" class="padding-x1">Change into another option: </label>
-                <select name="frui" multiple="multiple" class="select">
-                  <option>Banana</option>
-                  <option selected="selected">Apple</option>
-                  <option>Orange</option>
-                  <option selected="selected">Strawberry</option>
-                  <option>lemon</option>
-                </select>
-              </form>
-            </div>
+  <!-- Event checked / unchecked modal -->
+  <article class="modal flex-center" id="eventChecked" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Event checked / unchecked</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-check" type="radio" id="jqueryCheck" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <form action="" id="eventCheckJq" class="flex-start-center">
+              <label for="checkJq" class="padding-x1">Check / uncheck option </label>
+              <input type="checkbox" id="checkJq" class="checkbox">
+            </form>
           </div>
-          <label class="tab__nav flex-center" for="jqueryCheck">JQuery</label>
-          <input name="tab-nav-check" type="radio" id="VanillajsCheck" class="tab__radiobutton" />
-          <div class="tab__content">
-            <div class="tab__inner">
-              <form action="" id="eventOpSelectV" class="flex-column">
-                <label for="frutsV" class="padding-x1">Change into another option: </label>
-                <select name="frutsV" multiple="multiple" class="select">
-                  <option>Banana</option>
-                  <option selected="selected">Apple</option>
-                  <option>Orange</option>
-                  <option selected="selected">Strawberry</option>
-                  <option>lemon</option>
-                </select>
-              </form>
-            </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryCheck">JQuery</label>
+        <input name="tab-nav-check" type="radio" id="VanillajsCheck" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <form action="" id="eventCheckV" class="flex-start-center">
+              <label for="checkV" class="padding-x1">Check / uncheck option </label>
+              <input type="checkbox" id="checkV" class="checkbox">
+            </form>
           </div>
-          <label class="tab__nav flex-center" for="VanillajsCheck">Vanilla JS</label>
-        </section>
-      </div>
-    </article>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsCheck">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Event show modal -->
+  <article class="modal flex-center" id="eventShow" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Event show</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-show" type="radio" id="jqueryShow" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <form action="" id="eventShowJq" class="flex-start-center">
+              <label for="checkJq" class="padding-x1">Check / uncheck option </label>
+              <input type="checkbox" id="showJq" class="checkbox">
+            </form>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryShow">JQuery</label>
+        <input name="tab-nav-show" type="radio" id="VanillajsShow" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <form action="" id="eventCheckV" class="flex-start-center">
+              <label for="checkV" class="padding-x1">Check / uncheck option </label>
+              <input type="checkbox" id="checkV" class="checkbox">
+            </form>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsShow">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
 </body>
 </html>

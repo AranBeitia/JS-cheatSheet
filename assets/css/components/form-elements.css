@@ -13,3 +13,9 @@
 .select > * {
   padding: .5rem 0;
 }
+
+.checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 1rem;
+}
