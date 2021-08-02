@@ -43,3 +43,25 @@ document.addEventListener('keypress', (e) => {
   key.textContent = `You have pressed the key ${e.key}`
   document.getElementById('eventKeyboardV').appendChild(key)
 })
+
+document.getElementById('eventSubmitV').addEventListener('submit', (e) => {
+  e.preventDefault()
+  let message = document.createElement('p')
+  let name = document.getElementById('yourName').value
+  message.textContent = `Hi ${name}, your form is sent correctly`
+  e.target.parentNode.append(message)
+})
+
+document.getElementById('eventChangeV').addEventListener('change', (e) => {
+  e.preventDefault()
+  let result = document.createElement('p')
+  result.textContent = `Your animal is: ${e.target.value}`
+  document.getElementById('eventChangeV').parentNode.appendChild(result)
+})
+
+document.querySelector('#eventOpSelectV select').addEventListener('change', (e) => {
+  let message = document.createElement('p')
+  message.textContent = `Your selection is ${e.target.value}`
+  document.getElementById('eventOpSelectV').parentNode.appendChild(message)
+})
+

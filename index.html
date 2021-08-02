@@ -29,13 +29,12 @@
         <li data-open="eventMouseMove">Mouse cursor moved</li>
         <li data-open="eventMouseOver">Mouse over an element</li>
         <li data-open="eventKeyboard">Keyboard press a key</li>
-        <li data-open="eventSubmit">Form is submitted .submit()</li>
-        <li data-open="eventChange">Change a value .change()</li>
-        <li data-open="eventSubmitSelect">Form is submitted .select()</li>
-        <li data-open="eventLoad">Image is loaded .load()</li>
-        <li data-open="eventLoadFail">Image fails to load (if you write an incorrect image url the loading of the image will fail)</li>
+        <li data-open="eventSubmit">Form is submitted</li>
+        <li data-open="eventChange">Change a value</li>
         <li data-open="eventOptionSelect">User changes option select</li>
         <li data-open="eventChecked">Checkbox checked/unchecked</li>
+        <li data-open="eventLoad">Image is loaded .load()</li>
+        <li data-open="eventLoadFail">Image fails to load (if you write an incorrect image url the loading of the image will fail)</li>
         <li data-open="eventShow">Show item clicked (When a ul list item is clicked)</li>
       </ul>
     </section>
@@ -239,20 +238,141 @@
         <input name="tab-nav-submit" type="radio" id="jquerySubmit" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
-            <p>Press any key on your keyboard</p>
-            <div id="eventSubmitJc"></div>
+            <form action="" id="eventSubmitJq" class="flex-start-center">
+              <label for="yourNameJq">Your name:</label>
+              <input type="text" id="yourNameJq" class="input" required >
+              <button type="submit" class="button">Send</button>
+            </form>
           </div>
         </div>
         <label class="tab__nav flex-center" for="jquerySubmit">JQuery</label>
         <input name="tab-nav-submit" type="radio" id="VanillajsSubmit" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
-            <p id="eventSubmitV">Press any key on your keyboard</p>
+            <form action="" id="eventSubmitV" class="flex-start-center">
+              <label for="yourName">Your name:</label>
+              <input type="text" id="yourName" class="input" required >
+              <button type="submit" class="button">Send</button>
+            </form>
           </div>
         </div>
         <label class="tab__nav flex-center" for="VanillajsSubmit">Vanilla JS</label>
       </section>
     </div>
   </article>
+
+  <!-- Event change modal -->
+  <article class="modal flex-center" id="eventChange" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Event change</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-change" type="radio" id="jqueryChange" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <form action="" id="eventChangeJq" class="flex-start-center">
+              <label for="animal" class="padding-x1">Enter an animal name: </label>
+              <input type="text" id="animal" class="input">
+            </form>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryChange">JQuery</label>
+        <input name="tab-nav-change" type="radio" id="VanillajsChange" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <form action="" id="eventChangeV" class="flex-start-center">
+              <label for="animals" class="padding-x1">Enter an animal name: </label>
+              <input type="text" id="animals" class="input">
+            </form>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsChange">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Event option select modal -->
+  <article class="modal flex-center" id="eventOptionSelect" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Event option select</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-opSelect" type="radio" id="jqueryOpSelect" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <form action="" id="eventOpSelectJq" class="flex-column">
+              <label for="fruitsJq" class="padding-x1">Change into another option: </label>
+              <select name="fruitsJq" multiple="multiple" class="select">
+                <option>Banana</option>
+                <option selected="selected">Apple</option>
+                <option>Orange</option>
+                <option selected="selected">Strawberry</option>
+                <option>lemon</option>
+              </select>
+            </form>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryOpSelect">JQuery</label>
+        <input name="tab-nav-opSelect" type="radio" id="VanillajsOpSelect" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <form action="" id="eventOpSelectV" class="flex-column">
+              <label for="fruitsV" class="padding-x1">Change into another option: </label>
+              <select name="fruitsV" multiple="multiple" class="select">
+                <option>Banana</option>
+                <option selected="selected">Apple</option>
+                <option>Orange</option>
+                <option selected="selected">Strawberry</option>
+                <option>lemon</option>
+              </select>
+            </form>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsOpSelect">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+    <!-- Event checked / unchecked modal -->
+    <article class="modal flex-center" id="eventChecked" data-animation="zoomInOut">
+      <div class="modal__content">
+        <button class="button--close" data-close>X</button>
+        <h1>Event checked / unchecked</h1>
+        <section class="grid grid-2 tab">
+          <input name="tab-nav-check" type="radio" id="jqueryCheck" class="tab__radiobutton" checked="checked" />
+          <div class="tab__content">
+            <div class="tab__inner">
+              <form action="" id="eventCheckJq" class="flex-column">
+                <label for="frui" class="padding-x1">Change into another option: </label>
+                <select name="frui" multiple="multiple" class="select">
+                  <option>Banana</option>
+                  <option selected="selected">Apple</option>
+                  <option>Orange</option>
+                  <option selected="selected">Strawberry</option>
+                  <option>lemon</option>
+                </select>
+              </form>
+            </div>
+          </div>
+          <label class="tab__nav flex-center" for="jqueryCheck">JQuery</label>
+          <input name="tab-nav-check" type="radio" id="VanillajsCheck" class="tab__radiobutton" />
+          <div class="tab__content">
+            <div class="tab__inner">
+              <form action="" id="eventOpSelectV" class="flex-column">
+                <label for="frutsV" class="padding-x1">Change into another option: </label>
+                <select name="frutsV" multiple="multiple" class="select">
+                  <option>Banana</option>
+                  <option selected="selected">Apple</option>
+                  <option>Orange</option>
+                  <option selected="selected">Strawberry</option>
+                  <option>lemon</option>
+                </select>
+              </form>
+            </div>
+          </div>
+          <label class="tab__nav flex-center" for="VanillajsCheck">Vanilla JS</label>
+        </section>
+      </div>
+    </article>
 </body>
 </html>

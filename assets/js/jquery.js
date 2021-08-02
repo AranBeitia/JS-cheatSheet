@@ -38,3 +38,24 @@ $(document).keydown((e) => {
   key.text(`You have pressed the key ${e.key}`)
   $('#eventKeyboardJc').after(key)
 })
+
+$('#eventSubmitJq').on('submit', (e) => {
+  e.preventDefault()
+  let message = $('<p></p>')
+  let name = $('#yourNameJq').val()
+  message.text(`Hi ${name}, your form is sent correctly`)
+  $('#eventSubmitJq').after(message)
+})
+
+$('#eventChangeJq').change(() => {
+  let result = $('<p></p>')
+  result.text(`Your animal is: ${$(event.target).val()}`)
+  $('#eventChangeJq').after(result)
+})
+
+$('#eventOpSelectJq select').change(() => {
+  let message = $('<p></p>')
+  let option = $(event.target).val()
+  message.text(`Selected: ${option}`)
+  $('#eventOpSelectJq').after(message)
+})

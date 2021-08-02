@@ -28,4 +28,4 @@ function modal () {
 
 modal ()
 
- export { modal }
+export { modal }
