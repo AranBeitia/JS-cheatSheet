@@ -28,3 +28,18 @@ document.getElementById('eventMouseMoveV').addEventListener('mousemove', (e) => 
   coordinates.innerHTML = `Coordinates: (${coorX}, ${coorY})`
   e.target.parentNode.appendChild(coordinates)
 })
+
+let coordOver = document.createElement('p')
+document.getElementById('eventMouseOverV').addEventListener('mouseover', (e) => {
+  let coorX = e.clientX
+  let coorY = e.clientY
+  coordOver.innerHTML = `Coordinates: (${coorX}, ${coorY})`
+  e.target.parentNode.appendChild(coordOver)
+})
+
+let key = document.createElement('p')
+document.addEventListener('DOMContentLoaded', () => key )
+document.addEventListener('keypress', (e) => {
+  key.textContent = `You have pressed the key ${e.key}`
+  document.getElementById('eventKeyboardV').appendChild(key)
+})

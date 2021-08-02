@@ -25,10 +25,10 @@
       <ul>
         <li data-open="eventDomLoad">HTML document loaded</li>
         <li data-open="eventClick">HTML item clicked</li>
-        <li data-open="eventDblClick">HTML item double clicked .dblclick()</li>
-        <li data-open="eventMouseMove">Mouse cursor moved .mousemove()</li>
-        <li data-open="eventMouseOver">Mouse over an element .mouseover()</li>
-        <li data-open="eventKeyboard">Keyboard press a key .keypress()</li>
+        <li data-open="eventDblClick">HTML item double clicked</li>
+        <li data-open="eventMouseMove">Mouse cursor moved</li>
+        <li data-open="eventMouseOver">Mouse over an element</li>
+        <li data-open="eventKeyboard">Keyboard press a key</li>
         <li data-open="eventSubmit">Form is submitted .submit()</li>
         <li data-open="eventChange">Change a value .change()</li>
         <li data-open="eventSubmitSelect">Form is submitted .select()</li>
@@ -161,7 +161,7 @@
         <input name="tab-nav-mm" type="radio" id="jqueryMm" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
-            <p class="text-center">Move the mouse inside the box</p>
+            <p>Move the mouse inside the box</p>
             <div id="eventMouseMoveJc" class="canvan-box flex-center"></div>
           </div>
         </div>
@@ -169,11 +169,87 @@
         <input name="tab-nav-mm" type="radio" id="VanillajsMm" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
-            <p class="text-center">Move the mouse inside the box</p>
+            <p>Move the mouse inside the box</p>
             <div id="eventMouseMoveV" class="canvan-box flex-center"></div>
           </div>
         </div>
         <label class="tab__nav flex-center" for="VanillajsMm">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Event mouse over modal -->
+  <article class="modal flex-center" id="eventMouseOver" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Event mouse over</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-mo" type="radio" id="jqueryMo" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <p>Move the mouse inside the box</p>
+            <div id="eventMouseOverJc" class="canvan-box flex-center"></div>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryMo">JQuery</label>
+        <input name="tab-nav-mo" type="radio" id="VanillajsMo" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <p>Move the mouse inside the box</p>
+            <div id="eventMouseOverV" class="canvan-box flex-center"></div>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsMo">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Event keyboard modal -->
+  <article class="modal flex-center" id="eventKeyboard" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Event keyboard</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-key" type="radio" id="jqueryKey" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <p>Press any key on your keyboard</p>
+            <div id="eventKeyboardJc"></div>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryKey">JQuery</label>
+        <input name="tab-nav-key" type="radio" id="VanillajsKey" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <p id="eventKeyboardV">Press any key on your keyboard</p>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsKey">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Event submit modal -->
+  <article class="modal flex-center" id="eventSubmit" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Event submit</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-submit" type="radio" id="jquerySubmit" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <p>Press any key on your keyboard</p>
+            <div id="eventSubmitJc"></div>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jquerySubmit">JQuery</label>
+        <input name="tab-nav-submit" type="radio" id="VanillajsSubmit" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <p id="eventSubmitV">Press any key on your keyboard</p>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsSubmit">Vanilla JS</label>
       </section>
     </div>
   </article>
