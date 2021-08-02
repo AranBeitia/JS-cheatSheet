@@ -1,3 +1,21 @@
+.button {
+  display: block;
+  max-width: 6rem;
+  width: 100%;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: transparent;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background-color: var(--color-white);
+  color: var(--color-secondary);
+}
+
 .button--close {
   position: absolute;
   top: .5rem;

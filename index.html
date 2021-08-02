@@ -23,7 +23,7 @@
     <section class="cell cell-primary">
       <h2 class="text-center">Events</h2>
       <ul>
-        <li data-open="eventLoad">HTML document loaded (DOMContentLoaded)</li>
+        <li data-open="eventLoad">HTML document loaded</li>
         <li data-open="eventClick">HTML item clicked</li>
         <li>HTML item double clicked .dblclick()</li>
         <li>Mouse cursor moved .mousemove()</li>
@@ -83,21 +83,19 @@
   <article class="modal flex-center" id="eventLoad" data-animation="zoomInOut">
     <div class="modal__content">
       <button class="button--close" data-close>X</button>
-      <h1>Event load</h1>
+      <h1>Event DOM Content loaded</h1>
       <section class="grid grid-2 tab">
         <input name="tab-nav-el" type="radio" id="jquery-el" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
-            <h2>JQuery</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptates dolore id aspernatur odit minus quidem deleniti ab rerum exercitationem dolores neque officiis explicabo possimus blanditiis sed, voluptatem ut. Ab?</p>
+            <button id="eventLoadJq" class="button">Test me</button>
           </div>
         </div>
         <label class="tab__nav flex-center" for="jquery-el">JQuery</label>
         <input name="tab-nav-el" type="radio" id="Vanillajs-el" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
-            <h2>Vanilla JS</h2>
-            <p>Amet consectetur adipisicing elit. Sed ipsam ad exercitationem, quo quae ullam, quidem laudantium corporis quis minima debitis nesciunt repellat. Quos dolore ex quis voluptas, minus ut?</p>
+            <button id="eventLoadV" class="button">Test me</button>
           </div>
         </div>
         <label class="tab__nav flex-center" for="Vanillajs-el">Vanilla JS</label>
