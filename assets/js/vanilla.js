@@ -79,3 +79,8 @@ itemsList.forEach(item => item.addEventListener('click', (e) => {
   document.getElementById('showListV').parentNode.appendChild(listMessage)
 }))
 
+const img = document.createElement('img')
+img.addEventListener('load', () => {
+  
+})
+img.src = 'assets/hello-kitty-dface.jpg'
