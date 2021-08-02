@@ -40,7 +40,7 @@ document.getElementById('eventMouseOverV').addEventListener('mouseover', (e) => 
 const key = document.createElement('p')
 document.addEventListener('DOMContentLoaded', () => key )
 document.addEventListener('keypress', (e) => {
-  key.textContent = `You have pressed the key ${e.key}`
+  key.innerHTML = `You have pressed the key <span class="text-highlight">${e.key}</span>`
   document.getElementById('eventKeyboardV').appendChild(key)
 })
 
@@ -48,20 +48,20 @@ const submitMessage = document.createElement('p')
 document.getElementById('eventSubmitV').addEventListener('submit', (e) => {
   e.preventDefault()
   let name = document.getElementById('yourName').value
-  submitMessage.textContent = `Hi ${name}, your form is sent correctly`
+  submitMessage.innerHTML = `Hi <span class="text-highlight">${name}</span>, your form is sent correctly`
   e.target.parentNode.append(submitMessage)
 })
 
 const result = document.createElement('p')
 document.getElementById('eventChangeV').addEventListener('change', (e) => {
   e.preventDefault()
-  result.textContent = `Your animal is: ${e.target.value}`
+  result.innerHTML = `You have written <span class="text-highlight">${e.target.value}</span>`
   document.getElementById('eventChangeV').parentNode.appendChild(result)
 })
 
 const selectionMessage = document.createElement('p')
 document.querySelector('#eventOpSelectV select').addEventListener('change', (e) => {
-  selectionMessage.textContent = `Your selection is ${e.target.value}`
+  selectionMessage.innerHTML = `Your selection is <span class="text-highlight">${e.target.value}</span>`
   document.getElementById('eventOpSelectV').parentNode.appendChild(selectionMessage)
 })
 
@@ -72,4 +72,10 @@ document.getElementById('checkV').addEventListener('click', (e) => {
   document.getElementById('eventCheckV').parentNode.appendChild(checkMessage)
 })
 
+const listMessage = document.createElement('p')
+let itemsList = document.querySelectorAll('#showListV li')
+itemsList.forEach(item => item.addEventListener('click', (e) => {
+  listMessage.innerHTML= `You clicked <span class="text-highlight">${e.target.innerText}</span>`
+  document.getElementById('showListV').parentNode.appendChild(listMessage)
+}))
 

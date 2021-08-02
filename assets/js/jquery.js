@@ -35,7 +35,7 @@ $('#eventMouseOverJc').on('mouseover', (e) => {
 const key = $('<p></p>')
 $(() => key)
 $(document).keydown((e) => {
-  key.text(`You have pressed the key ${e.key}`)
+  key.html(`You have pressed the key <span class="text-highlight">${e.key}</span>`)
   $('#eventKeyboardJc').after(key)
 })
 
@@ -43,24 +43,24 @@ const submitMessage = $('<p></p>')
 $('#eventSubmitJq').on('submit', (e) => {
   e.preventDefault()
   let name = $('#yourNameJq').val()
-  submitMessage.text(`Hi ${name}, your form is sent correctly`)
+  submitMessage.html(`Hi <span class="text-highlight">${name}</span>, your form is sent correctly`)
   $('#eventSubmitJq').after(submitMessage)
 })
 
 const result = $('<p></p>')
 $('#eventChangeJq').change(() => {
-  result.text(`Your animal is: ${$(event.target).val()}`)
+  result.html(`You have written <span class="text-highlight">${$(event.target).val()}</span>`)
   $('#eventChangeJq').after(result)
 })
 
 const selectMessage = $('<p></p>')
 $('#eventOpSelectJq select').change(() => {
   let option = $(event.target).val()
-  selectMessage.text(`Selected: ${option}`)
+  selectMessage.html(`Selected: <span class="text-highlight">${option}</span>`)
   $('#eventOpSelectJq').after(selectMessage)
 })
 
-let checkMessage = $('<p></p>')
+const checkMessage = $('<p></p>')
 $('#eventCheckJq input').on('change', () => {
   if($(event.target).is(':checked')){
     checkMessage.text('Is checked!!')
@@ -68,4 +68,10 @@ $('#eventCheckJq input').on('change', () => {
     checkMessage.text('Not checked')
   }
   $('#eventCheckJq').after(checkMessage)
+})
+
+const listMessage = $('<p></p>')
+$('#showListJq li').on('click', () => {
+  listMessage.html(`You clicked <span class="text-highlight">${$(event.target).text()}</span>`)
+  $('#showListJq').after(listMessage)
 })
