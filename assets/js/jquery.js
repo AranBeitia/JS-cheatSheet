@@ -128,3 +128,13 @@ $('#removeClassBtnJq').on('click', () => {
 $('#toggleClassBtnJq').on('click', () => {
   $('#textToggleClassJq').toggleClass('text-highlight')
 })
+
+$('#disableBtnJq').on('click', () => {
+  const button = $('#disableBtnJq').prop('disabled', true)
+  button.text('DISABLED')
+})
+
+$('#enableCheckJq').on('change', () => {
+  const button = $('#enableBtnJq').prop('disabled', false)
+  button.text('ENABLED')
+})

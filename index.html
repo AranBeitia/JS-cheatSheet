@@ -51,12 +51,12 @@
         <li data-open="functionAddClass">Add a class to an HTML item</li>
         <li data-open="functionRemoveClass">Remove a class to an HTML item</li>
         <li data-open="functionToggleClass">Toggle a class of an HTML item</li>
-        <li>Add a disabled attribute to an HTML button</li>
-        <li>Remove the disabled attribute of an HTML button</li>
-        <li>Set a data-src attribute to a img element</li>
-        <li>Remove the data-src attribute of the img element</li>
-        <li>Hide an HTML element on click (display: none)</li>
-        <li>Show an HTML element on click (display: block)</li>
+        <li data-open="functionAddDisabled">Add a disabled attribute to a button</li>
+        <li data-open="functionRemoveDisabled">Remove a disabled attribute of a button</li>
+        <li data-open="functionSetData">Set a data-src attribute to an img</li>
+        <li data-open="functionAddDisab">Remove the data-src attribute of the img element</li>
+        <li data-open="functionAddDisa">Hide an HTML element on click (display: none)</li>
+        <li data-open="functionAddDis">Show an HTML element on click (display: block)</li>
         <li>Fade in an HTML element using jQuery</li>
         <li>Fade out an HTML element using jQuery</li>
         <li>Iterate a collection of elements and apply a change of style on them</li>
@@ -694,6 +694,84 @@
           </div>
         </div>
         <label class="tab__nav flex-center" for="VanillajsToggleClass">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Function add disabled attribute HTML modal -->
+  <article class="modal flex-center" id="functionAddDisabled" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Function add disabled attribute</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-addDisabled" type="radio" id="jqueryAddDisabled" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="disableBtnJq" class="button">Disable</button>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryAddDisabled">JQuery</label>
+        <input name="tab-nav-addDisabled" type="radio" id="VanillajsAddDisabled" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="disableBtnV" class="button">Disable</button>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsAddDisabled">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Function remove disabled attribute HTML modal -->
+  <article class="modal flex-center" id="functionRemoveDisabled" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Function remove disabled attribute</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-removeDisabled" type="radio" id="jqueryRemoveDisabled" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <label for="enableCheckJq">Click to enable button</label>
+            <input type="checkbox" id="enableCheckJq" class="checkbox">
+            <button id="enableBtnJq" class="button" disabled>Disabled</button>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryRemoveDisabled">JQuery</label>
+        <input name="tab-nav-removeDisabled" type="radio" id="VanillajsRemoveDisabled" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <label for="enableCheckV">Click to enable button</label>
+            <input type="checkbox" id="enableCheckV" class="checkbox">
+            <button id="enableBtnV" class="button" disabled>Disabled</button>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsRemoveDisabled">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Function set a dataset attribute HTML modal -->
+  <article class="modal flex-center" id="functionSetData" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Function set a dataset attribute</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-dataset" type="radio" id="jqueryDataset" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button class="button">Load</button>
+            <img src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo">
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryDataset">JQuery</label>
+        <input name="tab-nav-dataset" type="radio" id="VanillajsDataset" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button class="button">Load</button>
+            <img src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo">
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsDataset">Vanilla JS</label>
       </section>
     </div>
   </article>

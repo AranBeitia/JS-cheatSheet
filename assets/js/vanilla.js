@@ -150,3 +150,15 @@ document.getElementById('removeClassBtnV').addEventListener('click', () => {
 document.getElementById('toggleClassBtnV').addEventListener('click', () => {
 document.getElementById('textToggleV').classList.toggle('text-highlight')
 })
+
+document.getElementById('disableBtnV').addEventListener('click', () => {
+  const button = document.getElementById('disableBtnV')
+  button.disabled = true
+  button.textContent = 'DISABLED'
+})
+
+document.getElementById('enableCheckV').addEventListener('change', () => {
+  const button = document.getElementById('enableBtnV')
+  button.disabled = false
+  button.textContent = 'ENABLED'
+})

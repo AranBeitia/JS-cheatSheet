@@ -16,6 +16,12 @@
   color: var(--color-secondary);
 }
 
+.button:disabled {
+  background-color: var(--color-grey);
+  border: 2px solid var(--color-grey);
+  color: var(--color-secondary);
+}
+
 .button--close {
   position: absolute;
   top: .5rem;
