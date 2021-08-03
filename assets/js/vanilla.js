@@ -182,7 +182,6 @@ document.getElementById('showButtonV').addEventListener('click', () => {
   document.getElementById('imgShowV').style.display = 'block'
 })
 
-
 document.getElementById('functionFadein').addEventListener('click', () => {
   const tabInput = document.querySelector('[for="VanillajsFadein"]')
   document.getElementById('VanillajsFadein').disabled = true

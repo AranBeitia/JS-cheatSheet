@@ -17,6 +17,9 @@
 }
 
 .modal__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   position: relative;
   padding: 1rem;
   min-width: 70%;
