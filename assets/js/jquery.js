@@ -93,3 +93,38 @@ $('#appendBtnJq').on('click', () => {
   appendMessage.text('This message is sibiling of paragraph above, and child of <div class="tab__inner">')
   $('#appendBtnJq').parent().append(appendMessage)
 })
+
+const prependMessage = $('<p></p>')
+$('#prependBtnJq').on('click', () => {
+  prependMessage.text('This message is sibiling of paragraph below, and first child of <div class="tab__inner">')
+  $('#prependBtnJq').parent().prepend(prependMessage)
+})
+
+const afterMessage = $('<p></p>')
+$('#afterBtnJq').on('click', () => {
+  afterMessage.text('This message is sibiling of the button')
+  $('#afterBtnJq').after(afterMessage)
+})
+
+const beforeMessage = $('<p></p>')
+$('#beforeBtnJq').on('click', () => {
+  beforeMessage.text('This message is sibiling of the button')
+  $('#beforeBtnJq').before(beforeMessage)
+})
+
+$('#cloneBtnJq').on('click', () => {
+  const clone = $('#textElementJq').clone()
+  $('#textElementJq').after(clone)
+})
+
+$('#addBtnJq').on('click', () => {
+  $('#textAddJq').addClass('text-highlight')
+})
+
+$('#removeClassBtnJq').on('click', () => {
+  $('#textRemoveClassJq').removeClass('text-highlight')
+})
+
+$('#toggleClassBtnJq').on('click', () => {
+  $('#textToggleClassJq').toggleClass('text-highlight')
+})

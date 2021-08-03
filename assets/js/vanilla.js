@@ -91,7 +91,7 @@ document.getElementById('loadImgV').parentNode.appendChild(img)
 console.log(img);
 const message = document.createElement('p')
 document.getElementById('loadImgV').addEventListener('click', () => {
-  message.innerHTML = `Is the image loaded? <span class="text-highlight>${loadImg}</span>`
+  message.innerHTML = `Is the image loaded? <span class="text-highlight">${loadImg}</span>`
   document.getElementById('loadImgV').parentNode.appendChild(message)
 
 })
@@ -113,3 +113,40 @@ document.getElementById('appendBtnV').addEventListener('click', () => {
   document.getElementById('appendBtnV').parentNode.appendChild(appendMessage)
 })
 
+const prependMessage = document.createElement('p')
+document.getElementById('prependBtnV').addEventListener('click', () => {
+  prependMessage.textContent = 'This message is sibiling of paragraph below, and first child of <div class="tab__inner">'
+  document.getElementById('prependBtnV').parentNode.prepend(prependMessage)
+})
+
+const afterMessage = document.createElement('p')
+document.getElementById('afterBtnV').addEventListener('click', () => {
+  afterMessage.textContent = 'This message is sibiling of the button'
+  document.getElementById('afterBtnV').after(afterMessage)
+})
+
+const beforeMessage = document.createElement('p')
+document.getElementById('beforeBtnV').addEventListener('click', () => {
+  beforeMessage.textContent = 'This message is sibiling of the button'
+  document.getElementById('beforeBtnV').before(beforeMessage)
+})
+
+document.getElementById('cloneBtnV').addEventListener('click', () => {
+  const text = document.getElementById('textElementV')
+  const clone = text.cloneNode(true)
+  text.after(clone)
+})
+
+document.getElementById('addBtnV').addEventListener('click', () => {
+  const text = document.getElementById('textAddV')
+  text.classList.add('text-highlight')
+})
+
+document.getElementById('removeClassBtnV').addEventListener('click', () => {
+  const text = document.getElementById('textRemoveV')
+  text.classList.remove('text-highlight')
+})
+
+document.getElementById('toggleClassBtnV').addEventListener('click', () => {
+document.getElementById('textToggleV').classList.toggle('text-highlight')
+})
