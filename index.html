@@ -59,14 +59,15 @@
         <li data-open="functionShow">Show an HTML element on click</li>
         <li data-open="functionFadein">Fade in an HTML element using jQuery</li>
         <li data-open="functionFadeout">Fade out an HTML element using jQuery</li>
-        <li>Iterate a collection of elements and apply a change of style on them</li>
-        <li>Get the parent element of a certain element and change its font weight</li>
-        <li>Get the collection of children of a certain element and change its font weight</li>
+        <li data-open="functionAnimate">Animate an item after 2 seconds</li>
       </ul>
     </section>
     <section class="cell cell-tertiary">
       <h2 class="text-center">Selectors</h2>
       <ul>
+        <li data-open="selectorChangeStyle">Iterate a collection of elements and apply a change of style on them</li>
+        <li data-open="selectorParentFont">Get the parent element of a certain element and change its font weight</li>
+        <li data-open="selectorChildrenFont">Get the collection of children of a certain element and change its font weight</li>
         <li>Get all the elements that have a certain class and change their font weight</li>
         <li>Get an item by id and change its font weight</li>
         <li>Get all the elements that have a certain class and the display property of none and change their font color</li>
@@ -74,7 +75,6 @@
         <li>Change the href attribute of the first <a> element (You have to create several <a> elements)</li>
         <li>Show an alert with the value of the first <input> of the page (Create an <input> element to test this case)</li>
         <li>Remove all items from a specific selector</li>
-        <li>Animate an item after 2 seconds from the initial page load</li>
       </ul>
     </section>
   </main>
@@ -161,7 +161,7 @@
         <div class="tab__content">
           <div class="tab__inner">
             <p>Move the mouse inside the box</p>
-            <div id="eventMouseMoveJc" class="canvan-box flex-center"></div>
+            <div id="eventMouseMoveJc" class="canvas-box flex-center"></div>
           </div>
         </div>
         <label class="tab__nav flex-center" for="jqueryMm">JQuery</label>
@@ -169,7 +169,7 @@
         <div class="tab__content">
           <div class="tab__inner">
             <p>Move the mouse inside the box</p>
-            <div id="eventMouseMoveV" class="canvan-box flex-center"></div>
+            <div id="eventMouseMoveV" class="canvas-box flex-center"></div>
           </div>
         </div>
         <label class="tab__nav flex-center" for="VanillajsMm">Vanilla JS</label>
@@ -187,7 +187,7 @@
         <div class="tab__content">
           <div class="tab__inner">
             <p>Move the mouse inside the box</p>
-            <div id="eventMouseOverJc" class="canvan-box flex-center"></div>
+            <div id="eventMouseOverJc" class="canvas-box flex-center"></div>
           </div>
         </div>
         <label class="tab__nav flex-center" for="jqueryMo">JQuery</label>
@@ -195,7 +195,7 @@
         <div class="tab__content">
           <div class="tab__inner">
             <p>Move the mouse inside the box</p>
-            <div id="eventMouseOverV" class="canvan-box flex-center"></div>
+            <div id="eventMouseOverV" class="canvas-box flex-center"></div>
           </div>
         </div>
         <label class="tab__nav flex-center" for="VanillajsMo">Vanilla JS</label>
@@ -368,7 +368,7 @@
       <button class="button--close" data-close>X</button>
       <h1>Event show</h1>
       <section class="grid grid-2 tab">
-        <input name="tab-nav-show" type="radio" id="jqueryShow" class="tab__radiobutton" checked="checked" />
+        <input name="tab-nav-eShow" type="radio" id="jqueryeShow" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
             <p>Click on one of the items:</p>
@@ -379,8 +379,8 @@
             </ul>
           </div>
         </div>
-        <label class="tab__nav flex-center" for="jqueryShow">JQuery</label>
-        <input name="tab-nav-show" type="radio" id="VanillajsShow" class="tab__radiobutton" />
+        <label class="tab__nav flex-center" for="jqueryeShow">JQuery</label>
+        <input name="tab-nav-eShow" type="radio" id="VanillajseShow" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
             <p>Click on one of the items:</p>
@@ -391,7 +391,7 @@
             </ul>
           </div>
         </div>
-        <label class="tab__nav flex-center" for="VanillajsShow">Vanilla JS</label>
+        <label class="tab__nav flex-center" for="VanillajseShow">Vanilla JS</label>
       </section>
     </div>
   </article>
@@ -833,22 +833,22 @@
       <button class="button--close" data-close>X</button>
       <h1>Function show an element</h1>
       <section class="grid grid-2 tab">
-        <input name="tab-nav-show" type="radio" id="jqueryShowBlock" class="tab__radiobutton" checked="checked" />
+        <input name="tab-nav-fShow" type="radio" id="jqueryfShowBlock" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
             <button id="showButtonJq" class="button">Show</button>
             <img id="imgShowJq" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo" class="--is-hidden">
           </div>
         </div>
-        <label class="tab__nav flex-center" for="jqueryShowBlock">JQuery</label>
-        <input name="tab-nav-show" type="radio" id="VanillajsShowBlock" class="tab__radiobutton" />
+        <label class="tab__nav flex-center" for="jqueryfShowBlock">JQuery</label>
+        <input name="tab-nav-fShow" type="radio" id="VanillajsfShowBlock" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
             <button id="showButtonV" class="button">Show</button>
             <img id="imgShowV" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo" class="--is-hidden">
           </div>
         </div>
-        <label class="tab__nav flex-center" for="VanillajsShowBlock">Vanilla JS</label>
+        <label class="tab__nav flex-center" for="VanillajsfShowBlock">Vanilla JS</label>
       </section>
     </div>
   </article>
@@ -857,24 +857,68 @@
   <article class="modal flex-center" id="functionFadein" data-animation="zoomInOut">
     <div class="modal__content">
       <button class="button--close" data-close>X</button>
-      <h1>Function fadein an element</h1>
+      <h1>Function fadein an element in JQuery</h1>
       <section class="grid grid-2 tab">
         <input name="tab-nav-fadein" type="radio" id="jqueryFadein" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
-          <div class="tab__inner">
-            <button id="showButtonJq" class="button">Show</button>
-            <img id="imgShowJq" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo" class="--is-hidden">
-          </div>
+          <button id="fadeinButtonJq" class="button margin-x1">Fade in</button>
+          <img id="imgFadeinJq" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo" class="--is-hidden">
         </div>
         <label class="tab__nav flex-center" for="jqueryFadein">JQuery</label>
-        <input name="tab-nav-fadein" type="radio" id="VanillajsFadein" class="tab__radiobutton" />
+        <input name="tab-nav-fadein" type="radio" id="VanillajsFadein" class="tab__radiobutton"/>
         <div class="tab__content">
           <div class="tab__inner">
-            <button id="showButtonV" class="button">Show</button>
-            <img id="imgShowV" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo" class="--is-hidden">
           </div>
         </div>
         <label class="tab__nav flex-center" for="VanillajsFadein">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Function fadeout HTML element modal -->
+  <article class="modal flex-center" id="functionFadeout" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Function fadeout an element in JQuery</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-fadeout" type="radio" id="jqueryFadeout" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <button id="fadeoutButtonJq" class="button margin-x1">Fade out</button>
+          <img id="imgFadeoutJq" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo">
+        </div>
+        <label class="tab__nav flex-center" for="jqueryFadeout">JQuery</label>
+        <input name="tab-nav-fadeout" type="radio" id="VanillajsFadeout" class="tab__radiobutton"/>
+        <div class="tab__content">
+          <div class="tab__inner">
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsFadeout">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Function animate after 2 seconds HTML element modal -->
+  <article class="modal flex-center" id="functionAnimate" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Animate after 2 seconds from the initial page load</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-animate" type="radio" id="jqueryAnimate" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+          <button id="btnAnimateJq" class="button">Animate</button>
+          <div id="boxAnimateJq" class="[ canvas-box canvas-box--filled ] flex-center"></div>
+        </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryAnimate">JQuery</label>
+        <input name="tab-nav-animate" type="radio" id="VanillajsAnimate" class="tab__radiobutton"/>
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnAnimateV" class="button">Animate</button>
+            <div id="boxAnimateV" class="[ canvas-box canvas-box--filled ] flex-center"></div>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsAnimate">Vanilla JS</label>
       </section>
     </div>
   </article>

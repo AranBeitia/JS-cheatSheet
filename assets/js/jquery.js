@@ -156,3 +156,21 @@ $('#hideButtonJq').on('click', () => {
 $('#showButtonJq').on('click', () => {
   $('#imgShowJq').css('display', 'block')
 })
+
+$('#fadeinButtonJq').on('click', () => {
+  $('#imgFadeinJq').fadeIn(3000)
+})
+
+$('#fadeoutButtonJq').on('click', () => {
+  $('#imgFadeoutJq').fadeOut('slow')
+})
+
+$('#btnAnimateJq').on('click', () => {
+  setTimeout(function (){
+    $('#boxAnimateJq').animate({
+      width: '100px',
+      height: '100px',
+      opacity: 0.5,
+    }, 'slow')
+  }, 2000)
+})

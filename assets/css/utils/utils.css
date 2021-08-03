@@ -11,6 +11,10 @@
   padding: 1rem 0;
 }
 
+.margin-x1 {
+  margin: 1rem 0;
+}
+
 .--is-hidden {
   display: none;
 }

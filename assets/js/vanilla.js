@@ -182,3 +182,33 @@ document.getElementById('showButtonV').addEventListener('click', () => {
   document.getElementById('imgShowV').style.display = 'block'
 })
 
+
+document.getElementById('functionFadein').addEventListener('click', () => {
+  const tabInput = document.querySelector('[for="VanillajsFadein"]')
+  document.getElementById('VanillajsFadein').disabled = true
+  tabInput.style.cursor = 'no-drop'
+  tabInput.textContent = 'DISABLED'
+})
+
+document.getElementById('functionFadeout').addEventListener('click', () => {
+  const tabInput = document.querySelector('[for="VanillajsFadeout"]')
+  document.getElementById('VanillajsFadeout').disabled = true
+  tabInput.style.cursor = 'no-drop'
+  tabInput.textContent = 'DISABLED'
+})
+
+document.getElementById('btnAnimateV').addEventListener('click', () => {
+  setTimeout(() => {
+    document.getElementById('boxAnimateV').animate(
+    [
+      { transform: "translateY(0px)" },
+      { transform: "translateY(30px)" },
+      { transform: "translateY(0px)" },
+    ],{
+      duration: 1000,
+      iterations: 2
+    })
+  }, 2000)
+})
+
+
