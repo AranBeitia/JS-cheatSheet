@@ -1,5 +1,5 @@
 import { modal } from './modal.js'
-
+modal ()
 // Events
 const loadHTML = document.createElement('span')
 document.addEventListener('DOMContentLoaded' , () => loadHTML )
