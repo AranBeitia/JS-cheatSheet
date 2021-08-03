@@ -15,7 +15,7 @@
   <title>JQuery CheatSheet</title>
 </head>
 <body>
-  <header class="flex-center ">
+  <header class="flex-center">
     <img src="assets/images/logo.svg" alt="Logo" class="logo" />
     <h1>CheatSheet</h1>
   </header>
@@ -54,11 +54,11 @@
         <li data-open="functionAddDisabled">Add a disabled attribute to a button</li>
         <li data-open="functionRemoveDisabled">Remove a disabled attribute of a button</li>
         <li data-open="functionSetData">Set a data-src attribute to an img</li>
-        <li data-open="functionAddDisab">Remove the data-src attribute of the img element</li>
-        <li data-open="functionAddDisa">Hide an HTML element on click (display: none)</li>
-        <li data-open="functionAddDis">Show an HTML element on click (display: block)</li>
-        <li>Fade in an HTML element using jQuery</li>
-        <li>Fade out an HTML element using jQuery</li>
+        <li data-open="functionRemoveData">Remove the data-src attribute of an img</li>
+        <li data-open="functionHide">Hide an HTML element on click</li>
+        <li data-open="functionShow">Show an HTML element on click</li>
+        <li data-open="functionFadein">Fade in an HTML element using jQuery</li>
+        <li data-open="functionFadeout">Fade out an HTML element using jQuery</li>
         <li>Iterate a collection of elements and apply a change of style on them</li>
         <li>Get the parent element of a certain element and change its font weight</li>
         <li>Get the collection of children of a certain element and change its font weight</li>
@@ -759,19 +759,122 @@
         <input name="tab-nav-dataset" type="radio" id="jqueryDataset" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
-            <button class="button">Load</button>
-            <img src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo">
+            <button id="datasetButtonJq" class="button">Load</button>
+            <img alt="Hello kitty d-face in Tokyo">
           </div>
         </div>
         <label class="tab__nav flex-center" for="jqueryDataset">JQuery</label>
         <input name="tab-nav-dataset" type="radio" id="VanillajsDataset" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
-            <button class="button">Load</button>
-            <img src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo">
+            <button id="datasetButtonV" class="button">Load</button>
           </div>
         </div>
         <label class="tab__nav flex-center" for="VanillajsDataset">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Function remove a dataset attribute HTML modal -->
+  <article class="modal flex-center" id="functionRemoveData" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Function remove a dataset attribute</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-datasetR" type="radio" id="jqueryDatasetR" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="datasetRButtonJq" class="button">Load</button>
+            <img id="imgRemoveJq" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo">
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryDatasetR">JQuery</label>
+        <input name="tab-nav-datasetR" type="radio" id="VanillajsDatasetR" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="datasetRButtonV" class="button">Load</button>
+            <img id="imgRemoveV" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo">
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsDatasetR">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Function hide HTML element modal -->
+  <article class="modal flex-center" id="functionHide" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Function hide an element</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-hide" type="radio" id="jqueryHide" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="hideButtonJq" class="button">Hide</button>
+            <img id="imgHideJq" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo">
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryHide">JQuery</label>
+        <input name="tab-nav-hide" type="radio" id="VanillajsHide" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="hideButtonV" class="button">Hide</button>
+            <img id="imgHideV" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo">
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsHide">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Function show HTML element modal -->
+  <article class="modal flex-center" id="functionShow" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Function show an element</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-show" type="radio" id="jqueryShowBlock" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="showButtonJq" class="button">Show</button>
+            <img id="imgShowJq" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo" class="--is-hidden">
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryShowBlock">JQuery</label>
+        <input name="tab-nav-show" type="radio" id="VanillajsShowBlock" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="showButtonV" class="button">Show</button>
+            <img id="imgShowV" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo" class="--is-hidden">
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsShowBlock">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Function fadein HTML element modal -->
+  <article class="modal flex-center" id="functionFadein" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Function fadein an element</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-fadein" type="radio" id="jqueryFadein" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="showButtonJq" class="button">Show</button>
+            <img id="imgShowJq" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo" class="--is-hidden">
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryFadein">JQuery</label>
+        <input name="tab-nav-fadein" type="radio" id="VanillajsFadein" class="tab__radiobutton" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="showButtonV" class="button">Show</button>
+            <img id="imgShowV" src="assets/images/hello-kitty-dface.jpg" alt="Hello kitty d-face in Tokyo" class="--is-hidden">
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsFadein">Vanilla JS</label>
       </section>
     </div>
   </article>

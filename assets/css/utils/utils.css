@@ -10,3 +10,7 @@
 .padding-x1 {
   padding: 1rem 0;
 }
+
+.--is-hidden {
+  display: none;
+}

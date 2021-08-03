@@ -81,20 +81,20 @@ itemsList.forEach(item => item.addEventListener('click', (e) => {
 
 
 /* TODO: revision */
-let img = document.createElement('img')
-img.setAttribute('id', 'loadImgV')
-let loadImg = false
-document.getElementById('loadImgV').addEventListener('load', () => loadImg)
+// let img = document.createElement('img')
+// img.setAttribute('id', 'loadImgV')
+// let loadImg = false
+// document.getElementById('loadImgV').addEventListener('load', () => loadImg)
 
-img.setAttribute('src', 'assets/images/hello-kitty-dface.jpg')
-document.getElementById('loadImgV').parentNode.appendChild(img)
-console.log(img);
-const message = document.createElement('p')
-document.getElementById('loadImgV').addEventListener('click', () => {
-  message.innerHTML = `Is the image loaded? <span class="text-highlight">${loadImg}</span>`
-  document.getElementById('loadImgV').parentNode.appendChild(message)
+// img.setAttribute('src', 'assets/images/hello-kitty-dface.jpg')
+// document.getElementById('loadImgV').parentNode.appendChild(img)
+// console.log(img);
+// const message = document.createElement('p')
+// document.getElementById('loadImgV').addEventListener('click', () => {
+//   message.innerHTML = `Is the image loaded? <span class="text-highlight">${loadImg}</span>`
+//   document.getElementById('loadImgV').parentNode.appendChild(message)
 
-})
+// })
 
 // Functions
 const createMessage = document.createElement('p')
@@ -162,3 +162,23 @@ document.getElementById('enableCheckV').addEventListener('change', () => {
   button.disabled = false
   button.textContent = 'ENABLED'
 })
+
+const datasetImgV = document.createElement('img')
+document.getElementById('datasetButtonV').addEventListener('click', () => {
+  datasetImgV.setAttribute('src', 'assets/images/hello-kitty-dface.jpg')
+  datasetImgV.setAttribute('alt', 'Hello kitty d-face in Tokyo')
+  document.getElementById('datasetButtonV').parentNode.appendChild(datasetImgV)
+})
+
+document.getElementById('datasetRButtonV').addEventListener('click', () => {
+  document.getElementById('imgRemoveV').removeAttribute('src')
+})
+
+document.getElementById('hideButtonV').addEventListener('click', () => {
+  document.getElementById('imgHideV').style.display = 'none'
+})
+
+document.getElementById('showButtonV').addEventListener('click', () => {
+  document.getElementById('imgShowV').style.display = 'block'
+})
+

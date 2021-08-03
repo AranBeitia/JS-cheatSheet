@@ -138,3 +138,21 @@ $('#enableCheckJq').on('change', () => {
   const button = $('#enableBtnJq').prop('disabled', false)
   button.text('ENABLED')
 })
+
+$('#datasetButtonJq').on('click', () => {
+  const img = $('#functionSetData img')
+  img.attr('src', 'assets/images/hello-kitty-dface.jpg')
+  $('#datasetButtonJq').after(img)
+})
+
+$('#datasetRButtonJq').on('click', () => {
+  $('#imgRemoveJq').removeAttr('src')
+})
+
+$('#hideButtonJq').on('click', () => {
+  $('#imgHideJq').css('display', 'none')
+})
+
+$('#showButtonJq').on('click', () => {
+  $('#imgShowJq').css('display', 'block')
+})
