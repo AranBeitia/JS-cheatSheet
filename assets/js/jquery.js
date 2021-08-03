@@ -20,7 +20,7 @@ const coordenates = $('<p></p>')
 $('#eventMouseMoveJc').on('mousemove', (e) => {
   let coorX = e.clientX
   let coorY = e.clientY
-  coordenates.text(`Coordinates: (${coorX}, ${coorY})`)
+  coordenates.html(`Coordinates: <span class="text-highlight">(${coorX}, ${coorY})</span>`)
   $('#eventMouseMoveJc').after(coordenates)
 })
 
@@ -28,7 +28,7 @@ const coordOver = $('<p></p>')
 $('#eventMouseOverJc').on('mouseover', (e) => {
   let coorX = e.clientX
   let coorY = e.clientY
-  coordOver.text(`Coordinates: (${coorX}, ${coorY})`)
+  coordOver.html(`Coordinates: <span class="text-highlight">(${coorX}, ${coorY})</span>`)
   $('#eventMouseOverJc').after(coordOver)
 })
 
@@ -173,4 +173,19 @@ $('#btnAnimateJq').on('click', () => {
       opacity: 0.5,
     }, 'slow')
   }, 2000)
+})
+
+// Selectors
+$('#btnChangeStyleJq').on('click', () => {
+  $('#listChangeStyleJq li').each(function(){
+    $(this).toggleClass('text-highlight')
+  })
+})
+
+$('#btnParentFontJq').on('click', () => {
+  $('#itemParentFontJq').parent().prev().css('font-weight', '100')
+})
+
+$('#btnChildrenFontJq').on('click', () => {
+  let items = $('#itemChildrenFontJq').children().css('font-weight', '700')
 })

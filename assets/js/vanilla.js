@@ -25,7 +25,7 @@ const coordinates = document.createElement('p')
 document.getElementById('eventMouseMoveV').addEventListener('mousemove', (e) => {
   let coorX = e.clientX
   let coorY = e.clientY
-  coordinates.innerHTML = `Coordinates: (${coorX}, ${coorY})`
+  coordinates.innerHTML = `Coordinates: <span class="text-highlight">(${coorX}, ${coorY})</span>`
   e.target.parentNode.appendChild(coordinates)
 })
 
@@ -33,7 +33,7 @@ const coordOver = document.createElement('p')
 document.getElementById('eventMouseOverV').addEventListener('mouseover', (e) => {
   let coorX = e.clientX
   let coorY = e.clientY
-  coordOver.innerHTML = `Coordinates: (${coorX}, ${coorY})`
+  coordOver.innerHTML = `Coordinates: <span class="text-highlight">(${coorX}, ${coorY})</span>`
   e.target.parentNode.appendChild(coordOver)
 })
 
@@ -61,7 +61,7 @@ document.getElementById('eventChangeV').addEventListener('change', (e) => {
 
 const selectionMessage = document.createElement('p')
 document.querySelector('#eventOpSelectV select').addEventListener('change', (e) => {
-  selectionMessage.innerHTML = `Your selection is <span class="text-highlight">${e.target.value}</span>`
+  selectionMessage.innerHTML = `Your selection is <span class="text-highlight">${e.target.value}</span> `
   document.getElementById('eventOpSelectV').parentNode.appendChild(selectionMessage)
 })
 
@@ -210,4 +210,21 @@ document.getElementById('btnAnimateV').addEventListener('click', () => {
   }, 2000)
 })
 
+// Selectors
+document.getElementById('btnChangeStyleV').addEventListener('click', () => {
+  const list = document.querySelectorAll('#listChangeStyleV li')
+  list.forEach(item => {
+    item.classList.toggle('text-highlight')
+  })
+})
 
+document.getElementById('btnParentFontV').addEventListener('click', () => {
+  document.getElementById('btnParentFontV').parentNode.style.fontWeight = '700'
+})
+
+document.getElementById('btnChildrenFontV').addEventListener('click', () => {
+  const items = document.getElementById('itemChildrenFontV').children
+  for (let i = 0; i < items.length; i++) {
+    items[i].style.fontWeight = '700'
+  }
+})

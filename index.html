@@ -65,11 +65,11 @@
     <section class="cell cell-tertiary">
       <h2 class="text-center">Selectors</h2>
       <ul>
-        <li data-open="selectorChangeStyle">Iterate a collection of elements and apply a change of style on them</li>
-        <li data-open="selectorParentFont">Get the parent element of a certain element and change its font weight</li>
-        <li data-open="selectorChildrenFont">Get the collection of children of a certain element and change its font weight</li>
-        <li>Get all the elements that have a certain class and change their font weight</li>
-        <li>Get an item by id and change its font weight</li>
+        <li data-open="selectorIterateChange">Apply change of style on a collection</li>
+        <li data-open="selectorParentFont">Get parent element and change font weight</li>
+        <li data-open="selectorChildrenFont">Get children and change its font weight</li>
+        <li data-open="selectorCertainFont">Get all the elements that have a certain class and change their font weight</li>
+        <li data-open="selectorGetIdFont">Get an item by id and change its font weight</li>
         <li>Get all the elements that have a certain class and the display property of none and change their font color</li>
         <li>Get the options of a select element that are selected (attribute selected)</li>
         <li>Change the href attribute of the first <a> element (You have to create several <a> elements)</li>
@@ -237,9 +237,11 @@
         <input name="tab-nav-submit" type="radio" id="jquerySubmit" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
-            <form action="" id="eventSubmitJq" class="flex-start-center">
-              <label for="yourNameJq">Your name:</label>
-              <input type="text" id="yourNameJq" class="input" required >
+            <form action="" id="eventSubmitJq">
+              <div class="form-group">
+                <label for="yourNameJq">Your name:</label>
+                <input type="text" id="yourNameJq" class="input" required >
+              </div>
               <button type="submit" class="button">Send</button>
             </form>
           </div>
@@ -248,9 +250,11 @@
         <input name="tab-nav-submit" type="radio" id="VanillajsSubmit" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
-            <form action="" id="eventSubmitV" class="flex-start-center">
-              <label for="yourName">Your name:</label>
-              <input type="text" id="yourName" class="input" required >
+            <form action="" id="eventSubmitV">
+              <div class="form-group">
+                <label for="yourName">Your name:</label>
+                <input type="text" id="yourName" class="input" required >
+              </div>
               <button type="submit" class="button">Send</button>
             </form>
           </div>
@@ -919,6 +923,182 @@
           </div>
         </div>
         <label class="tab__nav flex-center" for="VanillajsAnimate">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Selector change style in a collection modal -->
+  <article class="modal flex-center" id="selectorIterateChange" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Change style in a collection</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-iterateStyle" type="radio" id="jqueryIterateStyle" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnChangeStyleJq" class="button">Change style</button>
+            <ul id="listChangeStyleJq" class="list">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryIterateStyle">JQuery</label>
+        <input name="tab-nav-iterateStyle" type="radio" id="VanillajsIterateStyle" class="tab__radiobutton"/>
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnChangeStyleV" class="button">Change style</button>
+            <ul id="listChangeStyleV" class="list">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsIterateStyle">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Selector get parent and change font weight modal -->
+  <article class="modal flex-center" id="selectorParentFont" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Get parent and change font weight</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-parentFont" type="radio" id="jqueryParentFont" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnParentFontJq" class="button">Change title</button>
+            <h2>Parent title</h2>
+            <ul class="list">
+              <li>Item 1</li>
+              <li id="itemParentFontJq">Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryParentFont">JQuery</label>
+        <input name="tab-nav-parentFont" type="radio" id="VanillajsParentFont" class="tab__radiobutton"/>
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnParentFontV" class="button">Change text</button>
+            <p>Parent text</p>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsParentFont">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Selector get children and change font weight modal -->
+  <article class="modal flex-center" id="selectorChildrenFont" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Get children and change font weight</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-childrenFont" type="radio" id="jqueryChildrenFont" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnChildrenFontJq" class="button">Change children</button>
+            <ul id="itemChildrenFontJq" class="list">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryChildrenFont">JQuery</label>
+        <input name="tab-nav-childrenFont" type="radio" id="VanillajsChildrenFont" class="tab__radiobutton"/>
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnChildrenFontV" class="button">Change children</button>
+            <ul id="itemChildrenFontV" class="list">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsChildrenFont">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Selector get all the elements with certain class and change font weight modal -->
+  <article class="modal flex-center" id="selectorCertainFont" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Get elements with a class and change font weight</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-certainFont" type="radio" id="jqueryCertainFont" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnChildrenFontJq" class="button">Change children</button>
+            <ul id="itemChildrenFontJq" class="list">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryCertainFont">JQuery</label>
+        <input name="tab-nav-certainFont" type="radio" id="VanillajsCertainFont" class="tab__radiobutton"/>
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnChildrenFontV" class="button">Change children</button>
+            <ul id="itemChildrenFontV" class="list">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsCertainFont">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Selector get an item by id and change its font weight modal -->
+  <article class="modal flex-center" id="selectorGetIdFont" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Get item by id and change font weight</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-getIdFont" type="radio" id="jqueryGetIdFont" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnChildrenFontJq" class="button">Change children</button>
+            <ul id="itemChildrenFontJq" class="list">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryGetIdFont">JQuery</label>
+        <input name="tab-nav-getIdFont" type="radio" id="VanillajsGetIdFont" class="tab__radiobutton"/>
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnChildrenFontV" class="button">Change children</button>
+            <ul id="itemChildrenFontV" class="list">
+              <li>Item 1</li>
+              <li>Item 2</li>
+              <li>Item 3</li>
+              <li>Item 4</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsGetIdFont">Vanilla JS</label>
       </section>
     </div>
   </article>
