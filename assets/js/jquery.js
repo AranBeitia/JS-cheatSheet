@@ -75,3 +75,21 @@ $('#showListJq li').on('click', () => {
   listMessage.html(`You clicked <span class="text-highlight">${$(event.target).text()}</span>`)
   $('#showListJq').after(listMessage)
 })
+
+// Functions
+
+const createMessage = $('<p></p>')
+$('#createValueJq').on('click', () => {
+  createMessage.text('The new HTML value created is a <p> tag')
+  $('#createValueJq').after(createMessage)
+})
+
+$('#removeBtnJq').on('click', () => {
+  $('#removeTextJq').remove()
+})
+
+const appendMessage = $('<p></p>')
+$('#appendBtnJq').on('click', () => {
+  appendMessage.text('This message is sibiling of paragraph above, and child of <div class="tab__inner">')
+  $('#appendBtnJq').parent().append(appendMessage)
+})

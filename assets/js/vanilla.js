@@ -79,8 +79,37 @@ itemsList.forEach(item => item.addEventListener('click', (e) => {
   document.getElementById('showListV').parentNode.appendChild(listMessage)
 }))
 
-const img = document.createElement('img')
-img.addEventListener('load', () => {
-  
+
+/* TODO: revision */
+let img = document.createElement('img')
+img.setAttribute('id', 'loadImgV')
+let loadImg = false
+document.getElementById('loadImgV').addEventListener('load', () => loadImg)
+
+img.setAttribute('src', 'assets/images/hello-kitty-dface.jpg')
+document.getElementById('loadImgV').parentNode.appendChild(img)
+console.log(img);
+const message = document.createElement('p')
+document.getElementById('loadImgV').addEventListener('click', () => {
+  message.innerHTML = `Is the image loaded? <span class="text-highlight>${loadImg}</span>`
+  document.getElementById('loadImgV').parentNode.appendChild(message)
+
 })
-img.src = 'assets/hello-kitty-dface.jpg'
+
+// Functions
+const createMessage = document.createElement('p')
+document.getElementById('createValueV').addEventListener('click', () => {
+  createMessage.textContent = 'The new HTML value created is a <p> tag'
+  document.getElementById('createValueV').parentNode.appendChild(createMessage)
+})
+
+document.getElementById('removeBtnV').addEventListener('click', () => {
+  document.getElementById('removeTextV').remove()
+})
+
+const appendMessage = document.createElement('p')
+document.getElementById('appendBtnV').addEventListener('click', () => {
+  appendMessage.textContent = 'This message is sibiling of paragraph above, and child of <div class="tab__inner">'
+  document.getElementById('appendBtnV').parentNode.appendChild(appendMessage)
+})
+
