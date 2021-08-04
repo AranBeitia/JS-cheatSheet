@@ -70,9 +70,9 @@
         <li data-open="selectorChildrenFont">Get children and change its font weight</li>
         <li data-open="selectorCertainFont">Get certain class and change font weight</li>
         <li data-open="selectorGetIdFont">Get an item by id and change its font weight</li>
-        <li data-open="selectorGetClassDisplay">Get all the elements that have a certain class and the display property of none and change their font color</li>
-        <li>Get the options of a select element that are selected (attribute selected)</li>
-        <li>Change the href attribute of the first <a> element (You have to create several <a> elements)</li>
+        <li data-open="selectorGetClassDisplay">Get elements by class and change style properties</li>
+        <li data-open="selectorAttSelected">Get the options of a select element that are selected (attribute selected)</li>
+        <li data-open="selectorAttLink">Change the href attribute of the first a element</li>
         <li>Show an alert with the value of the first <input> of the page (Create an <input> element to test this case)</li>
         <li>Remove all items from a specific selector</li>
       </ul>
@@ -1117,6 +1117,124 @@
             <button id="btnGetClassJq" class="button">Change styles</button>
             <ul class="list">
               <li>Item 1</li>
+              <li class="get-class-jq">Item 2</li>
+              <li>Item 3</li>
+              <li class="get-class-jq">Item 4</li>
+              <li>Item 5</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryGetClass">JQuery</label>
+        <input name="tab-nav-getClass" type="radio" id="VanillajsGetClass" class="tab__radiobutton"/>
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnGetClassV" class="button">Change styles</button>
+            <ul class="list">
+              <li>Item 1</li>
+              <li class="get-class-v --is-hidden">Item 2</li>
+              <li>Item 3</li>
+              <li class="get-class-v --is-hidden">Item 4</li>
+              <li>Item 5</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsGetClass">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Selector get the options of a select element that are selected (attribute selected) modal -->
+  <article class="modal flex-center" id="selectorAttSelected" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Get options by :selected attribute</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-att" type="radio" id="jqueryAtt" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <form action="" id="formAttrJq" class="flex-column">
+              <label for="bikesJq" class="padding-x1">Change into another option: </label>
+              <select id="bikesJq" multiple="multiple" class="select">
+                <option>Ducati</option>
+                <option>Morini</option>
+                <option>Norton</option>
+                <option>BMW</option>
+                <option>Triumph</option>
+              </select>
+            </form>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryAtt">JQuery</label>
+        <input name="tab-nav-att" type="radio" id="VanillajsAtt" class="tab__radiobutton"/>
+        <div class="tab__content">
+          <div class="tab__inner">
+            <form action="" id="formAttrV" class="flex-column">
+              <label for="bikesV" class="padding-x1">Change into another option: </label>
+              <select id="bikesV" multiple="multiple" class="select">
+                <option>Ducati</option>
+                <option>Morini</option>
+                <option>Norton</option>
+                <option>BMW</option>
+                <option>Triumph</option>
+              </select>
+            </form>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsAtt">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Selector change the href attribute of the first <a> element (You have to create several <a> elements) modal -->
+  <article class="modal flex-center" id="selectorAttLink" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Change the href attribute of the first a element</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-attrLink" type="radio" id="jqueryAttrLink" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnAttrLinkJq" class="button">Change attribute</button>
+            <ul id="listAttrLinkJq" class="list">
+              <li><a href="#">Item 1</a></li>
+              <li><a href="#">Item 2</a></li>
+              <li><a href="#">Item 3</a></li>
+              <li><a href="#">Item 4</a></li>
+              <li><a href="#">Item 5</a></li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryAttrLink">JQuery</label>
+        <input name="tab-nav-attrLink" type="radio" id="VanillajsAttrLink" class="tab__radiobutton"/>
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnAttrLinkV" class="button">Change attribute</button>
+            <ul id="listAttrLinkV" class="list">
+              <li><a href="#" target='_blank'>Item 1</a></li>
+              <li><a href="#">Item 2</a></li>
+              <li><a href="#">Item 3</a></li>
+              <li><a href="#">Item 4</a></li>
+              <li><a href="#">Item 5</a></li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsAttrLink">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Selector get all the elements that have a certain class and the display property of none and change their font color modal -->
+  <article class="modal flex-center" id="selector3" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Get item by class and change styles</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-getClas" type="radio" id="jqueryGetClas" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnGetClassJq" class="button">Change styles</button>
+            <ul class="list">
+              <li>Item 1</li>
               <li class="get-class-jq --is-hidden">Item 2</li>
               <li>Item 3</li>
               <li class="get-class-jq --is-hidden">Item 4</li>
@@ -1125,7 +1243,45 @@
           </div>
         </div>
         <label class="tab__nav flex-center" for="jqueryGetClass">JQuery</label>
-        <input name="tab-nav-getClass" type="radio" id="VanillajsGetClass" class="tab__radiobutton"/>
+        <input name="tab-nav-getClas" type="radio" id="VanillajsGetClas" class="tab__radiobutton"/>
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnGetClassV" class="button">Change styles</button>
+            <ul class="list">
+              <li>Item 1</li>
+              <li class="get-class-v --is-hidden">Item 2</li>
+              <li>Item 3</li>
+              <li class="get-class-v --is-hidden">Item 4</li>
+              <li>Item 5</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsGetClas">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Selector get all the elements that have a certain class and the display property of none and change their font color modal -->
+  <article class="modal flex-center" id="selector4" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Get item by class and change styles</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-getClas" type="radio" id="jqueryGetClas" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnGetClassJq" class="button">Change styles</button>
+            <ul class="list">
+              <li>Item 1</li>
+              <li class="get-class-jq --is-hidden">Item 2</li>
+              <li>Item 3</li>
+              <li class="get-class-jq --is-hidden">Item 4</li>
+              <li>Item 5</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryGetClass">JQuery</label>
+        <input name="tab-nav-getClas" type="radio" id="VanillajsGetClas" class="tab__radiobutton"/>
         <div class="tab__content">
           <div class="tab__inner">
             <button id="btnGetClassV" class="button">Change styles</button>

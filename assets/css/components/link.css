@@ -1,0 +1,10 @@
+a {
+  text-decoration: none;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+a:hover {
+  color: var(--color-tertiary);
+}

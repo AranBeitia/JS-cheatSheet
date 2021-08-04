@@ -254,3 +254,19 @@ document.getElementById('btnGetClassV').addEventListener('click', () => {
     item.style.color = '#d83f87'
   }
 })
+
+const attrMessage = document.createElement('p')
+document.querySelector('#formAttrV select').addEventListener('change', () => {
+  let result = document.querySelector('#formAttrV select').value
+  attrMessage.innerHTML = `Your selection is <span class="text-highlight">${result}</span>`
+  document.querySelector('#formAttrV').appendChild(attrMessage)
+})
+
+const attrLinkMessage = document.createElement('p')
+document.querySelector('#btnAttrLinkV').addEventListener('click', () => {
+  let firstItem = document.querySelector('#listAttrLinkV > li').firstChild
+  firstItem.setAttribute('href', 'https://www.google.com/')
+  firstItem.setAttribute('target', '_blank')
+  attrLinkMessage.textContent = 'Click on the first item'
+  document.querySelector('#listAttrLinkV').appendChild(attrLinkMessage)
+})

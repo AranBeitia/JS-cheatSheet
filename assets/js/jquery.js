@@ -207,8 +207,24 @@ $('#btnItemIdJq').on('click', () => {
   $('#itemIdJq').css('color', '#d83f87')
 })
 
+const itemClass = $('.get-class-jq').hide()
 $('#btnGetClassJq').on('click', () => {
-  const item = $('.get-class-jq')
-  item.css('display', 'block')
-  item.css('color', '#d83f87')
+  itemClass.show()
+  itemClass.css('color', '#d83f87')
 })
+
+const messageAttr = $('<p></p>')
+$('#formAttrJq select').on('change', () => {
+  let selected = $(event.target).val()
+  messageAttr.html(`Your selection is <span class="text-highlight">${selected}</span>`)
+  $('#formAttrJq').after(messageAttr)
+})
+
+const message = $('<p>Click on the first item</p>')
+$('#btnAttrLinkJq').on('click', () => {
+  let firstLink = $('#listAttrLinkJq').find('a').first()
+  firstLink.attr('href', 'https://www.google.com/')
+  firstLink.attr('target', '_blank')
+  $('#listAttrLinkJq').after(message)
+})
+
