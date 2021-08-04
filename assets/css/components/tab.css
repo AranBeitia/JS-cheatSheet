@@ -1,4 +1,5 @@
 .tab {
+  min-height: 60vh;
   overflow: hidden;
 }
 
@@ -8,20 +9,20 @@
 
 .tab__nav {
   font-size: 1.5rem;
-  border-bottom: 2px solid var(--color-secondary);
-  background: var(--color-secondary-light);
+  border-bottom: 2px solid var(--color-tertiary);
+  background: var(--color-tertiary-light);
   transition: background 0.4s;
   user-select: none;
   cursor: pointer;
 }
 
 .tab__radiobutton:checked + .tab__content + .tab__nav {
-  background: var(--color-secondary);
+  background: var(--color-tertiary);
   color: var(--color-white);
 }
 
 .tab__radiobutton:checked + .tab__content  {
-  background: var(--color-secondary);
+  background: var(--color-tertiary);
   color: var(--color-grey);
 }
 

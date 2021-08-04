@@ -1,6 +1,6 @@
 .button {
   display: block;
-  max-width: 6rem;
+  max-width: 10rem;
   width: 100%;
   padding: .5rem 1rem;
   cursor: pointer;
@@ -13,6 +13,12 @@
 
 .button:hover {
   background-color: var(--color-white);
+  color: var(--color-secondary);
+}
+
+.button:disabled {
+  background-color: var(--color-grey);
+  border: 2px solid var(--color-grey);
   color: var(--color-secondary);
 }
 

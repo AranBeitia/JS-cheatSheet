@@ -1,0 +1,9 @@
+.canvas-box {
+  width: 10rem;
+  height: 10rem;
+  border: 2px solid var(--color-white);
+}
+
+.canvas-box--filled {
+  background-color:var(--color-white);
+}
