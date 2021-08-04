@@ -179,13 +179,36 @@ $('#btnAnimateJq').on('click', () => {
 $('#btnChangeStyleJq').on('click', () => {
   $('#listChangeStyleJq li').each(function(){
     $(this).toggleClass('text-highlight')
+    $(this).text($(this).text() + ' iterated')
   })
 })
 
 $('#btnParentFontJq').on('click', () => {
-  $('#itemParentFontJq').parent().prev().css('font-weight', '100')
+  let item = $('#itemParentFontJq').parent().prev()
+  item.css('font-weight', '100')
+  item.css('color', '#d83f87')
 })
 
 $('#btnChildrenFontJq').on('click', () => {
-  let items = $('#itemChildrenFontJq').children().css('font-weight', '700')
+  let items = $('#itemChildrenFontJq').children()
+  items.css('font-weight', '700')
+  items.css('color', '#d83f87')
+})
+
+$('#btnCertainFontJq').on('click', () => {
+  $('.certain-class').each(function() {
+    $(this).css('font-weight', '100')
+    $(this).css('color', '#d83f87')
+  })
+})
+
+$('#btnItemIdJq').on('click', () => {
+  $('#itemIdJq').css('font-weight', '100')
+  $('#itemIdJq').css('color', '#d83f87')
+})
+
+$('#btnGetClassJq').on('click', () => {
+  const item = $('.get-class-jq')
+  item.css('display', 'block')
+  item.css('color', '#d83f87')
 })

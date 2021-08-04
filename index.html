@@ -68,9 +68,9 @@
         <li data-open="selectorIterateChange">Apply change of style on a collection</li>
         <li data-open="selectorParentFont">Get parent element and change font weight</li>
         <li data-open="selectorChildrenFont">Get children and change its font weight</li>
-        <li data-open="selectorCertainFont">Get all the elements that have a certain class and change their font weight</li>
+        <li data-open="selectorCertainFont">Get certain class and change font weight</li>
         <li data-open="selectorGetIdFont">Get an item by id and change its font weight</li>
-        <li>Get all the elements that have a certain class and the display property of none and change their font color</li>
+        <li data-open="selectorGetClassDisplay">Get all the elements that have a certain class and the display property of none and change their font color</li>
         <li>Get the options of a select element that are selected (attribute selected)</li>
         <li>Change the href attribute of the first <a> element (You have to create several <a> elements)</li>
         <li>Show an alert with the value of the first <input> of the page (Create an <input> element to test this case)</li>
@@ -1040,12 +1040,13 @@
         <input name="tab-nav-certainFont" type="radio" id="jqueryCertainFont" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
-            <button id="btnChildrenFontJq" class="button">Change children</button>
-            <ul id="itemChildrenFontJq" class="list">
+            <button id="btnCertainFontJq" class="button">Change children</button>
+            <ul class="list">
               <li>Item 1</li>
-              <li>Item 2</li>
+              <li class="certain-class">Item 2</li>
               <li>Item 3</li>
-              <li>Item 4</li>
+              <li class="certain-class">Item 4</li>
+              <li class="certain-class">Item 5</li>
             </ul>
           </div>
         </div>
@@ -1053,12 +1054,13 @@
         <input name="tab-nav-certainFont" type="radio" id="VanillajsCertainFont" class="tab__radiobutton"/>
         <div class="tab__content">
           <div class="tab__inner">
-            <button id="btnChildrenFontV" class="button">Change children</button>
-            <ul id="itemChildrenFontV" class="list">
+            <button id="btnCertainFontV" class="button">Change children</button>
+            <ul class="list">
               <li>Item 1</li>
-              <li>Item 2</li>
+              <li class="certain-classv">Item 2</li>
               <li>Item 3</li>
-              <li>Item 4</li>
+              <li class="certain-classv">Item 4</li>
+              <li class="certain-classv">Item 5</li>
             </ul>
           </div>
         </div>
@@ -1076,10 +1078,10 @@
         <input name="tab-nav-getIdFont" type="radio" id="jqueryGetIdFont" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
-            <button id="btnChildrenFontJq" class="button">Change children</button>
-            <ul id="itemChildrenFontJq" class="list">
+            <button id="btnItemIdJq" class="button">Change font</button>
+            <ul class="list">
               <li>Item 1</li>
-              <li>Item 2</li>
+              <li id="itemIdJq">Item 2</li>
               <li>Item 3</li>
               <li>Item 4</li>
             </ul>
@@ -1089,16 +1091,54 @@
         <input name="tab-nav-getIdFont" type="radio" id="VanillajsGetIdFont" class="tab__radiobutton"/>
         <div class="tab__content">
           <div class="tab__inner">
-            <button id="btnChildrenFontV" class="button">Change children</button>
-            <ul id="itemChildrenFontV" class="list">
+            <button id="btnIdFontV" class="button">Change font</button>
+            <ul class="list">
               <li>Item 1</li>
-              <li>Item 2</li>
+              <li id="itemIdV">Item 2</li>
               <li>Item 3</li>
               <li>Item 4</li>
             </ul>
           </div>
         </div>
         <label class="tab__nav flex-center" for="VanillajsGetIdFont">Vanilla JS</label>
+      </section>
+    </div>
+  </article>
+
+  <!-- Selector get all the elements that have a certain class and the display property of none and change their font color modal -->
+  <article class="modal flex-center" id="selectorGetClassDisplay" data-animation="zoomInOut">
+    <div class="modal__content">
+      <button class="button--close" data-close>X</button>
+      <h1>Get item by class and change styles</h1>
+      <section class="grid grid-2 tab">
+        <input name="tab-nav-getClass" type="radio" id="jqueryGetClass" class="tab__radiobutton" checked="checked" />
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnGetClassJq" class="button">Change styles</button>
+            <ul class="list">
+              <li>Item 1</li>
+              <li class="get-class-jq --is-hidden">Item 2</li>
+              <li>Item 3</li>
+              <li class="get-class-jq --is-hidden">Item 4</li>
+              <li>Item 5</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="jqueryGetClass">JQuery</label>
+        <input name="tab-nav-getClass" type="radio" id="VanillajsGetClass" class="tab__radiobutton"/>
+        <div class="tab__content">
+          <div class="tab__inner">
+            <button id="btnGetClassV" class="button">Change styles</button>
+            <ul class="list">
+              <li>Item 1</li>
+              <li class="get-class-v --is-hidden">Item 2</li>
+              <li>Item 3</li>
+              <li class="get-class-v --is-hidden">Item 4</li>
+              <li>Item 5</li>
+            </ul>
+          </div>
+        </div>
+        <label class="tab__nav flex-center" for="VanillajsGetClass">Vanilla JS</label>
       </section>
     </div>
   </article>

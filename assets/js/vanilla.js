@@ -214,17 +214,43 @@ document.getElementById('btnAnimateV').addEventListener('click', () => {
 document.getElementById('btnChangeStyleV').addEventListener('click', () => {
   const list = document.querySelectorAll('#listChangeStyleV li')
   list.forEach(item => {
+    item.textContent += ' iterated'
     item.classList.toggle('text-highlight')
   })
 })
 
 document.getElementById('btnParentFontV').addEventListener('click', () => {
-  document.getElementById('btnParentFontV').parentNode.style.fontWeight = '700'
+  const item = document.getElementById('btnParentFontV').parentNode
+  item.style.fontWeight = '700'
+  item.style.color = '#d83f87'
 })
 
 document.getElementById('btnChildrenFontV').addEventListener('click', () => {
   const items = document.getElementById('itemChildrenFontV').children
   for (let i = 0; i < items.length; i++) {
     items[i].style.fontWeight = '700'
+    items[i].style.color = '#d83f87'
+  }
+})
+
+document.getElementById('btnCertainFontV').addEventListener('click', () => {
+  const items = document.querySelectorAll('.certain-classv')
+  items.forEach (item => {
+    item.style.fontWeight = '100'
+    item.style.color = '#d83f87'
+  })
+})
+
+document.getElementById('btnIdFontV').addEventListener('click', () => {
+  const item = document.getElementById('itemIdV')
+  item.style.fontWeight = '100'
+  item.style.color = '#d83f87'
+})
+
+document.getElementById('btnGetClassV').addEventListener('click', () => {
+  const items = document.getElementsByClassName('get-class-v')
+  for (let item of items) {
+    item.style.display = 'block'
+    item.style.color = '#d83f87'
   }
 })
