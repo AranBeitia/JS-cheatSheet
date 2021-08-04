@@ -270,3 +270,14 @@ document.querySelector('#btnAttrLinkV').addEventListener('click', () => {
   attrLinkMessage.textContent = 'Click on the first item'
   document.querySelector('#listAttrLinkV').appendChild(attrLinkMessage)
 })
+
+document.getElementById('formShowAlertV').addEventListener('submit', (e) => {
+  e.preventDefault()
+  let firstInput = document.querySelectorAll('#formShowAlertV input')[0].value
+  if(firstInput) alert('The value of the first input is: ' + firstInput)
+})
+
+document.getElementById('btnRemoveV').addEventListener('click', (e) => {
+  let items = document.querySelectorAll('#listV li')
+  for (let item of items) item.remove()
+})

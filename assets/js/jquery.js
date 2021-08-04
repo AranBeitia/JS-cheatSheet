@@ -228,3 +228,15 @@ $('#btnAttrLinkJq').on('click', () => {
   $('#listAttrLinkJq').after(message)
 })
 
+$('#formShowAlertJq').on('submit', (e) => {
+  e.preventDefault()
+  let firstInput = $('#formShowAlertJq').find('input').first().val()
+  if(firstInput) alert('The value of first input is: ' + firstInput)
+})
+
+$('#btnRemoveJq').on('click', () => {
+  let items = $('#listJq li')
+  items.each(function () {
+    $(this).remove()
+  })
+})
