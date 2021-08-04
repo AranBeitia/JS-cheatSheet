@@ -3,7 +3,7 @@
 }
 
 .cell li {
-  line-height: 1.5;
+  line-height: 1.6;
   font-size: 1.2rem;
   cursor: pointer;
 }
@@ -13,7 +13,7 @@
   background-color: var(--color-primary);
 }
 .cell-primary li:hover {
-  background-color: var(--color-tertiary);
+  background-color: var(--color-secondary);
 }
 
 .cell-secondary {
@@ -21,7 +21,7 @@
   background-color: var(--color-secondary);
 }
 .cell-secondary li:hover {
-  background-color: var(--color-primary);
+  background-color: var(--color-tertiary);
 }
 
 .cell-tertiary {
@@ -29,5 +29,5 @@
   background-color: var(--color-tertiary);
 }
 .cell-tertiary li:hover {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary);
 }
