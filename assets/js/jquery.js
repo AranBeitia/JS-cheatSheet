@@ -76,6 +76,26 @@ $('#showListJq li').on('click', () => {
   $('#showListJq').after(listMessage)
 })
 
+const loadImageMessage = $('<p></p>')
+let loadImage = true
+const imgUrl = $('<img>')
+$('#loadImgJq').on('click', () => {
+  imgUrl.on('load', () => loadImage)
+  loadImageMessage.html(`The load of the image is <span class="text-highlight">${loadImage}</span>`)
+  imgUrl.attr('src', 'assets/images/hello-kitty-dface.jpg')
+  if(loadImage) $('#loadImgJq').parent().append(imgUrl)
+  $('#loadImgJq').parent().append(loadImageMessage)
+})
+
+const loadImageFailMessage = $('<p></p>')
+let loadImageFail = false
+const imgUrlFail = $('<img>')
+$('#loadImgFailJq').on('click', () => {
+  imgUrlFail.on('error', () => loadImageFail = true)
+  loadImageFailMessage.html(`The load of the image is <span class="text-highlight">${loadImageFail}</span>`)
+  imgUrlFail.attr('src', 'erroeImage.jpg')
+  $('#loadImgFailJq').parent().append(loadImageFailMessage)
+})
 // Functions
 
 const createMessage = $('<p></p>')

@@ -34,8 +34,8 @@
         <li data-open="eventOptionSelect">User changes option select</li>
         <li data-open="eventChecked">Checkbox checked/unchecked</li>
         <li data-open="eventShow">Show item clicked</li>
-        <li data-open="eventLoad">Image is loaded .load()</li>
-        <li data-open="eventLoadFail">Image fails to load (if you write an incorrect image url the loading of the image will fail)</li>
+        <li data-open="eventLoad">Image is loaded</li>
+        <li data-open="eventLoadFail">Image fails to load</li>
       </ul>
     </section>
     <section class="cell cell-secondary">
@@ -409,7 +409,7 @@
         <input name="tab-nav-load" type="radio" id="jqueryLoad" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
-            <button class="button">Load</button>
+            <button id="loadImgJq" class="button">Load</button>
           </div>
         </div>
         <label class="tab__nav flex-center" for="jqueryLoad">JQuery</label>
@@ -433,14 +433,14 @@
         <input name="tab-nav-loadf" type="radio" id="jqueryLoadf" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
-            <button class="button">Load</button>
+            <button id="loadImgFailJq" class="button">Load</button>
           </div>
         </div>
         <label class="tab__nav flex-center" for="jqueryLoadf">JQuery</label>
         <input name="tab-nav-loadf" type="radio" id="VanillajsLoadf" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
-            <button id="loadImgV" class="button">Load</button>
+            <button id="loadImgFailV" class="button">Load</button>
           </div>
         </div>
         <label class="tab__nav flex-center" for="VanillajsLoadf">Vanilla JS</label>

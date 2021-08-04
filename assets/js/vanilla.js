@@ -79,22 +79,29 @@ itemsList.forEach(item => item.addEventListener('click', (e) => {
   document.getElementById('showListV').parentNode.appendChild(listMessage)
 }))
 
+const imageLoadedMessage = document.createElement('p')
+const imageUrl = document.createElement('img')
+let imageLoaded = true
+document.getElementById('loadImgV').addEventListener('click', () => {
+  imageUrl.addEventListener('load', () => imageLoaded )
+  imageUrl.src = 'assets/images/hello-kitty-dface.jpg'
+  imageLoadedMessage.innerHTML = `The load of the image is <span class="text-highlight">${imageLoaded}</span>`
 
-/* TODO: revision */
-// let img = document.createElement('img')
-// img.setAttribute('id', 'loadImgV')
-// let loadImg = false
-// document.getElementById('loadImgV').addEventListener('load', () => loadImg)
+  if(imageLoaded) document.getElementById('loadImgV').parentNode.append(imageUrl)
+  document.getElementById('loadImgV').parentNode.append(imageLoadedMessage)
+})
 
-// img.setAttribute('src', 'assets/images/hello-kitty-dface.jpg')
-// document.getElementById('loadImgV').parentNode.appendChild(img)
-// console.log(img);
-// const message = document.createElement('p')
-// document.getElementById('loadImgV').addEventListener('click', () => {
-//   message.innerHTML = `Is the image loaded? <span class="text-highlight">${loadImg}</span>`
-//   document.getElementById('loadImgV').parentNode.appendChild(message)
+const imageLoadedFailMessage = document.createElement('p')
+const imageFailUrl = document.createElement('img')
+let imageFailLoaded = false
+document.getElementById('loadImgFailV').addEventListener('click', () => {
+  imageFailUrl.addEventListener('error', () => imageFailLoaded = true)
+  imageFailUrl.src = 'errorImage.jpg'
+  imageLoadedFailMessage.innerHTML = `The load of the image is <span class="text-highlight">${imageFailLoaded}</span>`
 
-// })
+  // if(imageFailLoaded) document.getElementById('loadImgFailV').parentNode.append(imageFailUrl)
+  document.getElementById('loadImgFailV').parentNode.append(imageLoadedFailMessage)
+})
 
 // Functions
 const createMessage = document.createElement('p')
