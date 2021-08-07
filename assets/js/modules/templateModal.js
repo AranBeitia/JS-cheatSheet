@@ -1,9 +1,10 @@
-import { modalEvent } from '../main.js'
+import { modalEvent, jquery } from '../main.js'
 import { data } from './data.js'
 
 function buildModal(id) {
   modalEvent.setAttribute('id', id)
   renderModal(id)
+  jquery()
 }
 
 function renderModal(titleId) {
@@ -25,7 +26,7 @@ function renderModal(titleId) {
         <input name="tab-nav" type="radio" id="Vanillajs" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
-            <button id="${modal.buttonIdV}" class="button">Test me</button>
+            <button id="vanilla" class="button">Test me</button>
           </div>
         </div>
         <label class="tab__nav flex-center" for="Vanillajs">Vanilla JS</label>
