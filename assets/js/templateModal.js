@@ -8,9 +8,10 @@ function buildModal(id) {
 
 function renderModal(titleId) {
   let modalHTML = ''
-  
+
   for (let it in data) {
     const modal = data[titleId]
+    console.log(modal);
     modalHTML = `
     <div class="modal__content">
       <button class="button--close" data-close>X</button>
