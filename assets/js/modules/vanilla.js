@@ -1,5 +1,4 @@
-import { modal } from './modal.js'
-modal()
+function vanilla() {
 // Events
 const loadHTML = document.createElement('span')
 document.addEventListener('DOMContentLoaded' , () => loadHTML )
@@ -288,3 +287,7 @@ document.getElementById('btnRemoveV').addEventListener('click', (e) => {
   let items = document.querySelectorAll('#listV li')
   for (let item of items) item.remove()
 })
+
+}
+
+export { vanilla }
