@@ -30,7 +30,7 @@
   grid-column-start: 1;
   grid-row-start: 2;
   grid-column-end: span 3;
-  padding: 1rem;
+  padding: 3rem 1rem;
 }
 
 .tab__inner > * {

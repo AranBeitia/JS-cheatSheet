@@ -10,7 +10,8 @@ export const data = {
       const loadHTML = document.createElement('span')
       document.addEventListener('DOMContentLoaded' , () => loadHTML )
 
-      document.getElementById('eventLoadV').addEventListener('click', (e) => {
+      document.getElementById('eventLoadV')
+      .addEventListener('click', (e) => {
         loadHTML.textContent = 'HTML loaded'
         e.target.parentNode.appendChild(loadHTML)
       })
@@ -32,13 +33,19 @@ export const data = {
       buttonIdJq: "eventClickJq",
       buttonIdV: "eventClickV",
       vanillaCode: `
-        document.querySelector("#ex-02-vanilla-btn").addEventListener("click", function (ev) {
-          <div class="code-indentation">document.querySelector("#ex-02-vanilla-msg").classList.toggle("no-display");</div>
-        });`,
-
+      document.getElementById('eventClickV')
+      .addEventListener('click', (e) => {
+        let item = document.createElement('span')
+        item.textContent = 'Item clicked'
+        e.target.parentNode.appendChild(item)
+      })
+      `,
       jQueryCode: `
-        $("#ex-02-jquery-btn").on("click", function (ev) {
-        <div class="code-indentation">$("#ex-02-jquery-msg").toggleClass("no-display");</div>
-        });`,
+      const item = $('<span></span>')
+      $('#eventClickJq').on('click', () => {
+        item.text('Item clicked')
+        $('#eventClickJq').after(item)
+      })
+      `,
     }
 }
