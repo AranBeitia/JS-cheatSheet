@@ -1,3 +1,4 @@
+function jquery () {
 // Events
 const loadHTML = $('<span>HTML loaded</span>')
 $(() => loadHTML)
@@ -260,3 +261,6 @@ $('#btnRemoveJq').on('click', () => {
     $(this).remove()
   })
 })
+}
+
+export { jquery }

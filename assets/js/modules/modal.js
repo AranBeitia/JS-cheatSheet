@@ -26,6 +26,4 @@ function modal () {
   })
 }
 
-modal ()
-
 export { modal }
