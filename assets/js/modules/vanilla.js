@@ -1,3 +1,6 @@
+import { modal } from '../main.js'
+modal()
+
 function vanilla() {
 // Events
 const loadHTML = document.createElement('span')

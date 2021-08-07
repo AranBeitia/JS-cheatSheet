@@ -1,37 +1,39 @@
+import { modalEvent } from '../main.js'
 import { data } from './data.js'
 
-const modalTemplate = document.querySelector('[data-open="modalTemplate"]')
 function buildModal(id) {
-  modalTemplate.setAttribute('id', id)
+  modalEvent.setAttribute('id', id)
   renderModal(id)
 }
 
 function renderModal(titleId) {
-  let modalHTML = ''
+  let modalHtml = ''
+  const modal = data[titleId]
 
-  for (let it in data) {
-    const modal = data[titleId]
-    console.log(modal);
-    modalHTML = `
+  modalHtml = `
     <div class="modal__content">
       <button class="button--close" data-close>X</button>
       <h1>${modal.title}</h1>
       <section class="grid grid-2 tab">
-        <input name="tab-nav-el" type="radio" id="jqueryEl" class="tab__radiobutton" checked="checked" />
+        <input name="tab-nav" type="radio" id="jquery" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
-          <div class="tab__inner">${modal.jQueryContent}</div>
+          <div class="tab__inner">
+            <button id="${modal.buttonIdJq}" class="button">Test me</button>
+          </div>
         </div>
-        <label class="tab__nav flex-center" for="jqueryEl">JQuery</label>
-        <input name="tab-nav-el" type="radio" id="VanillajsEl" class="tab__radiobutton" />
+        <label class="tab__nav flex-center" for="jquery">JQuery</label>
+        <input name="tab-nav" type="radio" id="Vanillajs" class="tab__radiobutton" />
         <div class="tab__content">
-          <div class="tab__inner">${modal.vanillaContent}</div>
+          <div class="tab__inner">
+            <button id="${modal.buttonIdV}" class="button">Test me</button>
+          </div>
         </div>
-        <label class="tab__nav flex-center" for="VanillajsEl">Vanilla JS</label>
+        <label class="tab__nav flex-center" for="Vanillajs">Vanilla JS</label>
       </section>
     </div>
-    `
-  }
-  modalTemplate.innerHTML = modalHTML
+  `
+
+  modalEvent.innerHTML = modalHtml
 }
 
 export { buildModal }

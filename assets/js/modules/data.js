@@ -4,8 +4,8 @@ export const data = {
       id: 1,
       type: "event",
       title: "DOM Content loaded",
-      jQueryContent: `<button id="eventLoadJq" class="button">Test me</button>`,
-      vanillaContent: `<button id="eventLoadV" class="button">Test me</button>`,
+      buttonIdJq: "eventLoadJq",
+      buttonIdV: "eventLoadV",
       vanillaCode: `
         document.addEventListener("DOMContentLoaded", function (ev) {
         <div class="code-indentation">document.querySelector("#ex-01-vanilla").classList.remove("no-display");</div>
@@ -24,8 +24,8 @@ export const data = {
       id: 2,
       type: "event",
       title: "Click",
-      jQueryContent: `<button id="eventClickJq" class="button">Test me</button>`,
-      vanillaContent: `<button id="eventClickV" class="button">Test me</button>`,
+      buttonIdJq: "eventClickJq",
+      buttonIdV: "eventClickV",
       vanillaCode: `
         document.querySelector("#ex-02-vanilla-btn").addEventListener("click", function (ev) {
           <div class="code-indentation">document.querySelector("#ex-02-vanilla-msg").classList.toggle("no-display");</div>
