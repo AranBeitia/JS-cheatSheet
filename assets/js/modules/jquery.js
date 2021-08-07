@@ -1,5 +1,13 @@
-function jquery () {
-// Events
+// function eventDomLoad () {
+//   const loadHTML = $('<span>HTML loaded</span>')
+//   $(() => loadHTML)
+//   $('#eventLoadJq').on('click', () => {
+//     $('#eventLoadJq').after(loadHTML)
+//   })
+// }
+
+function jqueryFunctions () {
+//Events
 const loadHTML = $('<span>HTML loaded</span>')
 $(() => loadHTML)
 $('#eventLoadJq').on('click', () => {
@@ -263,4 +271,4 @@ $('#btnRemoveJq').on('click', () => {
 })
 }
 
-export { jquery }
+export { jqueryFunctions }

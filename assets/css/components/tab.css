@@ -40,6 +40,18 @@
   transition: opacity 0.2s, transform 0.2s;
 }
 
+.tab__inner {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@media all and (max-width: 480px) {
+  .tab__inner {
+    flex-direction: column;
+  }
+}
+
 .tab__radiobutton + .tab__content {
   transition: transform 0.2s;
   transform: translateX(100%);

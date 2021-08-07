@@ -1,4 +1,4 @@
-function vanilla() {
+function vanillaFunctions() {
 // Events
 const loadHTML = document.createElement('span')
 document.addEventListener('DOMContentLoaded' , () => loadHTML )
@@ -290,4 +290,4 @@ document.getElementById('btnRemoveV').addEventListener('click', (e) => {
 
 }
 
-export { vanilla }
+export { vanillaFunctions }

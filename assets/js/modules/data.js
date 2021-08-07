@@ -7,16 +7,21 @@ export const data = {
       buttonIdJq: "eventLoadJq",
       buttonIdV: "eventLoadV",
       vanillaCode: `
-        document.addEventListener("DOMContentLoaded", function (ev) {
-        <div class="code-indentation">document.querySelector("#ex-01-vanilla").classList.remove("no-display");</div>
-        });
+      const loadHTML = document.createElement('span')
+      document.addEventListener('DOMContentLoaded' , () => loadHTML )
+
+      document.getElementById('eventLoadV').addEventListener('click', (e) => {
+        loadHTML.textContent = 'HTML loaded'
+        e.target.parentNode.appendChild(loadHTML)
+      })
       `,
 
       jQueryCode: `
-        $(function (ev) {
-        <div class="code-indentation">$('#ex-01-jquery').removeClass("no-display");</div>
-        });
-
+      const loadHTML = $('<span>HTML loaded</span>')
+      $(() => loadHTML)
+      $('#eventLoadJq').on('click', () => {
+        $('#eventLoadJq').after(loadHTML)
+      })
       `,
     },
     eventClick:

@@ -8,6 +8,7 @@
 @import 'utils/utils.css';
 
 @import 'components/logo.css';
+@import 'components/code.css';
 @import 'components/link.css';
 @import 'components/cell.css';
 @import 'components/button.css';
