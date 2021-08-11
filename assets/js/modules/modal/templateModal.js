@@ -9,6 +9,7 @@ function buildModal(id) {
   modalEvent.setAttribute('id', id)
   renderModal(id)
   jquery.jqueryFunctions()
+  vanilla()
   console.log(vanilla);
   // jquerys.eventDomLoad()
 }
@@ -36,7 +37,7 @@ function renderModal(titleId) {
         <div class="tab__content">
           <div class="tab__inner">
             <div>
-              <button id="${modal.buttonIdJq}" class="button margin-x2">${modal.buttonText}</button>
+              <button id="${modal.buttonIdV}" class="button margin-x2">${modal.buttonText}</button>
             </div>
             <pre class='code'><code>${modal.vanillaCode}</code></pre>
           </div>
