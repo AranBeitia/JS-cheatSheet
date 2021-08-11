@@ -8,10 +8,8 @@ import { data } from '../data.js'
 function buildModal(id) {
   modalEvent.setAttribute('id', id)
   renderModal(id)
-  jquery.jqueryFunctions()
-  vanilla()
-  console.log(vanilla);
-  // jquerys.eventDomLoad()
+  jquery[id]()
+  vanilla[id]()
 }
 
 function renderModal(titleId) {
@@ -46,8 +44,10 @@ function renderModal(titleId) {
       </section>
     </div>
   `
-
   modalEvent.innerHTML = modalHtml
+
+  // jquery[titleId]()
+  // vanilla[titleId]()
 }
 
 export { buildModal }

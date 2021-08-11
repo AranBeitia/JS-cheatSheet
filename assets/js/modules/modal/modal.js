@@ -1,4 +1,5 @@
 import { buildModal } from '../../main.js'
+import { jquery, vanilla } from '../../main.js'
 
 function modal () {
   const buttonsOpen = document.querySelectorAll('[data-open]')
