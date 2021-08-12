@@ -2,9 +2,11 @@ export const data = {
   eventDomLoad:
   {
     title: "DOM Content loaded",
-    buttonIdJq: "eventLoadJq",
-    buttonIdV: "eventLoadV",
-    buttonText: "Test me",
+    button: {
+      buttonIdJq: "eventLoadJq",
+      buttonIdV: "eventLoadV",
+      buttonText: "Test me",
+    },
     vanillaCode: `
     const loadHTML = document.createElement('span')
     document.addEventListener('DOMContentLoaded' , () => loadHTML )
@@ -27,9 +29,11 @@ export const data = {
   eventClick:
   {
     title: "Click",
-    buttonIdJq: "eventClickJq",
-    buttonIdV: "eventClickV",
-    buttonText: "Click",
+    button: {
+      buttonIdJq: "eventClickJq",
+      buttonIdV: "eventClickV",
+      buttonText: "Click",
+    },
     vanillaCode: `
     document.getElementById('eventClickV')
     .addEventListener('click', (e) => {
@@ -49,9 +53,12 @@ export const data = {
   eventDblClick:
   {
     title: "Double Click",
-    buttonIdJq: "eventDblClickJq",
-    buttonIdV: "eventDblClickV",
-    buttonText: "Double click",
+    button: {
+      buttonIdJq: "eventDblClickJq",
+      buttonIdV: "eventDblClickV",
+      buttonText: "Double click",
+    },
+    otraCosa: '',
     vanillaCode: `
     document.getElementById('eventDblClickV')
     .addEventListener('dblclick', (e) => {
@@ -70,8 +77,8 @@ export const data = {
   eventMouseMove:
   {
     title: "Mouse move",
-    buttonIdJq: "eventDblClickJq",
-    buttonIdV: "eventDblClickV",
+    button: '',
+    otraCosa: 'algo',
     vanillaCode: `
     Canvan mouse and coordinates
     `,

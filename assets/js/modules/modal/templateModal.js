@@ -15,7 +15,7 @@ function buildModal(id) {
 function renderModal(titleId) {
   let modalHtml = ''
   const modal = data[titleId]
-
+  
   modalHtml = `
     <div class="modal__content">
       <button class="button--close" data-close>X</button>
@@ -24,8 +24,12 @@ function renderModal(titleId) {
         <input name="tab-nav" type="radio" id="jquery" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
-            <div>
-              <button id="${modal.buttonIdJq}" class="button margin-x2">${modal.buttonText}</button>
+            <div id="button">
+              <button id="${modal.button.buttonIdJq}" class="button margin-x2">${modal.button.buttonText}</button>
+            </div>
+            <div id="otraCosa">
+              <p>Move the mouse inside the box</p>
+              <div id="eventMouseMoveJc" class="canvas-box flex-center"></div>
             </div>
             <pre class='code'><code>${modal.jQueryCode}</code></pre>
           </div>
@@ -34,8 +38,12 @@ function renderModal(titleId) {
         <input name="tab-nav" type="radio" id="Vanillajs" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
-            <div>
-              <button id="${modal.buttonIdV}" class="button margin-x2">${modal.buttonText}</button>
+            <div id="button">
+              <button id="${modal.button.buttonIdV}" class="button margin-x2">${modal.button.buttonText}</button>
+            </div>
+            <div id="otraCosa">
+              <p>Move the mouse inside the box</p>
+              <div id="eventMouseMoveV" class="canvas-box flex-center"></div>
             </div>
             <pre class='code'><code>${modal.vanillaCode}</code></pre>
           </div>
@@ -45,9 +53,14 @@ function renderModal(titleId) {
     </div>
   `
   modalEvent.innerHTML = modalHtml
+  let buttonInner = document.getElementById('button')
+  let otracosaInner = document.getElementById('otraCosa')
 
-  // jquery[titleId]()
-  // vanilla[titleId]()
+  if(modal.button) {
+    otracosaInner.remove()
+  } else if(modal.otraCosa) {
+    buttonInner.remove()
+  }
 }
 
 export { buildModal }
