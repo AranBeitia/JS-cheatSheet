@@ -81,8 +81,9 @@ export const data = {
     title: "Mouse move",
     button: '',
     canvas: {
-      canvasMouseJq: "eventMouseMoveJq",
-      canvasMouseV: "eventMouseMoveV",
+      canvasJq: "eventMouseMoveJq",
+      canvasV: "eventMouseMoveV",
+      canvasTitle: "Move the mouse inside the box"
     },
     vanillaCode: `
     const coordinates = document.createElement('p')
@@ -100,7 +101,7 @@ export const data = {
       $('#eventMouseMoveJq').on('mousemove', (e) => {
         let coorX = e.clientX
         let coorY = e.clientY
-        coordenates.html('Coordinates: (coorX, oorY))
+        coordenates.html('Coordinates: (coorX, coorY))
         $('#eventMouseMoveJq').after(coordenates)
       })
     }
@@ -111,8 +112,9 @@ export const data = {
     title: "Mouse over",
     button: '',
     canvas: {
-      canvasMouseJq: "eventMouseOverJq",
-      canvasMouseV: "eventMouseOverV",
+      canvasJq: "eventMouseOverJq",
+      canvasV: "eventMouseOverV",
+      canvasTitle: "Move the mouse inside the box"
     },
     vanillaCode: `
     Canvan mouse and coordinates
@@ -124,14 +126,31 @@ export const data = {
   eventKeyboard:
   {
     title: "Keyboard",
-    buttonIdJq: "eventDblClickJq",
-    buttonIdV: "eventDblClickV",
-    buttonText: "keyboard",
+    button: "",
+    canvas: {
+      canvasJq: "eventKeyboardJq",
+      canvasV: "eventKeyboardV",
+      canvasTitle: "Press any key on your keyboard"
+    },
     vanillaCode: `
-    Canvan mouse and coordinates
+    const key = document.createElement('p')
+    function eventKeyboard () {
+      document.addEventListener('DOMContentLoaded', () => key )
+      document.addEventListener('keypress', (e) => {
+        key.innerHTML = 'You have pressed the key <span class="text-highlight">{e.key}</span>'
+        document.getElementById('eventKeyboardV').appendChild(key)
+      })
+    }
     `,
     jQueryCode: `
-    Canvan mouse and coordinates
+    const key = $('<p></p>')
+    function eventKeyboard () {
+      $(() => key)
+      $(document).keydown((e) => {
+        key.html('You have pressed the key <span class="text-highlight">{e.key}</span>')
+        $('#eventKeyboardJq').html(key)
+      })
+    }
     `,
   },
   eventSubmit:

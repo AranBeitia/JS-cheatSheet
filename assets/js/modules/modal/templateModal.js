@@ -30,7 +30,7 @@ function renderModal(titleId) {
             </div>
             <div data-inner="canvas">
               <p>Move the mouse inside the box</p>
-              <div id="${modal.canvas.canvasMouseJq}" class="canvas-box flex-center"></div>
+              <div id="${modal.canvas.canvasJq}" class="canvas-box flex-center"></div>
             </div>
             <pre class='code'><code>${modal.jQueryCode}</code></pre>
           </div>
@@ -43,8 +43,8 @@ function renderModal(titleId) {
               <button id="${modal.button.buttonIdV}" class="button margin-x2">${modal.button.buttonText}</button>
             </div>
             <div data-inner="canvas">
-              <p>Move the mouse inside the box</p>
-              <div id="${modal.canvas.canvasMouseV}" class="canvas-box flex-center"></div>
+              <p>${modal.canvas.canvasTitle}</p>
+              <div id="${modal.canvas.canvasV}" class="canvas-box flex-center"></div>
             </div>
             <pre class='code'><code>${modal.vanillaCode}</code></pre>
           </div>

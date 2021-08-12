@@ -43,15 +43,17 @@ function eventMouseOver () {
   })
 }
 
+const key = $('<p></p>')
+function eventKeyboard () {
+  $(() => key)
+  $(document).keydown((e) => {
+    key.html(`You have pressed the key <span class="text-highlight">${e.key}</span>`)
+    $('#eventKeyboardJq').html(key)
+  })
+}
+
 // function jqueryFunctions () {
 // //Events
-
-// const key = $('<p></p>')
-// $(() => key)
-// $(document).keydown((e) => {
-//   key.html(`You have pressed the key <span class="text-highlight">${e.key}</span>`)
-//   $('#eventKeyboardJc').after(key)
-// })
 
 // const submitMessage = $('<p></p>')
 // $('#eventSubmitJq').on('submit', (e) => {
@@ -276,5 +278,5 @@ function eventMouseOver () {
 // })
 // }
 
-export { eventDomLoad, eventClick, eventDblClick, eventMouseMove, eventMouseOver }
+export { eventDomLoad, eventClick, eventDblClick, eventMouseMove, eventMouseOver, eventKeyboard }
 

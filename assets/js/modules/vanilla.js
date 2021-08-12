@@ -46,6 +46,15 @@ function eventMouseOver () {
   })
 }
 
+const key = document.createElement('p')
+function eventKeyboard () {
+  document.addEventListener('DOMContentLoaded', () => key )
+  document.addEventListener('keypress', (e) => {
+    key.innerHTML = `You have pressed the key <span class="text-highlight">${e.key}</span>`
+    document.getElementById('eventKeyboardV').appendChild(key)
+  })
+}
+
 // function vanillaFunctions() {
 // // Events
 
@@ -303,4 +312,4 @@ function eventMouseOver () {
 
 // }
 
-export { eventDomLoad, eventClick, eventDblClick, eventMouseMove, eventMouseOver }
+export { eventDomLoad, eventClick, eventDblClick, eventMouseMove, eventMouseOver, eventKeyboard }
