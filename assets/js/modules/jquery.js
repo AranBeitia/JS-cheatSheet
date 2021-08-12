@@ -25,32 +25,26 @@ function eventDblClick () {
 
 const coordenates = $('<p></p>')
 function eventMouseMove () {
-  $('#eventMouseMoveJc').on('mousemove', (e) => {
+  $('#eventMouseMoveJq').on('mousemove', (e) => {
     let coorX = e.clientX
     let coorY = e.clientY
     coordenates.html(`Coordinates: <span class="text-highlight">(${coorX}, ${coorY})</span>`)
-    $('#eventMouseMoveJc').after(coordenates)
+    $('#eventMouseMoveJq').after(coordenates)
+  })
+}
+
+const coordOver = $('<p></p>')
+function eventMouseOver () {
+  $('#eventMouseOverJq').on('mouseover', (e) => {
+    let coorX = e.clientX
+    let coorY = e.clientY
+    coordOver.html(`Coordinates: <span class="text-highlight">(${coorX}, ${coorY})</span>`)
+    $('#eventMouseOverJq').after(coordOver)
   })
 }
 
 // function jqueryFunctions () {
 // //Events
-
-// const coordenates = $('<p></p>')
-// $('#eventMouseMoveJc').on('mousemove', (e) => {
-//   let coorX = e.clientX
-//   let coorY = e.clientY
-//   coordenates.html(`Coordinates: <span class="text-highlight">(${coorX}, ${coorY})</span>`)
-//   $('#eventMouseMoveJc').after(coordenates)
-// })
-
-// const coordOver = $('<p></p>')
-// $('#eventMouseOverJc').on('mouseover', (e) => {
-//   let coorX = e.clientX
-//   let coorY = e.clientY
-//   coordOver.html(`Coordinates: <span class="text-highlight">(${coorX}, ${coorY})</span>`)
-//   $('#eventMouseOverJc').after(coordOver)
-// })
 
 // const key = $('<p></p>')
 // $(() => key)
@@ -282,5 +276,5 @@ function eventMouseMove () {
 // })
 // }
 
-export { eventDomLoad, eventClick, eventDblClick, eventMouseMove }
+export { eventDomLoad, eventClick, eventDblClick, eventMouseMove, eventMouseOver }
 

@@ -7,6 +7,7 @@ export const data = {
       buttonIdV: "eventLoadV",
       buttonText: "Test me",
     },
+    canvas: '',
     vanillaCode: `
     const loadHTML = document.createElement('span')
     document.addEventListener('DOMContentLoaded' , () => loadHTML )
@@ -34,6 +35,7 @@ export const data = {
       buttonIdV: "eventClickV",
       buttonText: "Click",
     },
+    canvas: '',
     vanillaCode: `
     document.getElementById('eventClickV')
     .addEventListener('click', (e) => {
@@ -58,7 +60,7 @@ export const data = {
       buttonIdV: "eventDblClickV",
       buttonText: "Double click",
     },
-    otraCosa: '',
+    canvas: '',
     vanillaCode: `
     document.getElementById('eventDblClickV')
     .addEventListener('dblclick', (e) => {
@@ -78,19 +80,40 @@ export const data = {
   {
     title: "Mouse move",
     button: '',
-    otraCosa: 'algo',
+    canvas: {
+      canvasMouseJq: "eventMouseMoveJq",
+      canvasMouseV: "eventMouseMoveV",
+    },
     vanillaCode: `
-    Canvan mouse and coordinates
+    const coordinates = document.createElement('p')
+    function eventMouseMove () {
+      document.getElementById('eventMouseMoveV').addEventListener('mousemove', (e) => {
+      let coorX = e.clientX
+      let coorY = e.clientY
+      coordinates.innerHTML = 'Coordinates: (coorX, coorY)'
+      e.target.parentNode.appendChild(coordinates)
+    })
     `,
     jQueryCode: `
-    Canvan mouse and coordinates
+    const coordenates = $('<p></p>')
+    function eventMouseMove () {
+      $('#eventMouseMoveJq').on('mousemove', (e) => {
+        let coorX = e.clientX
+        let coorY = e.clientY
+        coordenates.html('Coordinates: (coorX, oorY))
+        $('#eventMouseMoveJq').after(coordenates)
+      })
+    }
     `,
   },
   eventMouseOver:
   {
     title: "Mouse over",
-    buttonIdJq: "eventDblClickJq",
-    buttonIdV: "eventDblClickV",
+    button: '',
+    canvas: {
+      canvasMouseJq: "eventMouseOverJq",
+      canvasMouseV: "eventMouseOverV",
+    },
     vanillaCode: `
     Canvan mouse and coordinates
     `,

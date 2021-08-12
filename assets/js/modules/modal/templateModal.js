@@ -1,5 +1,6 @@
 import { modalEvent, jquery, vanilla } from '../../main.js'
 import { data } from '../data.js'
+import { getInner } from './templatesInner.js'
 
 /* TODO:
     1. import jquery functions with id as param
@@ -15,7 +16,7 @@ function buildModal(id) {
 function renderModal(titleId) {
   let modalHtml = ''
   const modal = data[titleId]
-  
+
   modalHtml = `
     <div class="modal__content">
       <button class="button--close" data-close>X</button>
@@ -24,12 +25,12 @@ function renderModal(titleId) {
         <input name="tab-nav" type="radio" id="jquery" class="tab__radiobutton" checked="checked" />
         <div class="tab__content">
           <div class="tab__inner">
-            <div id="button">
+            <div data-inner="button">
               <button id="${modal.button.buttonIdJq}" class="button margin-x2">${modal.button.buttonText}</button>
             </div>
-            <div id="otraCosa">
+            <div data-inner="canvas">
               <p>Move the mouse inside the box</p>
-              <div id="eventMouseMoveJc" class="canvas-box flex-center"></div>
+              <div id="${modal.canvas.canvasMouseJq}" class="canvas-box flex-center"></div>
             </div>
             <pre class='code'><code>${modal.jQueryCode}</code></pre>
           </div>
@@ -38,12 +39,12 @@ function renderModal(titleId) {
         <input name="tab-nav" type="radio" id="Vanillajs" class="tab__radiobutton" />
         <div class="tab__content">
           <div class="tab__inner">
-            <div id="button">
+            <div data-inner="button">
               <button id="${modal.button.buttonIdV}" class="button margin-x2">${modal.button.buttonText}</button>
             </div>
-            <div id="otraCosa">
+            <div data-inner="canvas">
               <p>Move the mouse inside the box</p>
-              <div id="eventMouseMoveV" class="canvas-box flex-center"></div>
+              <div id="${modal.canvas.canvasMouseV}" class="canvas-box flex-center"></div>
             </div>
             <pre class='code'><code>${modal.vanillaCode}</code></pre>
           </div>
@@ -53,14 +54,7 @@ function renderModal(titleId) {
     </div>
   `
   modalEvent.innerHTML = modalHtml
-  let buttonInner = document.getElementById('button')
-  let otracosaInner = document.getElementById('otraCosa')
-
-  if(modal.button) {
-    otracosaInner.remove()
-  } else if(modal.otraCosa) {
-    buttonInner.remove()
-  }
+  getInner (modal.button, modal.canvas)
 }
 
 export { buildModal }

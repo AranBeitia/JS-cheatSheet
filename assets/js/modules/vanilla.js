@@ -36,16 +36,18 @@ function eventMouseMove () {
   })
 }
 
+const coordOver = document.createElement('p')
+function eventMouseOver () {
+  document.getElementById('eventMouseOverV').addEventListener('mouseover', (e) => {
+    let coorX = e.clientX
+    let coorY = e.clientY
+    coordOver.innerHTML = `Coordinates: <span class="text-highlight">(${coorX}, ${coorY})</span>`
+    e.target.parentNode.appendChild(coordOver)
+  })
+}
+
 // function vanillaFunctions() {
 // // Events
-
-// const coordOver = document.createElement('p')
-// document.getElementById('eventMouseOverV').addEventListener('mouseover', (e) => {
-//   let coorX = e.clientX
-//   let coorY = e.clientY
-//   coordOver.innerHTML = `Coordinates: <span class="text-highlight">(${coorX}, ${coorY})</span>`
-//   e.target.parentNode.appendChild(coordOver)
-// })
 
 // const key = document.createElement('p')
 // document.addEventListener('DOMContentLoaded', () => key )
@@ -301,4 +303,4 @@ function eventMouseMove () {
 
 // }
 
-export { eventDomLoad, eventClick, eventDblClick, eventMouseMove }
+export { eventDomLoad, eventClick, eventDblClick, eventMouseMove, eventMouseOver }
