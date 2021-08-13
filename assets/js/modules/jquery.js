@@ -52,16 +52,18 @@ function eventKeyboard () {
   })
 }
 
+const submitMessage = $('<p></p>')
+function eventSubmit () {
+  $('#eventSubmitJq').on('submit', (e) => {
+    e.preventDefault()
+    let name = $('#yourNameJq').val()
+    submitMessage.html(`Hi <span class="text-highlight">${name}</span>, your form is sent correctly`)
+    $('#eventSubmitJq').after(submitMessage)
+  })
+}
+
 // function jqueryFunctions () {
 // //Events
-
-// const submitMessage = $('<p></p>')
-// $('#eventSubmitJq').on('submit', (e) => {
-//   e.preventDefault()
-//   let name = $('#yourNameJq').val()
-//   submitMessage.html(`Hi <span class="text-highlight">${name}</span>, your form is sent correctly`)
-//   $('#eventSubmitJq').after(submitMessage)
-// })
 
 // const result = $('<p></p>')
 // $('#eventChangeJq').change(() => {
@@ -278,5 +280,13 @@ function eventKeyboard () {
 // })
 // }
 
-export { eventDomLoad, eventClick, eventDblClick, eventMouseMove, eventMouseOver, eventKeyboard }
+export {
+  eventDomLoad,
+  eventClick,
+  eventDblClick,
+  eventMouseMove,
+  eventMouseOver,
+  eventKeyboard,
+  eventSubmit
+}
 

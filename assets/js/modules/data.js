@@ -8,6 +8,7 @@ export const data = {
       buttonText: "Test me",
     },
     canvas: '',
+    form: '',
     vanillaCode: `
     const loadHTML = document.createElement('span')
     document.addEventListener('DOMContentLoaded' , () => loadHTML )
@@ -36,6 +37,7 @@ export const data = {
       buttonText: "Click",
     },
     canvas: '',
+    form: '',
     vanillaCode: `
     document.getElementById('eventClickV')
     .addEventListener('click', (e) => {
@@ -61,6 +63,7 @@ export const data = {
       buttonText: "Double click",
     },
     canvas: '',
+    form: '',
     vanillaCode: `
     document.getElementById('eventDblClickV')
     .addEventListener('dblclick', (e) => {
@@ -85,6 +88,7 @@ export const data = {
       canvasV: "eventMouseMoveV",
       canvasTitle: "Move the mouse inside the box"
     },
+    form: '',
     vanillaCode: `
     const coordinates = document.createElement('p')
     function eventMouseMove () {
@@ -116,6 +120,7 @@ export const data = {
       canvasV: "eventMouseOverV",
       canvasTitle: "Move the mouse inside the box"
     },
+    form: '',
     vanillaCode: `
     Canvan mouse and coordinates
     `,
@@ -132,6 +137,7 @@ export const data = {
       canvasV: "eventKeyboardV",
       canvasTitle: "Press any key on your keyboard"
     },
+    form: '',
     vanillaCode: `
     const key = document.createElement('p')
     function eventKeyboard () {
@@ -156,9 +162,12 @@ export const data = {
   eventSubmit:
   {
     title: "Submit",
-    buttonIdJq: "eventDblClickJq",
-    buttonIdV: "eventDblClickV",
-    buttonText: "Submit",
+    button: "",
+    canvas: "",
+    form: {
+      formIdJq: "eventSubmitJq",
+      formIdV: "eventSubmitV"
+    } ,
     vanillaCode: `
     Form label input button
     `,

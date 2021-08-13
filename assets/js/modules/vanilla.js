@@ -55,23 +55,18 @@ function eventKeyboard () {
   })
 }
 
+const submitMessage = document.createElement('p')
+function eventSubmit () {
+  document.getElementById('eventSubmitV').addEventListener('submit', (e) => {
+    e.preventDefault()
+    let name = document.getElementById('yourName').value
+    submitMessage.innerHTML = `Hi <span class="text-highlight">${name}</span>, your form is sent correctly`
+    e.target.parentNode.append(submitMessage)
+  })
+}
+
 // function vanillaFunctions() {
 // // Events
-
-// const key = document.createElement('p')
-// document.addEventListener('DOMContentLoaded', () => key )
-// document.addEventListener('keypress', (e) => {
-//   key.innerHTML = `You have pressed the key <span class="text-highlight">${e.key}</span>`
-//   document.getElementById('eventKeyboardV').appendChild(key)
-// })
-
-// const submitMessage = document.createElement('p')
-// document.getElementById('eventSubmitV').addEventListener('submit', (e) => {
-//   e.preventDefault()
-//   let name = document.getElementById('yourName').value
-//   submitMessage.innerHTML = `Hi <span class="text-highlight">${name}</span>, your form is sent correctly`
-//   e.target.parentNode.append(submitMessage)
-// })
 
 // const result = document.createElement('p')
 // document.getElementById('eventChangeV').addEventListener('change', (e) => {
@@ -312,4 +307,12 @@ function eventKeyboard () {
 
 // }
 
-export { eventDomLoad, eventClick, eventDblClick, eventMouseMove, eventMouseOver, eventKeyboard }
+export {
+  eventDomLoad,
+  eventClick,
+  eventDblClick,
+  eventMouseMove,
+  eventMouseOver,
+  eventKeyboard,
+  eventSubmit
+}

@@ -32,6 +32,15 @@ function renderModal(titleId) {
               <p>Move the mouse inside the box</p>
               <div id="${modal.canvas.canvasJq}" class="canvas-box flex-center"></div>
             </div>
+            <div data-inner="form">
+              <form action="" id="${modal.form.formIdJq}">
+                <div class="form-group">
+                  <label for="yourNameJq">Your name:</label>
+                  <input type="text" id="yourNameJq" class="input" required >
+                </div>
+                <button type="submit" class="button">Send</button>
+              </form>
+            </div>
             <pre class='code'><code>${modal.jQueryCode}</code></pre>
           </div>
         </div>
@@ -46,6 +55,15 @@ function renderModal(titleId) {
               <p>${modal.canvas.canvasTitle}</p>
               <div id="${modal.canvas.canvasV}" class="canvas-box flex-center"></div>
             </div>
+            <div data-inner="form">
+              <form action="" id="${modal.form.formIdV}">
+                <div class="form-group">
+                  <label for="yourNameJq">Your name:</label>
+                  <input type="text" id="yourNameJq" class="input" required >
+                </div>
+                <button type="submit" class="button">Send</button>
+              </form>
+            </div>
             <pre class='code'><code>${modal.vanillaCode}</code></pre>
           </div>
         </div>
@@ -54,7 +72,7 @@ function renderModal(titleId) {
     </div>
   `
   modalEvent.innerHTML = modalHtml
-  getInner (modal.button, modal.canvas)
+  getInner (modal.button, modal.canvas, modal.form)
 }
 
 export { buildModal }
