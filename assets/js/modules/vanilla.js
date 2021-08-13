@@ -65,15 +65,17 @@ function eventSubmit () {
   })
 }
 
+const result = document.createElement('p')
+function eventChange () {
+  document.getElementById('eventChangeV').addEventListener('change', (e) => {
+    e.preventDefault()
+    result.innerHTML = `You have written <span class="text-highlight">${e.target.value}</span>`
+    document.getElementById('eventChangeV').parentNode.appendChild(result)
+  })
+}
+
 // function vanillaFunctions() {
 // // Events
-
-// const result = document.createElement('p')
-// document.getElementById('eventChangeV').addEventListener('change', (e) => {
-//   e.preventDefault()
-//   result.innerHTML = `You have written <span class="text-highlight">${e.target.value}</span>`
-//   document.getElementById('eventChangeV').parentNode.appendChild(result)
-// })
 
 // const selectionMessage = document.createElement('p')
 // document.querySelector('#eventOpSelectV select').addEventListener('change', (e) => {
@@ -314,5 +316,6 @@ export {
   eventMouseMove,
   eventMouseOver,
   eventKeyboard,
-  eventSubmit
+  eventSubmit,
+  eventChange
 }

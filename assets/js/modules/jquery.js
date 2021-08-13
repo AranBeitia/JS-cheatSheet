@@ -62,14 +62,16 @@ function eventSubmit () {
   })
 }
 
+const result = $('<p></p>')
+function eventChange () {
+  $('#eventChangeJq').change(() => {
+    result.html(`You have written <span class="text-highlight">${$(event.target).val()}</span>`)
+    $('#eventChangeJq').after(result)
+  })
+}
+
 // function jqueryFunctions () {
 // //Events
-
-// const result = $('<p></p>')
-// $('#eventChangeJq').change(() => {
-//   result.html(`You have written <span class="text-highlight">${$(event.target).val()}</span>`)
-//   $('#eventChangeJq').after(result)
-// })
 
 // const selectMessage = $('<p></p>')
 // $('#eventOpSelectJq select').change(() => {
@@ -287,6 +289,7 @@ export {
   eventMouseMove,
   eventMouseOver,
   eventKeyboard,
-  eventSubmit
+  eventSubmit,
+  eventChange
 }
 

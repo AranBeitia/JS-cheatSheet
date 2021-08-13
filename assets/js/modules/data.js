@@ -211,15 +211,33 @@ export const data = {
   },
   eventChange:
   {
-    title: "Submit",
-    buttonIdJq: "eventDblClickJq",
-    buttonIdV: "eventDblClickV",
-    buttonText: "Change",
+    title: "Change",
+    button: "",
+    canvas: "",
+    form: {
+      formIdJq: "eventChangeJq",
+      formIdV: "eventChangeV",
+      formNameIdJq: "formSubmitNameJq",
+      formNameIdV: "formSubmitNameV"
+    } ,
     vanillaCode: `
-    Form label input
+    const result = document.createElement('p')
+    function eventChange () {
+      document.getElementById('eventChangeV').addEventListener('change', (e) => {
+        e.preventDefault()
+        result.innerHTML = 'You have written {e.target.value}'
+        document.getElementById('eventChangeV').parentNode.appendChild(result)
+      })
+    }
     `,
     jQueryCode: `
-    Form label input
+    const result = $('<p></p>')
+    function eventChange () {
+      $('#eventChangeJq').change(() => {
+        result.html('You have written (event.target).val()')
+        $('#eventChangeJq').after(result)
+      })
+    }
     `,
   },
   eventOptionSelect:
