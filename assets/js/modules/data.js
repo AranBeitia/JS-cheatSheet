@@ -7,8 +7,8 @@ export const data = {
       buttonIdV: "eventLoadV",
       buttonText: "Test me",
     },
-    canvas: '',
-    form: '',
+    canvas: "",
+    form: "",
     vanillaCode: `
     const loadHTML = document.createElement('span')
     document.addEventListener('DOMContentLoaded' , () => loadHTML )
@@ -36,8 +36,8 @@ export const data = {
       buttonIdV: "eventClickV",
       buttonText: "Click",
     },
-    canvas: '',
-    form: '',
+    canvas: "",
+    form: "",
     vanillaCode: `
     document.getElementById('eventClickV')
     .addEventListener('click', (e) => {
@@ -62,8 +62,8 @@ export const data = {
       buttonIdV: "eventDblClickV",
       buttonText: "Double click",
     },
-    canvas: '',
-    form: '',
+    canvas: "",
+    form: "",
     vanillaCode: `
     document.getElementById('eventDblClickV')
     .addEventListener('dblclick', (e) => {
@@ -82,7 +82,7 @@ export const data = {
   eventMouseMove:
   {
     title: "Mouse move",
-    button: '',
+    button: "",
     canvas: {
       canvasJq: "eventMouseMoveJq",
       canvasV: "eventMouseMoveV",
@@ -114,18 +114,34 @@ export const data = {
   eventMouseOver:
   {
     title: "Mouse over",
-    button: '',
+    button: "",
     canvas: {
       canvasJq: "eventMouseOverJq",
       canvasV: "eventMouseOverV",
       canvasTitle: "Move the mouse inside the box"
     },
-    form: '',
+    form: "",
     vanillaCode: `
-    Canvan mouse and coordinates
+    const coordOver = document.createElement('p')
+    function eventMouseOver () {
+      document.getElementById('eventMouseOverV').addEventListener('mouseover', (e) => {
+        let coorX = e.clientX
+        let coorY = e.clientY
+        coordOver.innerHTML = 'Coordinates: <span class="text-highlight">(coorX, coorY)'
+        e.target.parentNode.appendChild(coordOver)
+      })
+    }
     `,
     jQueryCode: `
-    Canvan mouse and coordinates
+    const coordOver = $('<p></p>')
+    function eventMouseOver () {
+      $('#eventMouseOverJq').on('mouseover', (e) => {
+        let coorX = e.clientX
+        let coorY = e.clientY
+        coordOver.html('Coordinates: (coorX, coorY)')
+        $('#eventMouseOverJq').after(coordOver)
+      })
+    }
     `,
   },
   eventKeyboard:
@@ -137,7 +153,7 @@ export const data = {
       canvasV: "eventKeyboardV",
       canvasTitle: "Press any key on your keyboard"
     },
-    form: '',
+    form: "",
     vanillaCode: `
     const key = document.createElement('p')
     function eventKeyboard () {
@@ -166,13 +182,31 @@ export const data = {
     canvas: "",
     form: {
       formIdJq: "eventSubmitJq",
-      formIdV: "eventSubmitV"
+      formIdV: "eventSubmitV",
+      formNameIdJq: "formSubmitNameJq",
+      formNameIdV: "formSubmitNameV"
     } ,
     vanillaCode: `
-    Form label input button
+    const submitMessage = document.createElement('p')
+    function eventSubmit () {
+      document.getElementById('eventSubmitV').addEventListener('submit', (e) => {
+        e.preventDefault()
+        let name = document.getElementById('formSubmitNameV').value
+        submitMessage.innerHTML = 'Hi name, your form is sent correctly'
+        e.target.parentNode.append(submitMessage)
+      })
+    }
     `,
     jQueryCode: `
-    Form label input button
+    const submitMessage = $('<p></p>')
+    function eventSubmit () {
+      $('#eventSubmitJq').on('submit', (e) => {
+        e.preventDefault()
+        let name = $('#formSubmitNameJq').val()
+        submitMessage.html('Hi name, your form is sent correctly')
+        $('#eventSubmitJq').after(submitMessage)
+      })
+    }
     `,
   },
   eventChange:

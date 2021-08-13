@@ -35,8 +35,8 @@ function renderModal(titleId) {
             <div data-inner="form">
               <form action="" id="${modal.form.formIdJq}">
                 <div class="form-group">
-                  <label for="yourNameJq">Your name:</label>
-                  <input type="text" id="yourNameJq" class="input" required >
+                  <label for="${modal.form.formNameIdJq}">Your name:</label>
+                  <input type="text" id="${modal.form.formNameIdJq}" class="input" required >
                 </div>
                 <button type="submit" class="button">Send</button>
               </form>
@@ -58,8 +58,8 @@ function renderModal(titleId) {
             <div data-inner="form">
               <form action="" id="${modal.form.formIdV}">
                 <div class="form-group">
-                  <label for="yourNameJq">Your name:</label>
-                  <input type="text" id="yourNameJq" class="input" required >
+                  <label for="${modal.form.formNameIdV}">Your name:</label>
+                  <input type="text" id="${modal.form.formNameIdV}" class="input" required >
                 </div>
                 <button type="submit" class="button">Send</button>
               </form>

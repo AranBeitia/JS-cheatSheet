@@ -56,7 +56,7 @@ const submitMessage = $('<p></p>')
 function eventSubmit () {
   $('#eventSubmitJq').on('submit', (e) => {
     e.preventDefault()
-    let name = $('#yourNameJq').val()
+    let name = $('#formSubmitNameJq').val()
     submitMessage.html(`Hi <span class="text-highlight">${name}</span>, your form is sent correctly`)
     $('#eventSubmitJq').after(submitMessage)
   })

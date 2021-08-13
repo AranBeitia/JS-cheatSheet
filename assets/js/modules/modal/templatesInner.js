@@ -13,7 +13,7 @@ function getInner (button, canvas, form) {
       formInner[i].remove()
     }
   } else if (form) {
-    for (let i = 0; i < form.length; i++) {
+    for (let i = 0; i < formInner.length; i++) {
       buttonInner[i].remove()
       canvasInner[i].remove()
     }

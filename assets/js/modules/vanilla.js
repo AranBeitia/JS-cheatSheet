@@ -59,7 +59,7 @@ const submitMessage = document.createElement('p')
 function eventSubmit () {
   document.getElementById('eventSubmitV').addEventListener('submit', (e) => {
     e.preventDefault()
-    let name = document.getElementById('yourName').value
+    let name = document.getElementById('formSubmitNameV').value
     submitMessage.innerHTML = `Hi <span class="text-highlight">${name}</span>, your form is sent correctly`
     e.target.parentNode.append(submitMessage)
   })
