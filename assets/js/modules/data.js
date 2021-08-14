@@ -243,9 +243,13 @@ export const data = {
   eventOptionSelect:
   {
     title: "Option select",
-    buttonIdJq: "eventDblClickJq",
-    buttonIdV: "eventDblClickV",
-    buttonText: "Select",
+    button: {
+      buttonIdJq: "eventOpSelectJq",
+      buttonIdV: "eventOpSelectV",
+      buttonText: "Select",
+    },
+    canvas: "",
+    form: "",
     vanillaCode: `
     Form label select
     `,

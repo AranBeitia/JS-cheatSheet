@@ -74,240 +74,305 @@ function eventChange () {
   })
 }
 
-// function vanillaFunctions() {
-// // Events
+const selectionMessage = document.createElement('p')
+function eventOptionSelect () {
+  document.querySelector('#eventOpSelectV select').addEventListener('change', (e) => {
+    selectionMessage.innerHTML = `Your selection is <span class="text-highlight">${e.target.value}</span> `
+    document.getElementById('eventOpSelectV').parentNode.appendChild(selectionMessage)
+  })
+}
 
-// const selectionMessage = document.createElement('p')
-// document.querySelector('#eventOpSelectV select').addEventListener('change', (e) => {
-//   selectionMessage.innerHTML = `Your selection is <span class="text-highlight">${e.target.value}</span> `
-//   document.getElementById('eventOpSelectV').parentNode.appendChild(selectionMessage)
-// })
+const checkMessage = document.createElement('p')
+function eventChecked () {
+  document.getElementById('checkV').addEventListener('click', (e) => {
+    let checkbox = e.target.checked
+    checkbox ? checkMessage.textContent = 'Checked!!': checkMessage.textContent = 'Unchecked'
+    document.getElementById('eventCheckV').parentNode.appendChild(checkMessage)
+  })
+}
 
-// const checkMessage = document.createElement('p')
-// document.getElementById('checkV').addEventListener('click', (e) => {
-//   let checkbox = e.target.checked
-//   checkbox ? checkMessage.textContent = 'Checked!!': checkMessage.textContent = 'Unchecked'
-//   document.getElementById('eventCheckV').parentNode.appendChild(checkMessage)
-// })
+const listMessage = document.createElement('p')
+function eventShow () {
+  let itemsList = document.querySelectorAll('#showListV li')
+  itemsList.forEach(item => item.addEventListener('click', (e) => {
+    listMessage.innerHTML= `You clicked <span class="text-highlight">${e.target.innerText}</span>`
+    document.getElementById('showListV').parentNode.appendChild(listMessage)
+  }))
+}
 
-// const listMessage = document.createElement('p')
-// let itemsList = document.querySelectorAll('#showListV li')
-// itemsList.forEach(item => item.addEventListener('click', (e) => {
-//   listMessage.innerHTML= `You clicked <span class="text-highlight">${e.target.innerText}</span>`
-//   document.getElementById('showListV').parentNode.appendChild(listMessage)
-// }))
+const imageLoadedMessage = document.createElement('p')
+const imageUrl = document.createElement('img')
+let imageLoaded = true
+function eventLoad () {
+  document.getElementById('loadImgV').addEventListener('click', () => {
+    imageUrl.addEventListener('load', () => imageLoaded )
+    imageUrl.src = 'assets/images/hello-kitty-dface.jpg'
+    imageLoadedMessage.innerHTML = `The load of the image is <span class="text-highlight">${imageLoaded}</span>`
 
-// const imageLoadedMessage = document.createElement('p')
-// const imageUrl = document.createElement('img')
-// let imageLoaded = true
-// document.getElementById('loadImgV').addEventListener('click', () => {
-//   imageUrl.addEventListener('load', () => imageLoaded )
-//   imageUrl.src = 'assets/images/hello-kitty-dface.jpg'
-//   imageLoadedMessage.innerHTML = `The load of the image is <span class="text-highlight">${imageLoaded}</span>`
+    if(imageLoaded) document.getElementById('loadImgV').parentNode.append(imageUrl)
+    document.getElementById('loadImgV').parentNode.append(imageLoadedMessage)
+  })
+}
 
-//   if(imageLoaded) document.getElementById('loadImgV').parentNode.append(imageUrl)
-//   document.getElementById('loadImgV').parentNode.append(imageLoadedMessage)
-// })
+const imageLoadedFailMessage = document.createElement('p')
+const imageFailUrl = document.createElement('img')
+let imageFailLoaded = false
+function eventLoadFail () {
+  document.getElementById('loadImgFailV').addEventListener('click', () => {
+    imageFailUrl.addEventListener('error', () => imageFailLoaded = true)
+    imageFailUrl.src = 'errorImage.jpg'
+    imageLoadedFailMessage.innerHTML = `The load of the image is <span class="text-highlight">${imageFailLoaded}</span>`
 
-// const imageLoadedFailMessage = document.createElement('p')
-// const imageFailUrl = document.createElement('img')
-// let imageFailLoaded = false
-// document.getElementById('loadImgFailV').addEventListener('click', () => {
-//   imageFailUrl.addEventListener('error', () => imageFailLoaded = true)
-//   imageFailUrl.src = 'errorImage.jpg'
-//   imageLoadedFailMessage.innerHTML = `The load of the image is <span class="text-highlight">${imageFailLoaded}</span>`
+    // if(imageFailLoaded) document.getElementById('loadImgFailV').parentNode.append(imageFailUrl)
+    document.getElementById('loadImgFailV').parentNode.append(imageLoadedFailMessage)
+  })
+}
 
-//   // if(imageFailLoaded) document.getElementById('loadImgFailV').parentNode.append(imageFailUrl)
-//   document.getElementById('loadImgFailV').parentNode.append(imageLoadedFailMessage)
-// })
+// Functions
 
-// // Functions
-// const createMessage = document.createElement('p')
-// document.getElementById('createValueV').addEventListener('click', () => {
-//   createMessage.textContent = 'The new HTML value created is a <p> tag'
-//   document.getElementById('createValueV').parentNode.appendChild(createMessage)
-// })
+const createMessage = document.createElement('p')
+function functionCreateValue () {
+  document.getElementById('createValueV').addEventListener('click', () => {
+    createMessage.textContent = 'The new HTML value created is a <p> tag'
+    document.getElementById('createValueV').parentNode.appendChild(createMessage)
+  })
+}
 
-// document.getElementById('removeBtnV').addEventListener('click', () => {
-//   document.getElementById('removeTextV').remove()
-// })
+function functionRemoveValue () {
+  document.getElementById('removeBtnV').addEventListener('click', () => {
+    document.getElementById('removeTextV').remove()
+  })
+}
 
-// const appendMessage = document.createElement('p')
-// document.getElementById('appendBtnV').addEventListener('click', () => {
-//   appendMessage.textContent = 'This message is sibiling of paragraph above, and child of <div class="tab__inner">'
-//   document.getElementById('appendBtnV').parentNode.appendChild(appendMessage)
-// })
+const appendMessage = document.createElement('p')
+function functionAppendElement () {
+  document.getElementById('appendBtnV').addEventListener('click', () => {
+    appendMessage.textContent = 'This message is sibiling of paragraph above, and child of <div class="tab__inner">'
+    document.getElementById('appendBtnV').parentNode.appendChild(appendMessage)
+  })
+}
 
-// const prependMessage = document.createElement('p')
-// document.getElementById('prependBtnV').addEventListener('click', () => {
-//   prependMessage.textContent = 'This message is sibiling of paragraph below, and first child of <div class="tab__inner">'
-//   document.getElementById('prependBtnV').parentNode.prepend(prependMessage)
-// })
+const prependMessage = document.createElement('p')
+function functionPrependElement () {
+  document.getElementById('prependBtnV').addEventListener('click', () => {
+    prependMessage.textContent = 'This message is sibiling of paragraph below, and first child of <div class="tab__inner">'
+    document.getElementById('prependBtnV').parentNode.prepend(prependMessage)
+  })
+}
 
-// const afterMessage = document.createElement('p')
-// document.getElementById('afterBtnV').addEventListener('click', () => {
-//   afterMessage.textContent = 'This message is sibiling of the button'
-//   document.getElementById('afterBtnV').after(afterMessage)
-// })
+const afterMessage = document.createElement('p')
+function functionAfterElement () {
+  document.getElementById('afterBtnV').addEventListener('click', () => {
+    afterMessage.textContent = 'This message is sibiling of the button'
+    document.getElementById('afterBtnV').after(afterMessage)
+  })
+}
 
-// const beforeMessage = document.createElement('p')
-// document.getElementById('beforeBtnV').addEventListener('click', () => {
-//   beforeMessage.textContent = 'This message is sibiling of the button'
-//   document.getElementById('beforeBtnV').before(beforeMessage)
-// })
+const beforeMessage = document.createElement('p')
+function functionBeforeElement () {
+  document.getElementById('beforeBtnV').addEventListener('click', () => {
+    beforeMessage.textContent = 'This message is sibiling of the button'
+    document.getElementById('beforeBtnV').before(beforeMessage)
+  })
+}
 
-// document.getElementById('cloneBtnV').addEventListener('click', () => {
-//   const text = document.getElementById('textElementV')
-//   const clone = text.cloneNode(true)
-//   text.after(clone)
-// })
+function functionClone () {
+  document.getElementById('cloneBtnV').addEventListener('click', () => {
+    const text = document.getElementById('textElementV')
+    const clone = text.cloneNode(true)
+    text.after(clone)
+  })
+}
 
-// document.getElementById('addBtnV').addEventListener('click', () => {
-//   const text = document.getElementById('textAddV')
-//   text.classList.add('text-highlight')
-// })
+function functionAddClass () {
+  document.getElementById('addBtnV').addEventListener('click', () => {
+    const text = document.getElementById('textAddV')
+    text.classList.add('text-highlight')
+  })
+}
 
-// document.getElementById('removeClassBtnV').addEventListener('click', () => {
-//   const text = document.getElementById('textRemoveV')
-//   text.classList.remove('text-highlight')
-// })
+function functionRemoveClass () {
+  document.getElementById('removeClassBtnV').addEventListener('click', () => {
+    const text = document.getElementById('textRemoveV')
+    text.classList.remove('text-highlight')
+  })
+}
 
-// document.getElementById('toggleClassBtnV').addEventListener('click', () => {
-// document.getElementById('textToggleV').classList.toggle('text-highlight')
-// })
+function functionToggleClass () {
+  document.getElementById('toggleClassBtnV').addEventListener('click', () => {
+    document.getElementById('textToggleV').classList.toggle('text-highlight')
+    })
+}
 
-// document.getElementById('disableBtnV').addEventListener('click', () => {
-//   const button = document.getElementById('disableBtnV')
-//   button.disabled = true
-//   button.textContent = 'DISABLED'
-// })
+function functionAddDisabled () {
+  document.getElementById('disableBtnV').addEventListener('click', () => {
+    const button = document.getElementById('disableBtnV')
+    button.disabled = true
+    button.textContent = 'DISABLED'
+  })
+}
 
-// document.getElementById('enableCheckV').addEventListener('change', () => {
-//   const button = document.getElementById('enableBtnV')
-//   button.disabled = false
-//   button.textContent = 'ENABLED'
-// })
+function functionRemoveDisabled () {
+  document.getElementById('enableCheckV').addEventListener('change', () => {
+    const button = document.getElementById('enableBtnV')
+    button.disabled = false
+    button.textContent = 'ENABLED'
+  })
+}
 
-// const datasetImgV = document.createElement('img')
-// document.getElementById('datasetButtonV').addEventListener('click', () => {
-//   datasetImgV.setAttribute('src', 'assets/images/hello-kitty-dface.jpg')
-//   datasetImgV.setAttribute('alt', 'Hello kitty d-face in Tokyo')
-//   document.getElementById('datasetButtonV').parentNode.appendChild(datasetImgV)
-// })
+const datasetImgV = document.createElement('img')
+function functionSetData () {
+  document.getElementById('datasetButtonV').addEventListener('click', () => {
+    datasetImgV.setAttribute('src', 'assets/images/hello-kitty-dface.jpg')
+    datasetImgV.setAttribute('alt', 'Hello kitty d-face in Tokyo')
+    document.getElementById('datasetButtonV').parentNode.appendChild(datasetImgV)
+  })
+}
 
-// document.getElementById('datasetRButtonV').addEventListener('click', () => {
-//   document.getElementById('imgRemoveV').removeAttribute('src')
-// })
+function functionRemoveData () {
+  document.getElementById('datasetRButtonV').addEventListener('click', () => {
+    document.getElementById('imgRemoveV').removeAttribute('src')
+  })
+}
 
-// document.getElementById('hideButtonV').addEventListener('click', () => {
-//   document.getElementById('imgHideV').style.display = 'none'
-// })
+function functionHide () {
+  document.getElementById('hideButtonV').addEventListener('click', () => {
+    document.getElementById('imgHideV').style.display = 'none'
+  })
+}
 
-// document.getElementById('showButtonV').addEventListener('click', () => {
-//   document.getElementById('imgShowV').style.display = 'block'
-// })
+function functionShow () {
+  document.getElementById('showButtonV').addEventListener('click', () => {
+    document.getElementById('imgShowV').style.display = 'block'
+  })
+}
 
-// document.getElementById('functionFadein').addEventListener('click', () => {
-//   const tabInput = document.querySelector('[for="VanillajsFadein"]')
-//   document.getElementById('VanillajsFadein').disabled = true
-//   tabInput.style.cursor = 'no-drop'
-//   tabInput.textContent = 'DISABLED'
-// })
+function functionFadein () {
+  document.getElementById('functionFadein').addEventListener('click', () => {
+    const tabInput = document.querySelector('[for="VanillajsFadein"]')
+    document.getElementById('VanillajsFadein').disabled = true
+    tabInput.style.cursor = 'no-drop'
+    tabInput.textContent = 'DISABLED'
+  })
+}
 
-// document.getElementById('functionFadeout').addEventListener('click', () => {
-//   const tabInput = document.querySelector('[for="VanillajsFadeout"]')
-//   document.getElementById('VanillajsFadeout').disabled = true
-//   tabInput.style.cursor = 'no-drop'
-//   tabInput.textContent = 'DISABLED'
-// })
+function functionFadeout () {
+  document.getElementById('functionFadeout').addEventListener('click', () => {
+    const tabInput = document.querySelector('[for="VanillajsFadeout"]')
+    document.getElementById('VanillajsFadeout').disabled = true
+    tabInput.style.cursor = 'no-drop'
+    tabInput.textContent = 'DISABLED'
+  })
+}
 
-// document.getElementById('btnAnimateV').addEventListener('click', () => {
-//   setTimeout(() => {
-//     document.getElementById('boxAnimateV').animate(
-//     [
-//       { transform: "translateY(0px)" },
-//       { transform: "translateY(30px)" },
-//       { transform: "translateY(0px)" },
-//     ],{
-//       duration: 1000,
-//       iterations: 2
-//     })
-//   }, 2000)
-// })
+function functionAnimate () {
+  document.getElementById('btnAnimateV').addEventListener('click', () => {
+    setTimeout(() => {
+      document.getElementById('boxAnimateV').animate(
+      [
+        { transform: "translateY(0px)" },
+        { transform: "translateY(30px)" },
+        { transform: "translateY(0px)" },
+      ],{
+        duration: 1000,
+        iterations: 2
+      })
+    }, 2000)
+  })
+}
 
-// // Selectors
-// document.getElementById('btnChangeStyleV').addEventListener('click', () => {
-//   const list = document.querySelectorAll('#listChangeStyleV li')
-//   list.forEach(item => {
-//     item.textContent += ' iterated'
-//     item.classList.toggle('text-highlight')
-//   })
-// })
+// Selectors
 
-// document.getElementById('btnParentFontV').addEventListener('click', () => {
-//   const item = document.getElementById('btnParentFontV').parentNode
-//   item.style.fontWeight = '700'
-//   item.style.color = '#d83f87'
-// })
+function selectorIterateChange () {
+  document.getElementById('btnChangeStyleV').addEventListener('click', () => {
+    const list = document.querySelectorAll('#listChangeStyleV li')
+    list.forEach(item => {
+      item.textContent += ' iterated'
+      item.classList.toggle('text-highlight')
+    })
+  })
+}
 
-// document.getElementById('btnChildrenFontV').addEventListener('click', () => {
-//   const items = document.getElementById('itemChildrenFontV').children
-//   for (let i = 0; i < items.length; i++) {
-//     items[i].style.fontWeight = '700'
-//     items[i].style.color = '#d83f87'
-//   }
-// })
+function selectorParentFont () {
+  document.getElementById('btnParentFontV').addEventListener('click', () => {
+    const item = document.getElementById('btnParentFontV').parentNode
+    item.style.fontWeight = '700'
+    item.style.color = '#d83f87'
+  })
+}
 
-// document.getElementById('btnCertainFontV').addEventListener('click', () => {
-//   const items = document.querySelectorAll('.certain-classv')
-//   items.forEach (item => {
-//     item.style.fontWeight = '100'
-//     item.style.color = '#d83f87'
-//   })
-// })
+function selectorChildrenFont () {
+  document.getElementById('btnChildrenFontV').addEventListener('click', () => {
+    const items = document.getElementById('itemChildrenFontV').children
+    for (let i = 0; i < items.length; i++) {
+      items[i].style.fontWeight = '700'
+      items[i].style.color = '#d83f87'
+    }
+  })
+}
 
-// document.getElementById('btnIdFontV').addEventListener('click', () => {
-//   const item = document.getElementById('itemIdV')
-//   item.style.fontWeight = '100'
-//   item.style.color = '#d83f87'
-// })
+function selectorCertainFont () {
+  document.getElementById('btnCertainFontV').addEventListener('click', () => {
+    const items = document.querySelectorAll('.certain-classv')
+    items.forEach (item => {
+      item.style.fontWeight = '100'
+      item.style.color = '#d83f87'
+    })
+  })
+}
 
-// document.getElementById('btnGetClassV').addEventListener('click', () => {
-//   const items = document.getElementsByClassName('get-class-v')
-//   for (let item of items) {
-//     item.style.display = 'block'
-//     item.style.color = '#d83f87'
-//   }
-// })
+function selectorGetIdFont () {
+  document.getElementById('btnIdFontV').addEventListener('click', () => {
+    const item = document.getElementById('itemIdV')
+    item.style.fontWeight = '100'
+    item.style.color = '#d83f87'
+  })
+}
 
-// const attrMessage = document.createElement('p')
-// document.querySelector('#formAttrV select').addEventListener('change', () => {
-//   let result = document.querySelector('#formAttrV select').value
-//   attrMessage.innerHTML = `Your selection is <span class="text-highlight">${result}</span>`
-//   document.querySelector('#formAttrV').appendChild(attrMessage)
-// })
+function selectorGetClassDisplay () {
+  document.getElementById('btnGetClassV').addEventListener('click', () => {
+    const items = document.getElementsByClassName('get-class-v')
+    for (let item of items) {
+      item.style.display = 'block'
+      item.style.color = '#d83f87'
+    }
+  })
+}
 
-// const attrLinkMessage = document.createElement('p')
-// document.querySelector('#btnAttrLinkV').addEventListener('click', () => {
-//   let firstItem = document.querySelector('#listAttrLinkV > li').firstChild
-//   firstItem.setAttribute('href', 'https://www.google.com/')
-//   firstItem.setAttribute('target', '_blank')
-//   attrLinkMessage.textContent = 'Click on the first item'
-//   document.querySelector('#listAttrLinkV').appendChild(attrLinkMessage)
-// })
+const attrMessage = document.createElement('p')
+function selectorAttSelected () {
+  document.querySelector('#formAttrV select').addEventListener('change', () => {
+    let result = document.querySelector('#formAttrV select').value
+    attrMessage.innerHTML = `Your selection is <span class="text-highlight">${result}</span>`
+    document.querySelector('#formAttrV').appendChild(attrMessage)
+  })
+}
 
-// document.getElementById('formShowAlertV').addEventListener('submit', (e) => {
-//   e.preventDefault()
-//   let firstInput = document.querySelectorAll('#formShowAlertV input')[0].value
-//   if(firstInput) alert('The value of the first input is: ' + firstInput)
-// })
+const attrLinkMessage = document.createElement('p')
+function selectorAttLink () {
+  document.querySelector('#btnAttrLinkV').addEventListener('click', () => {
+    let firstItem = document.querySelector('#listAttrLinkV > li').firstChild
+    firstItem.setAttribute('href', 'https://www.google.com/')
+    firstItem.setAttribute('target', '_blank')
+    attrLinkMessage.textContent = 'Click on the first item'
+    document.querySelector('#listAttrLinkV').appendChild(attrLinkMessage)
+  })
+}
 
-// document.getElementById('btnRemoveV').addEventListener('click', (e) => {
-//   let items = document.querySelectorAll('#listV li')
-//   for (let item of items) item.remove()
-// })
+function selectorShowAlert () {
+  document.getElementById('formShowAlertV').addEventListener('submit', (e) => {
+    e.preventDefault()
+    let firstInput = document.querySelectorAll('#formShowAlertV input')[0].value
+    if(firstInput) alert('The value of the first input is: ' + firstInput)
+  })
+}
 
-// }
+function selectorRemove () {
+  document.getElementById('btnRemoveV').addEventListener('click', (e) => {
+    let items = document.querySelectorAll('#listV li')
+    for (let item of items) item.remove()
+  })
+}
 
 export {
   eventDomLoad,
@@ -317,5 +382,39 @@ export {
   eventMouseOver,
   eventKeyboard,
   eventSubmit,
-  eventChange
+  eventChange,
+  eventOptionSelect,
+  eventChecked,
+  eventShow,
+  eventLoad,
+  eventLoadFail,
+  functionCreateValue,
+  functionRemoveValue,
+  functionAppendElement,
+  functionPrependElement,
+  functionAfterElement,
+  functionBeforeElement,
+  functionClone,
+  functionAddClass,
+  functionRemoveClass,
+  functionToggleClass,
+  functionAddDisabled,
+  functionRemoveDisabled,
+  functionSetData,
+  functionRemoveData,
+  functionHide,
+  functionShow,
+  functionFadein,
+  functionFadeout,
+  functionAnimate,
+  selectorIterateChange,
+  selectorParentFont,
+  selectorChildrenFont,
+  selectorCertainFont,
+  selectorGetIdFont,
+  selectorGetClassDisplay,
+  selectorAttSelected,
+  selectorAttLink,
+  selectorShowAlert,
+  selectorRemove
 }
