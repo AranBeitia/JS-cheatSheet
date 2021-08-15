@@ -6,6 +6,7 @@ export const data = {
       buttonIdJq: "eventLoadJq",
       buttonIdV: "eventLoadV",
       buttonText: "Test me",
+      buttonParagraph: ""
     },
     canvas: "",
     form: "",
@@ -36,6 +37,7 @@ export const data = {
       buttonIdJq: "eventClickJq",
       buttonIdV: "eventClickV",
       buttonText: "Click",
+      buttonParagraph: ""
     },
     canvas: "",
     form: "",
@@ -63,6 +65,7 @@ export const data = {
       buttonIdJq: "eventDblClickJq",
       buttonIdV: "eventDblClickV",
       buttonText: "Double click",
+      buttonParagraph: ""
     },
     canvas: "",
     form: "",
@@ -359,6 +362,7 @@ export const data = {
       buttonIdJq: "loadImgJq",
       buttonIdV: "loadImgV",
       buttonText: "Load",
+      buttonParagraph: ""
     },
     canvas: "",
     form: "",
@@ -395,6 +399,7 @@ export const data = {
       buttonIdJq: "loadImgFailJq",
       buttonIdV: "loadImgFailV",
       buttonText: "Load",
+      buttonParagraph: ""
     },
     canvas: "",
     form: "",
@@ -425,6 +430,235 @@ export const data = {
         imgUrl.attr('src', 'assets/images/hello-kitty-dface.jpg')
         if(loadImage) $('#loadImgJq').parent().append(imgUrl)
         $('#loadImgJq').parent().append(loadImageMessage)
+      })
+    }
+    `,
+  },
+  functionCreateValue:
+  {
+    title: "Create element",
+    button: {
+      buttonIdJq: "createValueJq",
+      buttonIdV: "createValueV",
+      buttonText: "Create",
+      buttonParagraph: ""
+    },
+    canvas: "",
+    form: "",
+    list: "",
+    vanillaCode: `
+    const createMessage = document.createElement('p')
+    function functionCreateValue () {
+      document.getElementById('createValueV').addEventListener('click', () => {
+        createMessage.textContent = 'The new HTML value created is a <p> tag'
+        document.getElementById('createValueV').parentNode.appendChild(createMessage)
+      })
+    }
+    `,
+    jQueryCode: `
+    const createMessage = $('<p></p>')
+    function functionCreateValue () {
+      $('#createValueJq').on('click', () => {
+        createMessage.text('The new HTML value created is a <p> tag')
+        $('#createValueJq').after(createMessage)
+      })
+    }
+    `,
+  },
+  functionRemoveValue:
+  {
+    title: "Remove element",
+    button: {
+      buttonIdJq: "removeBtnJq",
+      buttonIdV: "removeBtnV",
+      buttonText: "Remove",
+      buttonParagraph: {
+        buttonParagraphTxt: "Remove this message",
+        buttonParagraphJq: "removeTextJq",
+        buttonParagraphV: "removeTextV"
+      },
+    },
+    canvas: "",
+    form: "",
+    list: "",
+    vanillaCode: `
+    function functionRemoveValue () {
+      document.getElementById('removeBtnV').addEventListener('click', () => {
+        document.getElementById('removeTextV').remove()
+      })
+    }
+    `,
+    jQueryCode: `
+    function functionRemoveValue () {
+      $('#removeBtnJq').on('click', () => {
+        $('#removeTextJq').remove()
+      })
+    }
+    `,
+  },
+  functionAppendElement:
+  {
+    title: "Append element to a parent element",
+    button: {
+      buttonIdJq: "appendBtnJq",
+      buttonIdV: "appendBtnV",
+      buttonText: "Append",
+      buttonParagraph: {
+        buttonParagraphTxt: "Append a new HTML element below this paragrapn",
+        buttonParagraphJq: "appendTextJq",
+        buttonParagraphV: "appendTextV"
+      },
+    },
+    canvas: "",
+    form: "",
+    list: "",
+    vanillaCode: `
+    const appendMessage = document.createElement('p')
+    function functionAppendElement () {
+      document.getElementById('appendBtnV').addEventListener('click', () => {
+        appendMessage.textContent = 'This message is sibiling of paragraph above, and child of <div class="tab__inner">'
+        document.getElementById('appendBtnV').parentNode.appendChild(appendMessage)
+      })
+    }
+    `,
+    jQueryCode: `
+    const appendMessage = $('<p></p>')
+    function functionAppendElement () {
+      $('#appendBtnJq').on('click', () => {
+        appendMessage.text('This message is sibiling of paragraph above, and child of <div class="tab__inner">')
+        $('#appendBtnJq').parent().append(appendMessage)
+      })
+    }
+    `,
+  },
+  functionPrependElement:
+  {
+    title: "Prepend element to a parent element",
+    button: {
+      buttonIdJq: "prependBtnJq",
+      buttonIdV: "prependBtnV",
+      buttonText: "Prepend",
+      buttonParagraph: {
+        buttonParagraphTxt: "Prepend a new HTML element above this paragrapn",
+        buttonParagraphJq: "prependTextJq",
+        buttonParagraphV: "prependTextV"
+      },
+    },
+    canvas: "",
+    form: "",
+    list: "",
+    vanillaCode: `
+    const prependMessage = document.createElement('p')
+    function functionPrependElement () {
+      document.getElementById('prependBtnV').addEventListener('click', () => {
+        prependMessage.textContent = 'This message is sibiling of paragraph below, and first child of <div class="tab__inner">'
+        document.getElementById('prependBtnV').parentNode.prepend(prependMessage)
+      })
+    }
+    `,
+    jQueryCode: `
+    const prependMessage = $('<p></p>')
+    function functionPrependElement () {
+      $('#prependBtnJq').on('click', () => {
+        prependMessage.text('This message is sibiling of paragraph below, and first child of <div class="tab__inner">')
+        $('#prependBtnJq').parent().prepend(prependMessage)
+      })
+    }
+    `,
+  },
+  functionAfterElement:
+  {
+    title: "Create and add after element",
+    button: {
+      buttonIdJq: "afterBtnJq",
+      buttonIdV: "afterBtnV",
+      buttonText: "After",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "",
+    list: "",
+    vanillaCode: `
+    const prependMessage = document.createElement('p')
+    const afterMessage = document.createElement('p')
+    function functionAfterElement () {
+      document.getElementById('afterBtnV').addEventListener('click', () => {
+        afterMessage.textContent = 'This message is sibiling of the button'
+        document.getElementById('afterBtnV').after(afterMessage)
+      })
+    }
+    `,
+    jQueryCode: `
+    const afterMessage = $('<p></p>')
+    function functionAfterElement () {
+      $('#afterBtnJq').on('click', () => {
+        afterMessage.text('This message is sibiling of the button')
+        $('#afterBtnJq').after(afterMessage)
+      })
+    }
+    `,
+  },
+  functionBeforeElement:
+  {
+    title: "Create and add before element",
+    button: {
+      buttonIdJq: "beforeBtnJq",
+      buttonIdV: "beforeBtnV",
+      buttonText: "Before",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "",
+    list: "",
+    vanillaCode: `
+    const beforeMessage = document.createElement('p')
+    function functionBeforeElement () {
+      document.getElementById('beforeBtnV').addEventListener('click', () => {
+        beforeMessage.textContent = 'This message is sibiling of the button'
+        document.getElementById('beforeBtnV').before(beforeMessage)
+      })
+    }
+    `,
+    jQueryCode: `
+    const beforeMessage = $('<p></p>')
+    function functionBeforeElement () {
+      $('#beforeBtnJq').on('click', () => {
+        beforeMessage.text('This message is sibiling of the button')
+        $('#beforeBtnJq').before(beforeMessage)
+      })
+    }
+    `,
+  },
+  functionClone:
+  {
+    title: "Create and add before element",
+    button: {
+      buttonIdJq: "cloneBtnJq",
+      buttonIdV: "cloneBtnV",
+      buttonText: "Clone",
+      buttonParagraph: {
+        buttonParagraphTxt: "Clone this message",
+        buttonParagraphJq: "textElementJq",
+        buttonParagraphV: "textElementV"
+      },
+    },
+    canvas: "",
+    form: "",
+    list: "",
+    vanillaCode: `
+    function functionClone () {
+      document.getElementById('cloneBtnV').addEventListener('click', () => {
+        const text = document.getElementById('textElementV')
+        const clone = text.cloneNode(true)
+        text.after(clone)
+      })
+    }
+    `,
+    jQueryCode: `
+    function functionClone () {
+      $('#cloneBtnJq').on('click', () => {
+        const clone = $('#textElementJq').clone()
+        $('#textElementJq').after(clone)
       })
     }
     `,

@@ -28,7 +28,8 @@ function renderModal(titleId) {
           <div class="tab__inner">
             <div data-inner="button">
               <button id="${modal.button.buttonIdJq}" class="button margin-x2">${modal.button.buttonText}</button>
-            </div>
+              ${modal.button.buttonParagraph ? `<p id="${modal.button.buttonParagraph.buttonParagraphJq}">${modal.button.buttonParagraph.buttonParagraphTxt}</p>`: ''}
+              </div>
             <div data-inner="canvas">
               <p>Move the mouse inside the box</p>
               <div id="${modal.canvas.canvasJq}" class="canvas-box flex-center"></div>
@@ -60,7 +61,8 @@ function renderModal(titleId) {
           <div class="tab__inner">
             <div data-inner="button">
               <button id="${modal.button.buttonIdV}" class="button margin-x2">${modal.button.buttonText}</button>
-            </div>
+              ${modal.button.buttonParagraph ? `<p id="${modal.button.buttonParagraph.buttonParagraphV}">${modal.button.buttonParagraph.buttonParagraphTxt}</p>`: ''}
+              </div>
             <div data-inner="canvas">
               <p>${modal.canvas.canvasTitle}</p>
               <div id="${modal.canvas.canvasV}" class="canvas-box flex-center"></div>
