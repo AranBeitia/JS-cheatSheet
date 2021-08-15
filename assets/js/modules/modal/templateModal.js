@@ -1,7 +1,7 @@
 import { modalEvent, jquery, vanilla } from '../../main.js'
 import { data } from '../data.js'
 import { getInner } from './templatesInner.js'
-import { optionsHTML } from './optionsForm.js'
+// import { renderOptions } from './optionsForm.js'
 
 /* TODO:
     1. import jquery functions with id as param
@@ -44,6 +44,13 @@ function renderModal(titleId) {
                 ${modal.form.checkInputJq ? `<input type="checkbox" id="${modal.form.checkInputJq}" class="checkbox">`: ''}
               </form>
             </div>
+            <div data-inner="list">
+              <ul id="${modal.list.listIdJq}" class="list">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ul>
+            </div>
             <pre class='code'><code>${modal.jQueryCode}</code></pre>
           </div>
         </div>
@@ -69,6 +76,13 @@ function renderModal(titleId) {
                 ${modal.form.checkInputV ? `<input type="checkbox" id="${modal.form.checkInputV}" class="checkbox">`: ''}
               </form>
             </div>
+            <div data-inner="list">
+              <ul id="${modal.list.listIdV}" class="list">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+              </ul>
+            </div>
             <pre class='code'><code>${modal.vanillaCode}</code></pre>
           </div>
         </div>
@@ -77,8 +91,7 @@ function renderModal(titleId) {
     </div>
   `
   modalEvent.innerHTML = modalHtml
-  // document.querySelector('.select').innerHTML = optionsHTML
-  getInner (modal.button, modal.canvas, modal.form)
+  getInner (modal.button, modal.canvas, modal.form, modal.list)
 }
 
 export { buildModal }

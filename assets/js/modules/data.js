@@ -9,6 +9,7 @@ export const data = {
     },
     canvas: "",
     form: "",
+    list: "",
     vanillaCode: `
     const loadHTML = document.createElement('span')
     document.addEventListener('DOMContentLoaded' , () => loadHTML )
@@ -38,6 +39,7 @@ export const data = {
     },
     canvas: "",
     form: "",
+    list: "",
     vanillaCode: `
     document.getElementById('eventClickV')
     .addEventListener('click', (e) => {
@@ -64,6 +66,7 @@ export const data = {
     },
     canvas: "",
     form: "",
+    list: "",
     vanillaCode: `
     document.getElementById('eventDblClickV')
     .addEventListener('dblclick', (e) => {
@@ -88,7 +91,8 @@ export const data = {
       canvasV: "eventMouseMoveV",
       canvasTitle: "Move the mouse inside the box"
     },
-    form: '',
+    form: "",
+    list: "",
     vanillaCode: `
     const coordinates = document.createElement('p')
     function eventMouseMove () {
@@ -121,6 +125,7 @@ export const data = {
       canvasTitle: "Move the mouse inside the box"
     },
     form: "",
+    list: "",
     vanillaCode: `
     const coordOver = document.createElement('p')
     function eventMouseOver () {
@@ -154,6 +159,7 @@ export const data = {
       canvasTitle: "Press any key on your keyboard"
     },
     form: "",
+    list: "",
     vanillaCode: `
     const key = document.createElement('p')
     function eventKeyboard () {
@@ -188,6 +194,7 @@ export const data = {
       formLabel: "Your name",
       formButton: "Submit"
     } ,
+    list: "",
     vanillaCode: `
     const submitMessage = document.createElement('p')
     function eventSubmit () {
@@ -223,6 +230,7 @@ export const data = {
       formNameIdV: "formSubmitNameV",
       formLabel: "write some text"
     } ,
+    list: "",
     vanillaCode: `
     const result = document.createElement('p')
     function eventChange () {
@@ -256,6 +264,7 @@ export const data = {
       selectV: "formSubmitNameV",
       selectOptions: ['Banana', 'Apple', 'Orange', 'Strawberry', 'Lemon']
     },
+    list: "",
     vanillaCode: `
     const selectionMessage = document.createElement('p')
     function eventOptionSelect () {
@@ -288,6 +297,7 @@ export const data = {
       checkInputJq: "checkJq",
       checkInputV: "checkV"
     },
+    list: "",
     vanillaCode: `
     const checkMessage = document.createElement('p')
     function eventChecked () {
@@ -315,33 +325,55 @@ export const data = {
   eventShow:
   {
     title: "Show",
-    buttonIdJq: "eventDblClickJq",
-    buttonIdV: "eventDblClickV",
-    buttonText: "Show",
+    button: "",
+    canvas: "",
+    form: "",
+    list: {
+      listIdJq: "showListJq",
+      listIdV: "showListV"
+    },
     vanillaCode: `
-    Paragraph list
+    const listMessage = document.createElement('p')
+    function eventShow () {
+      let itemsList = document.querySelectorAll('#showListV li')
+      itemsList.forEach(item => item.addEventListener('click', (e) => {
+        listMessage.innerHTML= 'You clicked <span class="text-highlight">{e.target.innerText}</span>'
+        document.getElementById('showListV').parentNode.appendChild(listMessage)
+      }))
+    }
     `,
     jQueryCode: `
-    Paragraph list
+    const listMessage = $('<p></p>')
+    function eventShow () {
+      $('#showListJq li').on('click', () => {
+        listMessage.html('You clicked {$(event.target).text()}')
+        $('#showListJq').after(listMessage)
+      })
+    }
     `,
   },
   eventLoad:
   {
-    title: "Option select",
-    buttonIdJq: "loadImgJq",
-    buttonIdV: "loadImgV",
-    buttonText: "Load",
+    title: "load",
+    button: {
+      buttonIdJq: "loadImgJq",
+      buttonIdV: "loadImgV",
+      buttonText: "Load",
+    },
+    canvas: "",
+    form: "",
+    list: "",
     vanillaCode: `
     const imageUrl = document.createElement('img')
     let imageLoaded = true
     document.getElementById('loadImgV').addEventListener('click', () => {
-    imageUrl.addEventListener('load', () => imageLoaded )
-    imageUrl.src = 'assets/images/hello-kitty-dface.jpg'
-    imageLoadedMessage.innerHTML = "The load of the image is $imageLoaded"
+      imageUrl.addEventListener('load', () => imageLoaded )
+      imageUrl.src = 'assets/images/hello-kitty-dface.jpg'
+      imageLoadedMessage.innerHTML = "The load of the image is $imageLoaded"
 
-    if(imageLoaded) document.getElementById('loadImgV').parentNode.append(imageUrl)
-    document.getElementById('loadImgV').parentNode.append(imageLoadedMessage)
-  })
+      if(imageLoaded) document.getElementById('loadImgV').parentNode.append(imageUrl)
+      document.getElementById('loadImgV').parentNode.append(imageLoadedMessage)
+    })
     `,
     jQueryCode: `
     const loadImageMessage = $('\<p>\</p>')
@@ -354,6 +386,47 @@ export const data = {
       if(loadImage) $('#loadImgJq').parent().append(imgUrl)
       $('#loadImgJq').parent().append(loadImageMessage)
     })
+    `,
+  },
+  eventLoadFail:
+  {
+    title: "load image failed",
+    button: {
+      buttonIdJq: "loadImgFailJq",
+      buttonIdV: "loadImgFailV",
+      buttonText: "Load",
+    },
+    canvas: "",
+    form: "",
+    list: "",
+    vanillaCode: `
+    const imageLoadedFailMessage = document.createElement('p')
+    const imageFailUrl = document.createElement('img')
+    let imageFailLoaded = false
+    function eventLoadFail () {
+      document.getElementById('loadImgFailV').addEventListener('click', () => {
+        imageFailUrl.addEventListener('error', () => imageFailLoaded = true)
+        imageFailUrl.src = 'errorImage.jpg'
+        imageLoadedFailMessage.innerHTML = 'The load of the image is <span class="text-highlight">{imageFailLoaded}</span>'
+    
+        // if(imageFailLoaded) document.getElementById('loadImgFailV').parentNode.append(imageFailUrl)
+        document.getElementById('loadImgFailV').parentNode.append(imageLoadedFailMessage)
+      })
+    }
+    `,
+    jQueryCode: `
+    const loadImageMessage = $('<p></p>')
+    function eventLoad () {
+      let loadImage = true
+      const imgUrl = $('<img>')
+      $('#loadImgJq').on('click', () => {
+        imgUrl.on('load', () => loadImage)
+        loadImageMessage.html('The load of the image is <span class="text-highlight">{loadImage}</span>')
+        imgUrl.attr('src', 'assets/images/hello-kitty-dface.jpg')
+        if(loadImage) $('#loadImgJq').parent().append(imgUrl)
+        $('#loadImgJq').parent().append(loadImageMessage)
+      })
+    }
     `,
   }
 }
