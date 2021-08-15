@@ -184,7 +184,9 @@ export const data = {
       formIdJq: "eventSubmitJq",
       formIdV: "eventSubmitV",
       formNameIdJq: "formSubmitNameJq",
-      formNameIdV: "formSubmitNameV"
+      formNameIdV: "formSubmitNameV",
+      formLabel: "Your name",
+      formButton: "Submit"
     } ,
     vanillaCode: `
     const submitMessage = document.createElement('p')
@@ -218,7 +220,8 @@ export const data = {
       formIdJq: "eventChangeJq",
       formIdV: "eventChangeV",
       formNameIdJq: "formSubmitNameJq",
-      formNameIdV: "formSubmitNameV"
+      formNameIdV: "formSubmitNameV",
+      formLabel: "write some text"
     } ,
     vanillaCode: `
     const result = document.createElement('p')
@@ -243,36 +246,75 @@ export const data = {
   eventOptionSelect:
   {
     title: "Option select",
-    button: {
-      buttonIdJq: "eventOpSelectJq",
-      buttonIdV: "eventOpSelectV",
-      buttonText: "Select",
-    },
+    button: "",
     canvas: "",
-    form: "",
+    form: {
+      formIdJq: "eventOpSelectJq",
+      formIdV: "eventOpSelectV",
+      formLabel: "Change into another option",
+      selectJq: "formSubmitNameJq",
+      selectV: "formSubmitNameV",
+      selectOptions: ['Banana', 'Apple', 'Orange', 'Strawberry', 'Lemon']
+    },
     vanillaCode: `
-    Form label select
+    const selectionMessage = document.createElement('p')
+    function eventOptionSelect () {
+      document.querySelector('#eventOpSelectV select').addEventListener('change', (e) => {
+        selectionMessage.innerHTML = 'Your selection is {e.target.value}'
+        document.getElementById('eventOpSelectV').parentNode.appendChild(selectionMessage)
+      })
+    }
     `,
     jQueryCode: `
-    Form label select
+    const selectMessage = $('<p></p>')
+    function eventOptionSelect () {
+      $('#eventOpSelectJq select').change(() => {
+        let option = $(event.target).val()
+        selectMessage.html('Selected: <span class="text-highlight">{option}</span>')
+        $('#eventOpSelectJq').after(selectMessage)
+      })
+    }
     `,
   },
   eventChecked:
   {
-    title: "Option select",
-    buttonIdJq: "eventDblClickJq",
-    buttonIdV: "eventDblClickV",
-    buttonText: "Checked",
+    title: "Checked / unchecked",
+    button: "",
+    canvas: "",
+    form: {
+      formIdJq: "eventCheckJq",
+      formIdV: "eventCheckV",
+      formLabel: "Check / uncheck option",
+      checkInputJq: "checkJq",
+      checkInputV: "checkV"
+    },
     vanillaCode: `
-    Form label input
+    const checkMessage = document.createElement('p')
+    function eventChecked () {
+      document.getElementById('checkV').addEventListener('click', (e) => {
+        let checkbox = e.target.checked
+        checkbox ? checkMessage.textContent = 'Checked!!': checkMessage.textContent = 'Unchecked'
+        document.getElementById('eventCheckV').parentNode.appendChild(checkMessage)
+      })
+    }
     `,
     jQueryCode: `
-    Form label input
+    const checkMessage = $('<p></p>')
+    function eventChecked () {
+      $('#eventCheckJq input').on('change', () => {
+        if($(event.target).is(':checked')){
+          checkMessage.text('Is checked!!')
+        } else {
+          checkMessage.text('Not checked')
+        }
+        $('#eventCheckJq').after(checkMessage)
+      })
+    }
     `,
   },
   eventShow:
   {
-    title: "Option select",
+    title: "Show",
     buttonIdJq: "eventDblClickJq",
     buttonIdV: "eventDblClickV",
     buttonText: "Show",

@@ -81,14 +81,14 @@ function eventOptionSelect () {
 
 const checkMessage = $('<p></p>')
 function eventChecked () {
-$('#eventCheckJq input').on('change', () => {
-  if($(event.target).is(':checked')){
-    checkMessage.text('Is checked!!')
-  } else {
-    checkMessage.text('Not checked')
-  }
-  $('#eventCheckJq').after(checkMessage)
-})
+  $('#eventCheckJq input').on('change', () => {
+    if($(event.target).is(':checked')){
+      checkMessage.text('Is checked!!')
+    } else {
+      checkMessage.text('Not checked')
+    }
+    $('#eventCheckJq').after(checkMessage)
+  })
 }
 
 const listMessage = $('<p></p>')

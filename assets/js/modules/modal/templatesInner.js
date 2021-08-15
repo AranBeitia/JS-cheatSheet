@@ -2,7 +2,6 @@ function getInner (button, canvas, form) {
   const buttonInner = document.querySelectorAll('[data-inner="button"]')
   const canvasInner = document.querySelectorAll('[data-inner="canvas"]')
   const formInner = document.querySelectorAll('[data-inner="form"]')
-  
   if(button) {
     for (let i = 0; i < canvasInner.length; i++) {
       canvasInner[i].remove()
@@ -16,7 +15,7 @@ function getInner (button, canvas, form) {
       formInner[i].remove()
     }
   }
-
+  
   if (form) {
     for (let i = 0; i < formInner.length; i++) {
       buttonInner[i].remove()

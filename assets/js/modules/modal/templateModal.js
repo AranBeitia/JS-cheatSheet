@@ -1,6 +1,7 @@
 import { modalEvent, jquery, vanilla } from '../../main.js'
 import { data } from '../data.js'
 import { getInner } from './templatesInner.js'
+import { optionsHTML } from './optionsForm.js'
 
 /* TODO:
     1. import jquery functions with id as param
@@ -35,10 +36,12 @@ function renderModal(titleId) {
             <div data-inner="form">
               <form action="" id="${modal.form.formIdJq}">
                 <div class="form-group">
-                  <label for="${modal.form.formNameIdJq}">Your name:</label>
-                  <input type="text" id="${modal.form.formNameIdJq}" class="input" required >
+                  <label for="${modal.form.formNameIdJq}">${modal.form.formLabel}:</label>
+                  ${modal.form.formNameIdJq ? `<input type="text" id="${modal.form.formNameIdJq}" class="input" required >` : ''}
                 </div>
-                <button type="submit" class="button">Send</button>
+                ${modal.form.formButton ? `<button type="submit" class="button">${modal.form.formButton}</button>` : ''}
+                ${modal.form.selectJq ? `<select name="${modal.form.selectJq}" multiple="multiple" class="select"><option>1op</option></select>` : ''}
+                ${modal.form.checkInputJq ? `<input type="checkbox" id="${modal.form.checkInputJq}" class="checkbox">`: ''}
               </form>
             </div>
             <pre class='code'><code>${modal.jQueryCode}</code></pre>
@@ -58,10 +61,12 @@ function renderModal(titleId) {
             <div data-inner="form">
               <form action="" id="${modal.form.formIdV}">
                 <div class="form-group">
-                  <label for="${modal.form.formNameIdV}">Your name:</label>
-                  <input type="text" id="${modal.form.formNameIdV}" class="input" required >
+                  <label for="${modal.form.formNameIdV}">${modal.form.formLabel}:</label>
+                  ${modal.form.formNameIdV ? `<input type="text" id="${modal.form.formNameIdV}" class="input" required >` : ''}
                 </div>
-                <button type="submit" class="button">Send</button>
+                ${modal.form.formButton ? `<button type="submit" class="button">${modal.form.formButton}</button>` : ''}
+                ${modal.form.selectV ? `<select name="${modal.form.selectV}" multiple="multiple" class="select"><option>1op</option></select>` : ''}
+                ${modal.form.checkInputV ? `<input type="checkbox" id="${modal.form.checkInputV}" class="checkbox">`: ''}
               </form>
             </div>
             <pre class='code'><code>${modal.vanillaCode}</code></pre>
@@ -72,6 +77,7 @@ function renderModal(titleId) {
     </div>
   `
   modalEvent.innerHTML = modalHtml
+  // document.querySelector('.select').innerHTML = optionsHTML
   getInner (modal.button, modal.canvas, modal.form)
 }
 
