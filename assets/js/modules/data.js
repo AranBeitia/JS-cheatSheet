@@ -662,5 +662,161 @@ export const data = {
       })
     }
     `,
+  },
+  functionAddClass:
+  {
+    title: "Add a class",
+    button: {
+      buttonIdJq: "addBtnJq",
+      buttonIdV: "addBtnV",
+      buttonText: "Add",
+      buttonParagraph: {
+        buttonParagraphTxt: "Add a class on this message",
+        buttonParagraphJq: "textAddJq",
+        buttonParagraphV: "textAddV"
+      },
+    },
+    canvas: "",
+    form: "",
+    list: "",
+    vanillaCode: `
+    function functionAddClass () {
+      document.getElementById('addBtnV').addEventListener('click', () => {
+        const text = document.getElementById('textAddV')
+        text.classList.add('text-highlight')
+      })
+    }
+    `,
+    jQueryCode: `
+    function functionAddClass () {
+      $('#addBtnJq').on('click', () => {
+        $('#textAddJq').addClass('text-highlight')
+      })
+    }
+    `,
+  },
+  functionRemoveClass:
+  {
+    title: "Remove a class",
+    button: {
+      buttonIdJq: "removeClassBtnJq",
+      buttonIdV: "removeClassBtnV",
+      buttonText: "Remove",
+      buttonParagraph: {
+        buttonParagraphTxt: "Remove a class on this message",
+        buttonParagraphJq: "textRemoveClassJq",
+        buttonParagraphV: "textAddV"
+      },
+    },
+    canvas: "",
+    form: "",
+    list: "",
+    vanillaCode: `
+    function functionRemoveClass () {
+      document.getElementById('removeClassBtnV').addEventListener('click', () => {
+        const text = document.getElementById('textRemoveV')
+        text.classList.remove('text-highlight')
+      })
+    }
+    `,
+    jQueryCode: `
+    function functionRemoveClass () {
+      $('#removeClassBtnJq').on('click', () => {
+        $('#textRemoveClassJq').removeClass('text-highlight')
+      })
+    }
+    `,
+  },
+  functionToggleClass:
+  {
+    title: "Toggle a class",
+    button: {
+      buttonIdJq: "toggleClassBtnJq",
+      buttonIdV: "toggleClassBtnV",
+      buttonText: "Toggle",
+      buttonParagraph: {
+        buttonParagraphTxt: "Toggle a class on this message",
+        buttonParagraphJq: "textToggleClassJq",
+        buttonParagraphV: "textToggleV"
+      },
+    },
+    canvas: "",
+    form: "",
+    list: "",
+    vanillaCode: `
+    function functionToggleClass () {
+      document.getElementById('toggleClassBtnV').addEventListener('click', () => {
+        document.getElementById('textToggleV').classList.toggle('text-highlight')
+        })
+    }
+    `,
+    jQueryCode: `
+    function functionToggleClass () {
+      $('#toggleClassBtnJq').on('click', () => {
+        $('#textToggleClassJq').toggleClass('text-highlight')
+      })
+    }
+    `,
+  },
+  functionAddDisabled:
+  {
+    title: "Add disabled attribute",
+    button: {
+      buttonIdJq: "disableBtnJq",
+      buttonIdV: "disableBtnV",
+      buttonText: "Disable",
+    },
+    canvas: "",
+    form: "",
+    list: "",
+    vanillaCode: `
+    function functionAddDisabled () {
+      document.getElementById('disableBtnV').addEventListener('click', () => {
+        const button = document.getElementById('disableBtnV')
+        button.disabled = true
+        button.textContent = 'DISABLED'
+      })
+    }
+    `,
+    jQueryCode: `
+    function functionAddDisabled () {
+      $('#disableBtnJq').on('click', () => {
+        const button = $('#disableBtnJq').prop('disabled', true)
+        button.text('DISABLED')
+      })
+    }
+    `,
+  },
+  functionRemoveDisabled:
+  {
+    title: "Remove disabled attribute",
+    button: "",
+    canvas: "",
+    form: {
+      formIdJq: "enableBtnJq",
+      formIdV: "enableBtnV",
+      formNameIdJq: "enableCheckJq",
+      formNameIdV: "enableCheckV",
+      formLabel: "Click to enable button",
+      formButton: "Disabled"
+    } ,
+    list: "",
+    vanillaCode: `
+    function functionRemoveDisabled () {
+      document.getElementById('enableCheckV').addEventListener('change', () => {
+        const button = document.getElementById('enableBtnV')
+        button.disabled = false
+        button.textContent = 'ENABLED'
+      })
+    }
+    `,
+    jQueryCode: `
+    function functionRemoveDisabled () {
+      $('#enableCheckJq').on('change', () => {
+        const button = $('#enableBtnJq').prop('disabled', false)
+        button.text('ENABLED')
+      })
+    }
+    `,
   }
 }
