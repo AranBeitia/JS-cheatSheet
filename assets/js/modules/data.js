@@ -795,8 +795,8 @@ export const data = {
     form: {
       formIdJq: "enableBtnJq",
       formIdV: "enableBtnV",
-      formNameIdJq: "enableCheckJq",
-      formNameIdV: "enableCheckV",
+      checkInputJq: "enableCheckJq",
+      checkInputV: "enableCheckV",
       formLabel: "Click to enable button",
       formButton: "Disabled"
     } ,
@@ -815,6 +815,534 @@ export const data = {
       $('#enableCheckJq').on('change', () => {
         const button = $('#enableBtnJq').prop('disabled', false)
         button.text('ENABLED')
+      })
+    }
+    `,
+  },
+  functionSetData:
+  {
+    title: "Set a dataset attribute",
+    button: {
+      buttonIdJq: "datasetButtonJq",
+      buttonIdV: "datasetButtonV",
+      buttonText: "Load",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    const datasetImgV = document.createElement('img')
+    function functionSetData () {
+      document.getElementById('datasetButtonV').addEventListener('click', () => {
+        datasetImgV.setAttribute('src', 'assets/images/hello-kitty-dface.jpg')
+        datasetImgV.setAttribute('alt', 'Hello kitty d-face in Tokyo')
+        document.getElementById('datasetButtonV').parentNode.appendChild(datasetImgV)
+      })
+    }
+    `,
+    jQueryCode: `
+    function functionSetData () {
+      $('#datasetButtonJq').on('click', () => {
+        const img = $('#functionSetData img')
+        img.attr('src', 'assets/images/hello-kitty-dface.jpg')
+        $('#datasetButtonJq').after(img)
+      })
+    }
+    `,
+  },
+  functionRemoveData:
+  {
+    title: "Remove a dataset attribute",
+    button: {
+      buttonIdJq: "datasetRButtonJq",
+      buttonIdV: "datasetRButtonV",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    function functionRemoveData () {
+      document.getElementById('datasetRButtonV').addEventListener('click', () => {
+        document.getElementById('imgRemoveV').removeAttribute('src')
+      })
+    }
+    `,
+    jQueryCode: `
+    function functionRemoveData () {
+      $('#datasetRButtonJq').on('click', () => {
+        $('#imgRemoveJq').removeAttr('src')
+      })
+    }
+    `,
+  },
+  functionHide:
+  {
+    title: "Hide an HTML element on click",
+    button: {
+      buttonIdJq: "hideButtonJq",
+      buttonIdV: "hideButtonV",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    function functionHide () {
+      document.getElementById('hideButtonV').addEventListener('click', () => {
+        document.getElementById('imgHideV').style.display = 'none'
+      })
+    }
+    `,
+    jQueryCode: `
+    function functionHide () {
+      $('#hideButtonJq').on('click', () => {
+        $('#imgHideJq').css('display', 'none')
+      })
+    }
+    `,
+  },
+  functionShow:
+  {
+    title: "Show an HTML element on click",
+    button: {
+      buttonIdJq: "showButtonJq",
+      buttonIdV: "showButtonV",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    function functionShow () {
+      document.getElementById('showButtonV').addEventListener('click', () => {
+        document.getElementById('imgShowV').style.display = 'block'
+      })
+    }
+    `,
+    jQueryCode: `
+    function functionShow () {
+      $('#showButtonJq').on('click', () => {
+        $('#imgShowJq').css('display', 'block')
+      })
+    }
+    `,
+  },
+  functionFadein:
+  {
+    title: "Fade in an HTML element using jQuery",
+    button: {
+      buttonIdJq: "fadeinButtonJq",
+      buttonIdV: "",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+      nothing
+    `,
+    jQueryCode: `
+    function functionFadein () {
+      $('#fadeinButtonJq').on('click', () => {
+        $('#imgFadeinJq').fadeIn(3000)
+      })
+    }
+    `,
+  },
+  functionFadeout:
+  {
+    title: "Fade out an HTML element using jQuery",
+    button: {
+      buttonIdJq: "fadeoutButtonJq",
+      buttonIdV: "",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+      nothing
+    `,
+    jQueryCode: `
+    function functionFadeout () {
+      $('#fadeoutButtonJq').on('click', () => {
+        $('#imgFadeoutJq').fadeOut('slow')
+      })
+    }
+    `,
+  },
+  functionAnimate:
+  {
+    title: "Animate an item after 2 seconds",
+    button: {
+      buttonIdJq: "btnAnimateJq",
+      buttonIdV: "btnAnimateV",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    function functionAnimate () {
+      document.getElementById('btnAnimateV').addEventListener('click', () => {
+        setTimeout(() => {
+          document.getElementById('boxAnimateV').animate(
+          [
+            { transform: "translateY(0px)" },
+            { transform: "translateY(30px)" },
+            { transform: "translateY(0px)" },
+          ],{
+            duration: 1000,
+            iterations: 2
+          })
+        }, 2000)
+      })
+    }
+    `,
+    jQueryCode: `
+    function functionAnimate () {
+      $('#btnAnimateJq').on('click', () => {
+        setTimeout(function (){
+          $('#boxAnimateJq').animate({
+            width: '100px',
+            height: '100px',
+            opacity: 0.5,
+          }, 'slow')
+        }, 2000)
+      })
+    }
+    `,
+  },
+  selectorIterateChange:
+  {
+    title: "Apply change of style on a collection",
+    button: {
+      buttonIdJq: "btnChangeStyleJq",
+      buttonIdV: "btnChangeStyleV",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    function selectorIterateChange () {
+      document.getElementById('btnChangeStyleV').addEventListener('click', () => {
+        const list = document.querySelectorAll('#listChangeStyleV li')
+        list.forEach(item => {
+          item.textContent += ' iterated'
+          item.classList.toggle('text-highlight')
+        })
+      })
+    }
+    `,
+    jQueryCode: `
+    function selectorIterateChange () {
+      $('#btnChangeStyleJq').on('click', () => {
+        $('#listChangeStyleJq li').each(function(){
+          $(this).toggleClass('text-highlight')
+          $(this).text($(this).text() + ' iterated')
+        })
+      })
+    }
+    `,
+  },
+  selectorParentFont:
+  {
+    title: "Get parent element and change font weight",
+    button: {
+      buttonIdJq: "btnParentFontJq",
+      buttonIdV: "btnParentFontV",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    function selectorParentFont () {
+      document.getElementById('btnParentFontV').addEventListener('click', () => {
+        const item = document.getElementById('btnParentFontV').parentNode
+        item.style.fontWeight = '700'
+        item.style.color = '#d83f87'
+      })
+    }
+    `,
+    jQueryCode: `
+    function selectorParentFont () {
+      $('#btnParentFontJq').on('click', () => {
+        let item = $('#itemParentFontJq').parent().prev()
+        item.css('font-weight', '100')
+        item.css('color', '#d83f87')
+      })
+    }
+    `,
+  },
+  selectorChildrenFont:
+  {
+    title: "Get children and change its font weight",
+    button: {
+      buttonIdJq: "btnChildrenFontJq",
+      buttonIdV: "btnChildrenFontV",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    function selectorChildrenFont () {
+      document.getElementById('btnChildrenFontV').addEventListener('click', () => {
+        const items = document.getElementById('itemChildrenFontV').children
+        for (let i = 0; i < items.length; i++) {
+          items[i].style.fontWeight = '700'
+          items[i].style.color = '#d83f87'
+        }
+      })
+    }
+    `,
+    jQueryCode: `
+    function selectorChildrenFont () {
+      $('#btnChildrenFontJq').on('click', () => {
+        let items = $('#itemChildrenFontJq').children()
+        items.css('font-weight', '700')
+        items.css('color', '#d83f87')
+      })
+    }
+    `,
+  },
+  selectorCertainFont:
+  {
+    title: "Get certain class and change font weight",
+    button: {
+      buttonIdJq: "btnCertainFontJq",
+      buttonIdV: "btnCertainFontV",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    function selectorCertainFont () {
+      document.getElementById('btnCertainFontV').addEventListener('click', () => {
+        const items = document.querySelectorAll('.certain-classv')
+        items.forEach (item => {
+          item.style.fontWeight = '100'
+          item.style.color = '#d83f87'
+        })
+      })
+    }
+    `,
+    jQueryCode: `
+    function selectorCertainFont () {
+      $('#btnCertainFontJq').on('click', () => {
+        $('.certain-class').each(function() {
+          $(this).css('font-weight', '100')
+          $(this).css('color', '#d83f87')
+        })
+      })
+    }
+    `,
+  },
+  selectorGetIdFont:
+  {
+    title: "Get an item by id and change its font weight",
+    button: {
+      buttonIdJq: "btnItemIdJq",
+      buttonIdV: "btnIdFontV",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    function selectorGetIdFont () {
+      document.getElementById('btnIdFontV').addEventListener('click', () => {
+        const item = document.getElementById('itemIdV')
+        item.style.fontWeight = '100'
+        item.style.color = '#d83f87'
+      })
+    }
+    `,
+    jQueryCode: `
+    function selectorGetIdFont () {
+      $('#btnItemIdJq').on('click', () => {
+        $('#itemIdJq').css('font-weight', '100')
+        $('#itemIdJq').css('color', '#d83f87')
+      })
+    }
+    `,
+  },
+  selectorGetClassDisplay:
+  {
+    title: "Get elements by class and change style properties",
+    button: {
+      buttonIdJq: "btnGetClassJq",
+      buttonIdV: "btnGetClassV",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    function selectorGetClassDisplay () {
+      document.getElementById('btnGetClassV').addEventListener('click', () => {
+        const items = document.getElementsByClassName('get-class-v')
+        for (let item of items) {
+          item.style.display = 'block'
+          item.style.color = '#d83f87'
+        }
+      })
+    }
+    `,
+    jQueryCode: `
+    function selectorGetClassDisplay () {
+      const itemClass = $('.get-class-jq').hide()
+      $('#btnGetClassJq').on('click', () => {
+        itemClass.show()
+        itemClass.css('color', '#d83f87')
+      })
+    }
+    `,
+  },
+  selectorAttSelected:
+  {
+    title: "Get the options of selected elements",
+    button: {
+      buttonIdJq: "",
+      buttonIdV: "",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    const attrMessage = document.createElement('p')
+    function selectorAttSelected () {
+      document.querySelector('#formAttrV select').addEventListener('change', () => {
+        let result = document.querySelector('#formAttrV select').value
+        attrMessage.innerHTML = 'Your selection is {result}'
+        document.querySelector('#formAttrV').appendChild(attrMessage)
+      })
+    }
+    `,
+    jQueryCode: `
+    const messageAttr = $('<p></p>')
+    function selectorAttSelected () {
+      $('#formAttrJq select').on('change', () => {
+        let selected = $(event.target).val()
+        messageAttr.html('Your selection is <span class="text-highlight">${selected}</span>')
+        $('#formAttrJq').after(messageAttr)
+      })
+    }
+    `,
+  },
+  selectorAttLink:
+  {
+    title: "Change the href attribute of the first a element",
+    button: {
+      buttonIdJq: "",
+      buttonIdV: "",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    const attrLinkMessage = document.createElement('p')
+    function selectorAttLink () {
+      document.querySelector('#btnAttrLinkV').addEventListener('click', () => {
+        let firstItem = document.querySelector('#listAttrLinkV > li').firstChild
+        firstItem.setAttribute('href', 'https://www.google.com/')
+        firstItem.setAttribute('target', '_blank')
+        attrLinkMessage.textContent = 'Click on the first item'
+        document.querySelector('#listAttrLinkV').appendChild(attrLinkMessage)
+      })
+    }
+    `,
+    jQueryCode: `
+    const message = $('<p>Click on the first item</p>')
+    function selectorAttLink () {
+      $('#btnAttrLinkJq').on('click', () => {
+        let firstLink = $('#listAttrLinkJq').find('a').first()
+        firstLink.attr('href', 'https://www.google.com/')
+        firstLink.attr('target', '_blank')
+        $('#listAttrLinkJq').after(message)
+      })
+    }
+    `,
+  },
+  selectorShowAlert:
+  {
+    title: "Show an alert with the value of the first input",
+    button: {
+      buttonIdJq: "",
+      buttonIdV: "",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    function selectorShowAlert () {
+      document.getElementById('formShowAlertV').addEventListener('submit', (e) => {
+        e.preventDefault()
+        let firstInput = document.querySelectorAll('#formShowAlertV input')[0].value
+        if(firstInput) alert('The value of the first input is: ' + firstInput)
+      })
+    }
+    `,
+    jQueryCode: `
+    function selectorShowAlert () {
+      $('#formShowAlertJq').on('submit', (e) => {
+        e.preventDefault()
+        let firstInput = $('#formShowAlertJq').find('input').first().val()
+        if(firstInput) alert('The value of first input is: ' + firstInput)
+      })
+    }
+    `,
+  },
+  selectorRemove:
+  {
+    title: "Remove all items from a specific selector",
+    button: {
+      buttonIdJq: "btnRemoveJq",
+      buttonIdV: "btnRemoveV",
+      buttonText: "",
+      buttonParagraph: "",
+    },
+    canvas: "",
+    form: "" ,
+    list: "",
+    vanillaCode: `
+    function selectorRemove () {
+      document.getElementById('btnRemoveV').addEventListener('click', (e) => {
+        let items = document.querySelectorAll('#listV li')
+        for (let item of items) item.remove()
+      })
+    }
+    `,
+    jQueryCode: `
+    function selectorRemove () {
+      $('#btnRemoveJq').on('click', () => {
+        let items = $('#listJq li')
+        items.each(function () {
+          $(this).remove()
+        })
       })
     }
     `,

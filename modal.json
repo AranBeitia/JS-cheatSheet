@@ -1,9 +1,0 @@
-{
-  "eventDomLoad":
-  {
-    "id": 1,
-    "title": "Event DOM Content loaded",
-    "innerJQ": "<button id=\"eventLoadJq\" class=\"button\">Test me</button>",
-    "innerV": "<button id=\"eventLoadV\" class=\"button\">Test me</button>"
-  }
-}

@@ -29,7 +29,7 @@ function renderModal(titleId) {
             <div data-inner="button">
               <button id="${modal.button.buttonIdJq}" class="button margin-x2">${modal.button.buttonText}</button>
               ${modal.button.buttonParagraph ? `<p id="${modal.button.buttonParagraph.buttonParagraphJq}">${modal.button.buttonParagraph.buttonParagraphTxt}</p>`: ''}
-              </div>
+            </div>
             <div data-inner="canvas">
               <p>Move the mouse inside the box</p>
               <div id="${modal.canvas.canvasJq}" class="canvas-box flex-center"></div>
