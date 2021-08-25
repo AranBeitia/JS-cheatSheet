@@ -46,6 +46,7 @@ function renderModal(titleId) {
               </form>
             </div>
             <div data-inner="list">
+              ${modal.list.listBtnJq ? `<button id="${modal.list.listBtnJq}" class="button">${modal.list.listBtnTxt}</button>` : ''}
               <ul id="${modal.list.listIdJq}" class="list">
                 <li>Item 1</li>
                 <li>Item 2</li>
@@ -79,6 +80,7 @@ function renderModal(titleId) {
               </form>
             </div>
             <div data-inner="list">
+              ${modal.list.listBtnV ? `<button id="${modal.list.listBtnV}" class="button">${modal.list.listBtnTxt}</button>` : ''}
               <ul id="${modal.list.listIdV}" class="list">
                 <li>Item 1</li>
                 <li>Item 2</li>

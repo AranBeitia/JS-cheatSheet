@@ -1024,15 +1024,16 @@ export const data = {
   selectorIterateChange:
   {
     title: "Apply change of style on a collection",
-    button: {
-      buttonIdJq: "btnChangeStyleJq",
-      buttonIdV: "btnChangeStyleV",
-      buttonText: "",
-      buttonParagraph: "",
-    },
+    button: "",
     canvas: "",
     form: "" ,
-    list: "",
+    list: {
+      listBtnJq: "btnChangeStyleJq",
+      listBtnV: "btnChangeStyleV",
+      listBtnTxt: "Change style",
+      listIdJq: "listChangeStyleJq",
+      listIdV: "listChangeStyleV"
+    },
     vanillaCode: `
     function selectorIterateChange () {
       document.getElementById('btnChangeStyleV').addEventListener('click', () => {
@@ -1058,15 +1059,16 @@ export const data = {
   selectorParentFont:
   {
     title: "Get parent element and change font weight",
-    button: {
-      buttonIdJq: "btnParentFontJq",
-      buttonIdV: "btnParentFontV",
-      buttonText: "",
-      buttonParagraph: "",
-    },
+    button: "",
     canvas: "",
     form: "" ,
-    list: "",
+    list: {
+      listBtnJq: "btnParentFontJq",
+      listBtnV: "btnChangeStyleV",
+      listBtnTxt: "Change title",
+      listIdJq: "listChangeStyleJq",
+      listIdV: "listChangeStyleV"
+    },
     vanillaCode: `
     function selectorParentFont () {
       document.getElementById('btnParentFontV').addEventListener('click', () => {
@@ -1089,15 +1091,16 @@ export const data = {
   selectorChildrenFont:
   {
     title: "Get children and change its font weight",
-    button: {
-      buttonIdJq: "btnChildrenFontJq",
-      buttonIdV: "btnChildrenFontV",
-      buttonText: "",
-      buttonParagraph: "",
-    },
+    button: "",
     canvas: "",
     form: "" ,
-    list: "",
+    list: {
+      listBtnJq: "btnChildrenFontJq",
+      listBtnV: "btnChildrenFontV",
+      listBtnTxt: "Change children",
+      listIdJq: "itemChildrenFontJq",
+      listIdV: "itemChildrenFontV"
+    },
     vanillaCode: `
     function selectorChildrenFont () {
       document.getElementById('btnChildrenFontV').addEventListener('click', () => {
@@ -1243,7 +1246,7 @@ export const data = {
     function selectorAttSelected () {
       $('#formAttrJq select').on('change', () => {
         let selected = $(event.target).val()
-        messageAttr.html('Your selection is <span class="text-highlight">${selected}</span>')
+        messageAttr.html('Your selection is <span class="text-highlight">{selected}</span>')
         $('#formAttrJq').after(messageAttr)
       })
     }
@@ -1319,15 +1322,16 @@ export const data = {
   selectorRemove:
   {
     title: "Remove all items from a specific selector",
-    button: {
-      buttonIdJq: "btnRemoveJq",
-      buttonIdV: "btnRemoveV",
-      buttonText: "",
-      buttonParagraph: "",
-    },
+    button: "",
     canvas: "",
     form: "" ,
-    list: "",
+    list: {
+      listBtnJq: "btnRemoveJq",
+      listBtnV: "btnRemoveV",
+      listBtnTxt: "Remove",
+      listIdJq: "listJq",
+      listIdV: "listV"
+    },
     vanillaCode: `
     function selectorRemove () {
       document.getElementById('btnRemoveV').addEventListener('click', (e) => {
